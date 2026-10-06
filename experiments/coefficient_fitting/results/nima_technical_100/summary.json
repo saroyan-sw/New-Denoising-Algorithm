@@ -1,0 +1,28 @@
+{
+  "quality_model": "NIMA technical MobileNet, TID2013",
+  "weights_sha256": "5093f2cdf16e5c9a0a005f1bf853ed869c8a47f973190e7a34fb06871060bcd6",
+  "count": 100,
+  "datasets": {
+    "CBSD68": 50,
+    "Kodak24": 50
+  },
+  "crop_size": 128,
+  "noise": {
+    "type": "AWGN then clipped to [0,1]",
+    "sigma_8bit": 25.0,
+    "seed": 20261001
+  },
+  "steps": 150,
+  "batch_size": 10,
+  "objective": "-NIMA/10 + 10*L1(reconstruction,noisy) + 5*mean-brightness difference",
+  "mean_noisy_psnr": 20.45947394736848,
+  "mean_restored_psnr": 24.27778273461812,
+  "mean_noisy_ssim": 0.3893844360858202,
+  "mean_restored_ssim": 0.5593952038884162,
+  "mean_coefficients_low_mid_high": [
+    0.2735071049630642,
+    0.4735643982887268,
+    0.25292849391698835
+  ],
+  "improved_psnr_count": 100
+}

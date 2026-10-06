@@ -1,0 +1,113 @@
+{
+  "method": "frequency-domain order-3 steerable pyramid with 4 log-radial scales and 4 orientations",
+  "quality_prior": "NIMA technical MobileNet, same loss and checkpoint as prior NIMA experiment",
+  "dataset": "same 100 matched crops as NIMA/discriminator comparison: 50 CBSD68 + 50 Kodak24",
+  "noise": {
+    "type": "AWGN then clipped to [0,1]",
+    "sigma_8bit": 25.0,
+    "seed": 20261001
+  },
+  "crop_size": 128,
+  "optimization_steps": 150,
+  "batch_size": 10,
+  "objective": "-NIMA/10 + 10*L1(reconstruction,noisy) + 5*absolute mean-brightness difference",
+  "gain_bounds": [
+    0.0,
+    2.0
+  ],
+  "thresholding": "complex soft threshold preserving coefficient phase; threshold = softplus(parameter) * sigma * filter RMS",
+  "synthesis": "paired analysis/synthesis tight frame; maximum identity reconstruction error across batches recorded per crop",
+  "mean_metrics": {
+    "noisy_psnr": 20.45947394736848,
+    "noisy_ssim": 0.3893844360858202,
+    "gain_only_psnr": 20.461655184328425,
+    "gain_only_ssim": 0.38950244277715684,
+    "threshold_psnr": 20.583913117925963,
+    "threshold_ssim": 0.39698943875730036,
+    "nima_psnr": 24.27778273461812,
+    "nima_ssim": 0.5593952038884162,
+    "disc_psnr": 23.25166778136211,
+    "disc_ssim": 0.5205949507653713
+  },
+  "wins_over_noisy": {
+    "gain_only": 59,
+    "threshold": 92,
+    "nima": 100,
+    "disc": 100
+  },
+  "paired_psnr_comparisons": {
+    "gain_only_vs_nima": {
+      "mean_delta_db": -3.8161275502897043,
+      "wins": 0
+    },
+    "threshold_vs_nima": {
+      "mean_delta_db": -3.693869616692166,
+      "wins": 0
+    },
+    "gain_only_vs_disc": {
+      "mean_delta_db": -2.7900125970336784,
+      "wins": 0
+    },
+    "threshold_vs_disc": {
+      "mean_delta_db": -2.6677546634361393,
+      "wins": 1
+    }
+  },
+  "max_identity_reconstruction_error": 4.76837158203125e-07,
+  "mean_gain_only_coefficients": [
+    1.0007337939739227,
+    0.998781087398529,
+    1.0012530386447906,
+    0.9986812478303909,
+    1.0029114198684692,
+    0.9969294542074203,
+    1.0014439004659652,
+    0.9983853507041931,
+    0.9900662982463837,
+    0.997625982761383,
+    1.0000837713479995,
+    0.9988518732786179,
+    1.0033461093902587,
+    0.9984918695688247,
+    1.0014705604314804,
+    0.9983349072933198
+  ],
+  "mean_thresholded_coefficients": [
+    1.1947232449054719,
+    1.195781123638153,
+    1.219757583141327,
+    1.192906002998352,
+    1.127768868803978,
+    1.1665368318557738,
+    1.1625018191337586,
+    1.1330576515197754,
+    1.0246199452877045,
+    1.0423214411735535,
+    1.0815075582265854,
+    1.0520247840881347,
+    1.0395170617103577,
+    1.0570367503166198,
+    1.072628014087677,
+    1.0451561737060546
+  ],
+  "mean_threshold_sigma_multipliers": [
+    0.2371429117023945,
+    0.24273404702544213,
+    0.23826752945780755,
+    0.24427740141749382,
+    0.26008988946676254,
+    0.2730049933493137,
+    0.2796551652252674,
+    0.27921120628714563,
+    0.38627755343914033,
+    0.35124975979328155,
+    0.2962901572883129,
+    0.32649308159947393,
+    0.4119019277393818,
+    0.408293144851923,
+    0.4039232225716114,
+    0.3789822253584862
+  ],
+  "crop_and_noise_match_verified": true,
+  "nima_weights_sha256": "5093f2cdf16e5c9a0a005f1bf853ed869c8a47f973190e7a34fb06871060bcd6"
+}

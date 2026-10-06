@@ -1,0 +1,124 @@
+{
+  "quality_model": "NIMA technical (MobileNet, TID2013-trained), public converted author weights",
+  "quality_model_type": "no-reference image-quality assessor; not a discriminator",
+  "weights_file": "C:\\Users\\user\\Documents\\ChatGPT\\New Denoising Algorithm\\.cache\\torch\\hub\\checkpoints\\nima_mobilenet_technical_weights.pt",
+  "weights_sha256": "5093f2cdf16e5c9a0a005f1bf853ed869c8a47f973190e7a34fb06871060bcd6",
+  "bands": "archive Gaussian low + averaged Gabor mid + residual high",
+  "coefficient_rule": "absolute values normalized to sum to 1",
+  "noise": {
+    "type": "AWGN then clip to [0,1]",
+    "sigma_8bit": 25.0,
+    "seed": 20260930
+  },
+  "crop_size": 128,
+  "steps": 150,
+  "learning_rate": 0.01,
+  "objective": "-NIMA_score/10 + 10*L1(reconstruction,noisy) + 5*abs(mean(reconstruction)-mean(noisy))",
+  "device": "cpu",
+  "fits": [
+    {
+      "image": "CBSD68/0000.png",
+      "coefficients_low_mid_high": [
+        0.36500313878059387,
+        0.4139831066131592,
+        0.22101375460624695
+      ],
+      "loss_first": 3.713355302810669,
+      "loss_last": 0.12567856907844543,
+      "nima_score_first": 3.578261375427246,
+      "nima_score_last_preclip": 3.9170584678649902,
+      "nima_score_final_clipped": 3.911505937576294
+    },
+    {
+      "image": "CBSD68/0001.png",
+      "coefficients_low_mid_high": [
+        0.18415457010269165,
+        0.530329167842865,
+        0.28551626205444336
+      ],
+      "loss_first": 3.564945936203003,
+      "loss_last": 0.10247722268104553,
+      "nima_score_first": 4.004110813140869,
+      "nima_score_last_preclip": 4.092255115509033,
+      "nima_score_final_clipped": 4.092464447021484
+    },
+    {
+      "image": "CBSD68/0002.png",
+      "coefficients_low_mid_high": [
+        0.27923110127449036,
+        0.47075772285461426,
+        0.2500111758708954
+      ],
+      "loss_first": 2.925541400909424,
+      "loss_last": 0.05949017405509949,
+      "nima_score_first": 4.86219596862793,
+      "nima_score_last_preclip": 4.184157371520996,
+      "nima_score_final_clipped": 4.185054302215576
+    },
+    {
+      "image": "CBSD68/0003.png",
+      "coefficients_low_mid_high": [
+        0.33670690655708313,
+        0.4315524697303772,
+        0.2317405790090561
+      ],
+      "loss_first": 4.346823692321777,
+      "loss_last": 0.2544468343257904,
+      "nima_score_first": 2.8230416774749756,
+      "nima_score_last_preclip": 3.1596152782440186,
+      "nima_score_final_clipped": 3.1459944248199463
+    },
+    {
+      "image": "Kodak24/kodim01.png",
+      "coefficients_low_mid_high": [
+        0.32009056210517883,
+        0.44453686475753784,
+        0.23537257313728333
+      ],
+      "loss_first": 4.180523872375488,
+      "loss_last": 0.2458515167236328,
+      "nima_score_first": 3.7897300720214844,
+      "nima_score_last_preclip": 2.972421646118164,
+      "nima_score_final_clipped": 2.9650638103485107
+    },
+    {
+      "image": "Kodak24/kodim02.png",
+      "coefficients_low_mid_high": [
+        0.23131965100765228,
+        0.4996419847011566,
+        0.2690383195877075
+      ],
+      "loss_first": 2.1714231967926025,
+      "loss_last": 0.032129526138305664,
+      "nima_score_first": 4.389575004577637,
+      "nima_score_last_preclip": 4.384713649749756,
+      "nima_score_final_clipped": 4.374141693115234
+    },
+    {
+      "image": "Kodak24/kodim03.png",
+      "coefficients_low_mid_high": [
+        0.3032644987106323,
+        0.4553912281990051,
+        0.24134427309036255
+      ],
+      "loss_first": 3.66494083404541,
+      "loss_last": 0.03205060958862305,
+      "nima_score_first": 4.139781475067139,
+      "nima_score_last_preclip": 4.680066108703613,
+      "nima_score_final_clipped": 4.696916580200195
+    },
+    {
+      "image": "Kodak24/kodim04.png",
+      "coefficients_low_mid_high": [
+        0.11872446537017822,
+        0.5720897316932678,
+        0.30918583273887634
+      ],
+      "loss_first": 1.8667711019515991,
+      "loss_last": -0.037107616662979126,
+      "nima_score_first": 4.561890125274658,
+      "nima_score_last_preclip": 4.831354141235352,
+      "nima_score_final_clipped": 4.805089950561523
+    }
+  ]
+}

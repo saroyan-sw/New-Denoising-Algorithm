@@ -1,0 +1,18 @@
+{
+  "count": 100,
+  "checkpoint": "C:\\Users\\user\\Documents\\ChatGPT\\New Denoising Algorithm\\checkpoints\\netD_Clean_epoch_100.pth",
+  "noise": {
+    "type": "AWGN then clipped to [0,1]",
+    "sigma_8bit": 25.0,
+    "seed": 20261001
+  },
+  "steps": 150,
+  "mean_noisy_psnr": 20.45947394736848,
+  "mean_nima_psnr": 24.27778273461812,
+  "mean_disc_psnr": 23.25166778136211,
+  "mean_noisy_ssim": 0.3893844360858202,
+  "mean_nima_ssim": 0.5593952038884162,
+  "mean_disc_ssim": 0.5205949507653713,
+  "nima_psnr_wins": 92,
+  "discriminator_psnr_wins": 8
+}

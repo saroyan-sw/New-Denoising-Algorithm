@@ -1,0 +1,3 @@
+method,low,mid,high,mean_sure,mean_quality_affinity,risk_threshold
+global_quality_only,1.0,1.5,0.0,0.002065296330953952,0.9029737903225807,0.0028654695544233616
+global_risk_constrained_quality,1.0,1.5,0.0,0.002065296330953952,0.9029737903225807,0.0028654695544233616

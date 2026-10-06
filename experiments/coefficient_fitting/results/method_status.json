@@ -1,0 +1,21 @@
+{
+  "grid_random_coordinate_gradient_bayesian_evolution_search": "ran: compact global SURE and oracle-MSE searches; results in summary.csv and search_comparison.csv",
+  "brisque_niqe_quality_only": "ran: 125-point coefficient grid; invalid BRISQUE/NIQE candidate scores penalized and counted in nr_metric_failures.json",
+  "risk_constrained_quality": "ran: global and per-image BRISQUE/NIQE rank-affinity selection with a SURE risk ceiling",
+  "discriminator_guided_coefficients": "ran: epoch-100 checkpoint; 8 images, 128px crops, 8 optimizer steps/image; smoke-test pilot only",
+  "archive_faithful_discriminator_coefficients": "ran: epoch-100 clean checkpoint; archive Gabor bands and abs-normalized coefficients; 150 steps/image, with and without mean constraint; 4 clipped-AWGN crops per dataset",
+  "public_nima_technical_coefficients": "ran: public NIMA technical MobileNet weights trained on TID2013; archive bands; 150 steps/image; same 8 clipped-AWGN crops as discriminator comparison; results in nima_technical/",
+  "public_nima_technical_100_crops": "ran: 50 CBSD68 plus 50 Kodak24 reproducible 128px crops; clipped AWGN sigma 25/255 before fitting; 150 steps; clean/noisy/restored images and metrics in nima_technical_100/",
+  "nima_vs_discriminator_100_crops": "ran: paired comparison on the exact same 100 noisy crops; epoch-100 archive discriminator versus public NIMA technical guidance; paired metrics and discriminator images in discriminator_100/",
+  "salt_pepper_100_crops": "ran: 10% whole-pixel salt-and-pepper noise on 100 crops; NIMA and archive-discriminator guidance versus 3x3/5x5 median; mismatched Gaussian-SURE diagnostic and clean-reference three-band oracle recorded in salt_pepper_100/",
+  "hits_filter_ensemble": "ran: 9-filter global ensemble fitted on 16 DIV2K validation crops; frozen evaluation on 8 CBSD68 and 8 Kodak24 crops",
+  "noise_model": "synthetic unclipped AWGN, sigma=25/255; restored images clipped for display-domain metrics",
+  "calibration": "16 DIV2K validation images, random 128px crops; separate HITS fit uses its recorded 16-image calibration set",
+  "evaluation": "pilot subsets only: coefficient search uses 8 CBSD68 and 8 Kodak24 images with 192px crops; NR and discriminator runs use 8 and 4 images per set respectively",
+  "checkpoints": {
+    "epoch_50": "copied to checkpoints/netD_Clean_epoch_50.pth; 22264366 bytes; SHA-256 30A40FC19BFC023E7D4F004FA567E81F41364FE5EB936F2ECE7E1AA708FEDF7F",
+    "epoch_100": "copied to checkpoints/netD_Clean_epoch_100.pth; 22264410 bytes; SHA-256 709F5C86DA2D7DB46C7FF8224D3A642884937CD8AE115DE1ECEA99186776FDB7"
+  },
+  "runtime": "verified in .venv: Python 3.14, PyTorch 2.14.0+cpu, torchvision 0.29.0, PyIQA 0.1.16",
+  "seed": 20260930
+}

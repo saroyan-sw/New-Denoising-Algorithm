@@ -1,0 +1,16 @@
+{
+  "fine_sigma": 1.0,
+  "coarse_sigma": 2.0,
+  "weights": {
+    "low": 1.0,
+    "mid": 1.0,
+    "high": 1.0
+  },
+  "optimization": {
+    "learning_rate": 0.01,
+    "steps": 150,
+    "fidelity_weight": 10.0,
+    "mean_weight": 5.0
+  }
+}
+

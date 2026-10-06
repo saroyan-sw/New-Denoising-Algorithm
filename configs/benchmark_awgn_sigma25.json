@@ -1,0 +1,43 @@
+{
+  "protocol_version": 1,
+  "task": "color_awgn_nonblind",
+  "noise": {
+    "distribution": "normal",
+    "sigma_8bit": 25,
+    "sigma_float": 0.09803921568627451,
+    "clip_noisy_input": false,
+    "canonical_seed": 20260916,
+    "robustness_seeds": [20260916, 20260917, 20260918, 20260919, 20260920]
+  },
+  "data": {
+    "prior_fit": "DIV2K_train_800",
+    "validation": "DIV2K_valid_100",
+    "test": ["CBSD68_68", "Kodak24_24"]
+  },
+  "evaluation": {
+    "clip_restored_output": true,
+    "primary_metrics": ["psnr_rgb", "ssim_rgb", "mae_rgb"],
+    "secondary_metrics": ["dists", "lpips"],
+    "diagnostics": [
+      "residual_mean",
+      "residual_variance",
+      "residual_autocorrelation",
+      "runtime",
+      "optimization_steps"
+    ],
+    "report_per_image_rows": true,
+    "paired_bootstrap_confidence": 0.95
+  },
+  "baseline_tiers": {
+    "sanity": ["identity", "gaussian", "median", "bilateral", "nonlocal_means"],
+    "classical": ["cbm3d"],
+    "supervised": ["dncnn", "ffdnet_or_drunet", "restormer_or_swinir"],
+    "no_clean_target": ["noise2self", "neighbor2neighbor", "single_image_self_supervised"],
+    "project": [
+      "fixed_deterministic",
+      "corrected_differentiable_fusion",
+      "naturalness_guided",
+      "clean_target_oracle"
+    ]
+  }
+}

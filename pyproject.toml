@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "denoise-research-baseline"
+version = "0.1.0"
+description = "Audited baselines reconstructed from the Self-FuseNet-inspired denoising research"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=10",
+]
+
+[project.optional-dependencies]
+viz = [
+  "matplotlib>=3.10",
+]
+torch = [
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "pyiqa>=0.1.13",
+]
+quality = [
+  "deepinv>=0.4.2",
+]
+
+[project.scripts]
+denoise-baseline = "denoise_research.cli:baseline_main"
+denoise-benchmark = "denoise_research.cli:benchmark_main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,17 @@
+{
+  "checkpoint": "C:\\Users\\user\\Documents\\ChatGPT\\New Denoising Algorithm\\checkpoints\\netD_Clean_epoch_100.pth",
+  "algorithm": "archive Gaussian low + averaged Gabor mid + residual high",
+  "coefficient_rule": "absolute coefficients normalized to sum to 1",
+  "mean_constraint": true,
+  "mean_constraint_weight": 5.0,
+  "fidelity_weight": 10.0,
+  "learning_rate": 0.01,
+  "steps": 150,
+  "noise": {
+    "type": "AWGN then clipped to [0,1]",
+    "sigma_8bit": 25.0,
+    "seed": 20261001
+  },
+  "crop_size": 128,
+  "count": 50
+}

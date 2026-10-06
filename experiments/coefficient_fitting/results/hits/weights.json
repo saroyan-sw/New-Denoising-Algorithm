@@ -1,0 +1,157 @@
+{
+  "affinity": {
+    "mode": "rank",
+    "temperature": 1.0
+  },
+  "crop_size": 128,
+  "filter_weights": {
+    "bilateral_medium": 0.09571132088807452,
+    "bilateral_mild": 0.08449407622250941,
+    "bilateral_strong": 0.08059044490369445,
+    "gaussian_sigma_0.6": 0.20091796919709465,
+    "gaussian_sigma_1.0": 0.1360826268015201,
+    "gaussian_sigma_1.5": 0.06449419117690032,
+    "identity": 0.012106234255685569,
+    "median_3": 0.19165667539166387,
+    "median_5": 0.13394646116285713
+  },
+  "filters": [
+    "identity",
+    "gaussian_sigma_0.6",
+    "gaussian_sigma_1.0",
+    "gaussian_sigma_1.5",
+    "median_3",
+    "median_5",
+    "bilateral_mild",
+    "bilateral_medium",
+    "bilateral_strong"
+  ],
+  "fit_dataset": "C:\\Users\\user\\Documents\\ChatGPT\\New Denoising Algorithm\\data\\DIV2K_valid",
+  "fit_full_reference_summary": {
+    "bilateral_medium": {
+      "mae": 0.02689367183484137,
+      "mse": 0.0012629496413865127,
+      "psnr": 29.370403237699737,
+      "ssim": 0.6645993329584599
+    },
+    "bilateral_mild": {
+      "mae": 0.042946845991536975,
+      "mse": 0.003179052408086136,
+      "psnr": 25.025108548114986,
+      "ssim": 0.4257607255131006
+    },
+    "bilateral_strong": {
+      "mae": 0.022152027755510062,
+      "mse": 0.000984002790573868,
+      "psnr": 31.3893190507418,
+      "ssim": 0.7860230915248394
+    },
+    "gaussian_sigma_0.6": {
+      "mae": 0.0398932674434036,
+      "mse": 0.0025777051341719925,
+      "psnr": 26.006044403884673,
+      "ssim": 0.4702773541212082
+    },
+    "gaussian_sigma_1.0": {
+      "mae": 0.027811665437184274,
+      "mse": 0.0015727899044577498,
+      "psnr": 29.407184787377624,
+      "ssim": 0.687223844230175
+    },
+    "gaussian_sigma_1.5": {
+      "mae": 0.02474963665008545,
+      "mse": 0.0016522247187822359,
+      "psnr": 30.867418670464627,
+      "ssim": 0.7757467310875654
+    },
+    "identity": {
+      "mae": 0.07547184079885483,
+      "mse": 0.009039006487000734,
+      "psnr": 20.448096095392717,
+      "ssim": 0.2360135749913752
+    },
+    "median_3": {
+      "mae": 0.03635981911793351,
+      "mse": 0.002414280235825572,
+      "psnr": 26.892593275389142,
+      "ssim": 0.5329094603657722
+    },
+    "median_5": {
+      "mae": 0.028764250921085477,
+      "mse": 0.002030637737334473,
+      "psnr": 29.314289703822162,
+      "ssim": 0.6833476275205612
+    },
+    "spectral_fusion": {
+      "mae": 0.028200804721564054,
+      "mse": 0.0014418735772778746,
+      "psnr": 29.16429144083151,
+      "ssim": 0.661625299602747
+    },
+    "uniform_fusion": {
+      "mae": 0.030259820632636547,
+      "mse": 0.0015757575529278256,
+      "psnr": 28.481542590566804,
+      "ssim": 0.6111082173883915
+    }
+  },
+  "image_ids": [
+    "0801.png",
+    "0802.png",
+    "0803.png",
+    "0804.png",
+    "0805.png",
+    "0806.png",
+    "0807.png",
+    "0808.png",
+    "0809.png",
+    "0810.png",
+    "0811.png",
+    "0812.png",
+    "0813.png",
+    "0814.png",
+    "0815.png",
+    "0816.png"
+  ],
+  "image_weights": [
+    0.062322777895296395,
+    0.06320639375671264,
+    0.0633690201292251,
+    0.06235686673197569,
+    0.06353574695223102,
+    0.06295146145802935,
+    0.05654643198089778,
+    0.06250888157856516,
+    0.06206627879284449,
+    0.06324709541394138,
+    0.060554262472453955,
+    0.06376258843304858,
+    0.06392212189609939,
+    0.06328629294243623,
+    0.0632311815874733,
+    0.06313259797876945
+  ],
+  "method": "damped_bipartite_spectral_consensus",
+  "metrics": [
+    {
+      "lower_is_better": true,
+      "name": "brisque"
+    },
+    {
+      "lower_is_better": true,
+      "name": "niqe"
+    }
+  ],
+  "noise": {
+    "clip_noisy_input": false,
+    "sigma_255": 25.0,
+    "type": "awgn"
+  },
+  "seed": 20260917,
+  "solver": {
+    "converged": true,
+    "damping": 0.95,
+    "iterations": 7
+  },
+  "warning": "These are spectral consensus coefficients, not error-optimal coefficients."
+}

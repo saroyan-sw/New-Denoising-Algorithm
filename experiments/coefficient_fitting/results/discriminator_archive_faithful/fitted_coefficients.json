@@ -1,0 +1,194 @@
+{
+  "checkpoint": "C:\\Users\\user\\Documents\\ChatGPT\\New Denoising Algorithm\\checkpoints\\netD_Clean_epoch_100.pth",
+  "model": "archived Gaussian low + averaged Gabor mid + residual high",
+  "coefficient_rule": "absolute values normalized to sum to 1",
+  "noise": {
+    "type": "AWGN then clip to [0,1]",
+    "sigma_8bit": 25.0,
+    "seed": 20260930
+  },
+  "crop_size": 128,
+  "steps": 150,
+  "learning_rate": 0.01,
+  "fidelity_weight": 10.0,
+  "mean_constraint_weight": 5.0,
+  "device": "cpu",
+  "fits": [
+    {
+      "image": "CBSD68/0000.png",
+      "method": "archive_no_mean",
+      "coefficients_low_mid_high": [
+        0.006144991144537926,
+        0.6476172804832458,
+        0.3462377190589905
+      ],
+      "loss_first": 3.4293036460876465,
+      "loss_last": 0.9633541107177734
+    },
+    {
+      "image": "CBSD68/0000.png",
+      "method": "archive_with_mean",
+      "coefficients_low_mid_high": [
+        0.06654138118028641,
+        0.6066328287124634,
+        0.32682573795318604
+      ],
+      "loss_first": 4.7863640785217285,
+      "loss_last": 0.9828933477401733
+    },
+    {
+      "image": "CBSD68/0001.png",
+      "method": "archive_no_mean",
+      "coefficients_low_mid_high": [
+        0.04962192103266716,
+        0.61847323179245,
+        0.331904798746109
+      ],
+      "loss_first": 3.265894889831543,
+      "loss_last": 0.5666572451591492
+    },
+    {
+      "image": "CBSD68/0001.png",
+      "method": "archive_with_mean",
+      "coefficients_low_mid_high": [
+        0.17693302035331726,
+        0.5369684100151062,
+        0.2860985994338989
+      ],
+      "loss_first": 4.587680816650391,
+      "loss_last": 0.6009306311607361
+    },
+    {
+      "image": "CBSD68/0002.png",
+      "method": "archive_no_mean",
+      "coefficients_low_mid_high": [
+        0.0020568573381751776,
+        0.6508631706237793,
+        0.34707996249198914
+      ],
+      "loss_first": 3.023853063583374,
+      "loss_last": 0.6667656898498535
+    },
+    {
+      "image": "CBSD68/0002.png",
+      "method": "archive_with_mean",
+      "coefficients_low_mid_high": [
+        0.0019804753828793764,
+        0.6494739651679993,
+        0.34854555130004883
+      ],
+      "loss_first": 4.161106586456299,
+      "loss_last": 0.675977885723114
+    },
+    {
+      "image": "CBSD68/0003.png",
+      "method": "archive_no_mean",
+      "coefficients_low_mid_high": [
+        0.08234502375125885,
+        0.5967791080474854,
+        0.3208758234977722
+      ],
+      "loss_first": 3.561838388442993,
+      "loss_last": 0.5831713676452637
+    },
+    {
+      "image": "CBSD68/0003.png",
+      "method": "archive_with_mean",
+      "coefficients_low_mid_high": [
+        0.15959204733371735,
+        0.5464696288108826,
+        0.29393839836120605
+      ],
+      "loss_first": 5.104881286621094,
+      "loss_last": 0.620644211769104
+    },
+    {
+      "image": "Kodak24/kodim01.png",
+      "method": "archive_no_mean",
+      "coefficients_low_mid_high": [
+        0.09437557309865952,
+        0.5894385576248169,
+        0.316185861825943
+      ],
+      "loss_first": 3.5847771167755127,
+      "loss_last": 0.5789046287536621
+    },
+    {
+      "image": "Kodak24/kodim01.png",
+      "method": "archive_with_mean",
+      "coefficients_low_mid_high": [
+        0.21803009510040283,
+        0.5124653577804565,
+        0.2695045471191406
+      ],
+      "loss_first": 5.104609489440918,
+      "loss_last": 0.6444969773292542
+    },
+    {
+      "image": "Kodak24/kodim02.png",
+      "method": "archive_no_mean",
+      "coefficients_low_mid_high": [
+        0.0038585017900913954,
+        0.6498984694480896,
+        0.3462430536746979
+      ],
+      "loss_first": 2.2321112155914307,
+      "loss_last": 0.499656617641449
+    },
+    {
+      "image": "Kodak24/kodim02.png",
+      "method": "archive_with_mean",
+      "coefficients_low_mid_high": [
+        0.005660973489284515,
+        0.647982656955719,
+        0.34635642170906067
+      ],
+      "loss_first": 3.102238178253174,
+      "loss_last": 0.5108777284622192
+    },
+    {
+      "image": "Kodak24/kodim03.png",
+      "method": "archive_no_mean",
+      "coefficients_low_mid_high": [
+        0.007141731679439545,
+        0.6468534469604492,
+        0.34600481390953064
+      ],
+      "loss_first": 3.224613904953003,
+      "loss_last": 0.5430300831794739
+    },
+    {
+      "image": "Kodak24/kodim03.png",
+      "method": "archive_with_mean",
+      "coefficients_low_mid_high": [
+        0.03940635919570923,
+        0.6253503561019897,
+        0.33524319529533386
+      ],
+      "loss_first": 4.584253787994385,
+      "loss_last": 0.5556362867355347
+    },
+    {
+      "image": "Kodak24/kodim04.png",
+      "method": "archive_no_mean",
+      "coefficients_low_mid_high": [
+        0.0010733210947364569,
+        0.6540025472640991,
+        0.3449241816997528
+      ],
+      "loss_first": 2.0179715156555176,
+      "loss_last": 0.5893251895904541
+    },
+    {
+      "image": "Kodak24/kodim04.png",
+      "method": "archive_with_mean",
+      "coefficients_low_mid_high": [
+        0.00635156175121665,
+        0.6462227702140808,
+        0.3474257290363312
+      ],
+      "loss_first": 2.7922916412353516,
+      "loss_last": 0.6023821234703064
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "checkpoint": "C:\\Users\\user\\Documents\\ChatGPT\\New Denoising Algorithm\\checkpoints\\netD_Clean_epoch_100.pth",
+  "noise": {
+    "type": "unclipped_awgn",
+    "sigma_8bit": 25.0,
+    "seed": 20260930
+  },
+  "crop_size": 128,
+  "steps": 8,
+  "device": "cpu",
+  "records": [
+    {
+      "image": "CBSD68/0000.png",
+      "weights_low_mid_high": [
+        0.9998530149459839,
+        0.9975208640098572,
+        1.0026259422302246
+      ],
+      "loss_first": 0.5029217600822449,
+      "loss_last": 0.5130261182785034
+    },
+    {
+      "image": "CBSD68/0001.png",
+      "weights_low_mid_high": [
+        1.0048980712890625,
+        0.9967526793479919,
+        0.9983493089675903
+      ],
+      "loss_first": 0.058733802288770676,
+      "loss_last": 0.07082753628492355
+    },
+    {
+      "image": "CBSD68/0002.png",
+      "weights_low_mid_high": [
+        1.003206729888916,
+        0.9968807697296143,
+        0.9999123215675354
+      ],
+      "loss_first": 0.27219778299331665,
+      "loss_last": 0.294666051864624
+    },
+    {
+      "image": "CBSD68/0003.png",
+      "weights_low_mid_high": [
+        1.0024741888046265,
+        0.9996480941772461,
+        0.9978774189949036
+      ],
+      "loss_first": 0.09826502948999405,
+      "loss_last": 0.1253596395254135
+    },
+    {
+      "image": "Kodak24/kodim01.png",
+      "weights_low_mid_high": [
+        1.0041474103927612,
+        0.9976978898048401,
+        0.9981547594070435
+      ],
+      "loss_first": 0.06256400048732758,
+      "loss_last": 0.07242775708436966
+    },
+    {
+      "image": "Kodak24/kodim02.png",
+      "weights_low_mid_high": [
+        0.9980952143669128,
+        1.0007812976837158,
+        1.0011235475540161
+      ],
+      "loss_first": 0.08187036961317062,
+      "loss_last": 0.09118345379829407
+    },
+    {
+      "image": "Kodak24/kodim03.png",
+      "weights_low_mid_high": [
+        1.0061705112457275,
+        0.9966121315956116,
+        0.9972174167633057
+      ],
+      "loss_first": 0.09823984652757645,
+      "loss_last": 0.11682872474193573
+    },
+    {
+      "image": "Kodak24/kodim04.png",
+      "weights_low_mid_high": [
+        1.0047576427459717,
+        0.9975595474243164,
+        0.9976825714111328
+      ],
+      "loss_first": 0.19343239068984985,
+      "loss_last": 0.20787258446216583
+    }
+  ],
+  "results_are_pilot": true
+}
