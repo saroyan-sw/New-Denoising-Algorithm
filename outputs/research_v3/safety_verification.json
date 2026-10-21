@@ -1,0 +1,9 @@
+{
+  "actual_musiq_adam_resume_max_error": 0.0,
+  "checkpoint_sha256": "429de8019d578a0539a7f41583d2170fc2250baec34fdd7db71f55bd7edf5c62",
+  "independent_low_battery_signal": true,
+  "physical_power": "PowerStatus(battery_percent=41, on_ac=True, battery_present=True, source='GetSystemPowerStatus')",
+  "poll_test_interval": 0.05,
+  "production_poll_interval": 30,
+  "scorer_frozen": true
+}

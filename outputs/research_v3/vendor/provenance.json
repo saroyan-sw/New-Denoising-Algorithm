@@ -1,0 +1,32 @@
+{
+  "LICENSE": {
+    "bytes": 1066,
+    "sha256": "448e69b705d64f21bf8cb86562301e0edd99ac79026064ddd75af8242b067be5",
+    "url": "https://raw.githubusercontent.com/cszn/KAIR/fc1732f4a4514e42ce15e5b3a1e18c828af47a1e/LICENSE"
+  },
+  "dncnn_color_blind.pth": {
+    "bytes": 2678121,
+    "sha256": "dfe11a6b703304df82cdf236f431fc6492766c7b9119d97e943edeb392c710a3",
+    "url": "https://github.com/cszn/KAIR/releases/download/v1.0/dncnn_color_blind.pth"
+  },
+  "drunet_color.pth": {
+    "bytes": 130579305,
+    "sha256": "479abe3c5327dfd10ff54a80ec7d4098ca80752a5c9492cdff31cee430bec4b4",
+    "url": "https://github.com/cszn/KAIR/releases/download/v1.0/drunet_color.pth"
+  },
+  "models/basicblock.py": {
+    "bytes": 24138,
+    "sha256": "48406db8867394ac5ae233ebeec7711ac10acfc3a6bbf0072c33aa77d659b6fd",
+    "url": "https://raw.githubusercontent.com/cszn/KAIR/fc1732f4a4514e42ce15e5b3a1e18c828af47a1e/models/basicblock.py"
+  },
+  "models/network_dncnn.py": {
+    "bytes": 6298,
+    "sha256": "8cee9e14df16da67f922ba96b9156b5bc5bcfc8c1cc2628906c871287d4b7c40",
+    "url": "https://raw.githubusercontent.com/cszn/KAIR/fc1732f4a4514e42ce15e5b3a1e18c828af47a1e/models/network_dncnn.py"
+  },
+  "models/network_unet.py": {
+    "bytes": 3484,
+    "sha256": "8043b6350f1589d5f08892e3be0b4d12c5a502058014285107b7360696d12bf5",
+    "url": "https://raw.githubusercontent.com/cszn/KAIR/fc1732f4a4514e42ce15e5b3a1e18c828af47a1e/models/network_unet.py"
+  }
+}

@@ -1,0 +1,1289 @@
+{
+  "bilateral DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.10568783673147361,
+      -0.08223783197502296
+    ],
+    "mean": -0.09387313524881999,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "bilateral DISTS improvement over dncnn": {
+    "ci95": [
+      -0.095211847871542,
+      -0.07024855102101964
+    ],
+    "mean": -0.0832436909278234,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "bilateral DISTS improvement over drunet": {
+    "ci95": [
+      -0.13812754241128763,
+      -0.1075953408330679
+    ],
+    "mean": -0.12244844535986583,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "bilateral SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.1471047929674387,
+      -0.10535368035236992
+    ],
+    "mean": -0.125866037607193,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "bilateral SSIM improvement over dncnn": {
+    "ci95": [
+      -0.12984272045393785,
+      -0.08627151124179362
+    ],
+    "mean": -0.1077033241589864,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "bilateral SSIM improvement over drunet": {
+    "ci95": [
+      -0.16675285669664544,
+      -0.12193625656267011
+    ],
+    "mean": -0.14415669242541,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "bilateral minus cbm3d": {
+    "ci95": [
+      -4.803981095548498,
+      -3.4987661653856077
+    ],
+    "mean": -4.117209029548064,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "bilateral minus dncnn": {
+    "ci95": [
+      -3.705728600242772,
+      -2.4627365743427694
+    ],
+    "mean": -3.0828286185535427,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "bilateral minus drunet": {
+    "ci95": [
+      -6.438258693594846,
+      -4.85866643832144
+    ],
+    "mean": -5.61957825533265,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "cbm3d DISTS improvement over cbm3d": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "cbm3d DISTS improvement over dncnn": {
+    "ci95": [
+      0.003924748202164962,
+      0.016990292569001513
+    ],
+    "mean": 0.010629444320996601,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 15
+  },
+  "cbm3d DISTS improvement over drunet": {
+    "ci95": [
+      -0.041541088124116256,
+      -0.01583596788346767
+    ],
+    "mean": -0.02857531011104584,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 2
+  },
+  "cbm3d SSIM improvement over cbm3d": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "cbm3d SSIM improvement over dncnn": {
+    "ci95": [
+      0.007820858483513195,
+      0.030091098919510836
+    ],
+    "mean": 0.018162713448206573,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 16
+  },
+  "cbm3d SSIM improvement over drunet": {
+    "ci95": [
+      -0.02398539538184803,
+      -0.01182418957352641
+    ],
+    "mean": -0.018290654818216977,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "cbm3d minus cbm3d": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "cbm3d minus dncnn": {
+    "ci95": [
+      0.5569194149155352,
+      1.546864195679662
+    ],
+    "mean": 1.0343804109945218,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 16
+  },
+  "cbm3d minus drunet": {
+    "ci95": [
+      -1.867366807772649,
+      -1.1692816567672506
+    ],
+    "mean": -1.502369225784585,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "dncnn DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.016990292569001517,
+      -0.003924748202164964
+    ],
+    "mean": -0.010629444320996601,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 5
+  },
+  "dncnn DISTS improvement over dncnn": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "dncnn DISTS improvement over drunet": {
+    "ci95": [
+      -0.05022091038525104,
+      -0.027362033799290652
+    ],
+    "mean": -0.03920475443204244,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 2
+  },
+  "dncnn SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.030091098919510836,
+      -0.007820858483513198
+    ],
+    "mean": -0.018162713448206573,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 4
+  },
+  "dncnn SSIM improvement over dncnn": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "dncnn SSIM improvement over drunet": {
+    "ci95": [
+      -0.049105820829669654,
+      -0.025717088803648962
+    ],
+    "mean": -0.03645336826642355,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "dncnn minus cbm3d": {
+    "ci95": [
+      -1.546864195679662,
+      -0.5569194149155352
+    ],
+    "mean": -1.0343804109945218,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 4
+  },
+  "dncnn minus dncnn": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "dncnn minus drunet": {
+    "ci95": [
+      -3.2099668147918745,
+      -1.9156051281676687
+    ],
+    "mean": -2.536749636779107,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "drunet DISTS improvement over cbm3d": {
+    "ci95": [
+      0.015835967883467666,
+      0.041541088124116256
+    ],
+    "mean": 0.02857531011104584,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 18
+  },
+  "drunet DISTS improvement over dncnn": {
+    "ci95": [
+      0.02736203379929065,
+      0.05022091038525104
+    ],
+    "mean": 0.03920475443204244,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 18
+  },
+  "drunet DISTS improvement over drunet": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "drunet SSIM improvement over cbm3d": {
+    "ci95": [
+      0.011824189573526406,
+      0.023985395381848025
+    ],
+    "mean": 0.018290654818216977,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 19
+  },
+  "drunet SSIM improvement over dncnn": {
+    "ci95": [
+      0.025717088803648962,
+      0.04910582082966965
+    ],
+    "mean": 0.03645336826642355,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 20
+  },
+  "drunet SSIM improvement over drunet": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "drunet minus cbm3d": {
+    "ci95": [
+      1.1692816567672506,
+      1.8673668077726489
+    ],
+    "mean": 1.502369225784585,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 20
+  },
+  "drunet minus dncnn": {
+    "ci95": [
+      1.9156051281676687,
+      3.2099668147918745
+    ],
+    "mean": 2.536749636779107,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 20
+  },
+  "drunet minus drunet": {
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "mean": 0.0,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "equal_fusion_v4 DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.06609917402267454,
+      -0.04469716439644496
+    ],
+    "mean": -0.055488499999046335,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "equal_fusion_v4 DISTS improvement over dncnn": {
+    "ci95": [
+      -0.055623620525002485,
+      -0.03337821731964749
+    ],
+    "mean": -0.04485905567804973,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "equal_fusion_v4 DISTS improvement over drunet": {
+    "ci95": [
+      -0.0997992145518462,
+      -0.0693869889775912
+    ],
+    "mean": -0.08406381011009216,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "equal_fusion_v4 SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.1577149819085995,
+      -0.10028454452753068
+    ],
+    "mean": -0.127969699104627,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "equal_fusion_v4 SSIM improvement over dncnn": {
+    "ci95": [
+      -0.13979148373007774,
+      -0.08165323632458846
+    ],
+    "mean": -0.10980698565642037,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "equal_fusion_v4 SSIM improvement over drunet": {
+    "ci95": [
+      -0.17665100348492463,
+      -0.11712693082789581
+    ],
+    "mean": -0.14626035392284395,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "equal_fusion_v4 minus cbm3d": {
+    "ci95": [
+      -4.155079129756623,
+      -2.916113306876821
+    ],
+    "mean": -3.486206759030174,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "equal_fusion_v4 minus dncnn": {
+    "ci95": [
+      -3.1098631792095506,
+      -1.7905010230157803
+    ],
+    "mean": -2.451826348035653,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "equal_fusion_v4 minus drunet": {
+    "ci95": [
+      -5.773390958438856,
+      -4.275989252598949
+    ],
+    "mean": -4.98857598481476,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.12569275418917336,
+      -0.10399824087818464
+    ],
+    "mean": -0.11426955858866375,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 DISTS improvement over dncnn": {
+    "ci95": [
+      -0.11555884937445324,
+      -0.09161784869929154
+    ],
+    "mean": -0.10364011426766713,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 DISTS improvement over drunet": {
+    "ci95": [
+      -0.1575719966739416,
+      -0.128697843849659
+    ],
+    "mean": -0.14284486869970955,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.23348298333585263,
+      -0.1768286579847336
+    ],
+    "mean": -0.20397135714689893,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 SSIM improvement over dncnn": {
+    "ci95": [
+      -0.216955938488245,
+      -0.15686701382199925
+    ],
+    "mean": -0.18580864369869232,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 SSIM improvement over drunet": {
+    "ci95": [
+      -0.2511042871822914,
+      -0.19498084055880707
+    ],
+    "mean": -0.22226201196511589,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 minus cbm3d": {
+    "ci95": [
+      -7.3277563341955645,
+      -5.344185556909605
+    ],
+    "mean": -6.278682932837016,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 minus dncnn": {
+    "ci95": [
+      -6.1294621009836385,
+      -4.421880702006914
+    ],
+    "mean": -5.244302521842494,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_07 minus drunet": {
+    "ci95": [
+      -8.913882014262544,
+      -6.729067236002956
+    ],
+    "mean": -7.7810521586216,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.15983519581456979,
+      -0.13349185496568683
+    ],
+    "mean": -0.14549495180447897,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 DISTS improvement over dncnn": {
+    "ci95": [
+      -0.15007750426729521,
+      -0.12033528683086239
+    ],
+    "mean": -0.1348655074834824,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 DISTS improvement over drunet": {
+    "ci95": [
+      -0.1918584263821443,
+      -0.15666195039947828
+    ],
+    "mean": -0.1740702619155248,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.3010050284986694,
+      -0.21262495520214236
+    ],
+    "mean": -0.2506171718239784,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 SSIM improvement over dncnn": {
+    "ci95": [
+      -0.285599534039696,
+      -0.19098019577562816
+    ],
+    "mean": -0.23245445837577186,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 SSIM improvement over drunet": {
+    "ci95": [
+      -0.3175440605233113,
+      -0.23172036702434223
+    ],
+    "mean": -0.26890782664219537,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 minus cbm3d": {
+    "ci95": [
+      -9.141901754460257,
+      -6.833306811830688
+    ],
+    "mean": -7.914704923045887,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 minus dncnn": {
+    "ci95": [
+      -7.9040896751535366,
+      -5.970761189139013
+    ],
+    "mean": -6.880324512051369,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "gaussian_11 minus drunet": {
+    "ci95": [
+      -10.719765186576032,
+      -8.223512720845532
+    ],
+    "mean": -9.417074148830476,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.15744821404417356,
+      -0.13249138335386912
+    ],
+    "mean": -0.14504330257574718,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity DISTS improvement over dncnn": {
+    "ci95": [
+      -0.14654361161092916,
+      -0.12139010387162366
+    ],
+    "mean": -0.13441385825475058,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity DISTS improvement over drunet": {
+    "ci95": [
+      -0.18897285237908362,
+      -0.15899346868197123
+    ],
+    "mean": -0.173618612686793,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.4099344040950139,
+      -0.30473871753861514
+    ],
+    "mean": -0.3572901303569477,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity SSIM improvement over dncnn": {
+    "ci95": [
+      -0.3920099904139837,
+      -0.2873899614314238
+    ],
+    "mean": -0.33912741690874104,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity SSIM improvement over drunet": {
+    "ci95": [
+      -0.4295231177285313,
+      -0.3216724432135622
+    ],
+    "mean": -0.3755807851751646,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity minus cbm3d": {
+    "ci95": [
+      -10.978193533325054,
+      -9.056840075993492
+    ],
+    "mean": -9.954841017456756,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity minus dncnn": {
+    "ci95": [
+      -9.8849513187319,
+      -7.988637566548773
+    ],
+    "mean": -8.920460606462235,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "identity minus drunet": {
+    "ci95": [
+      -12.563694711154499,
+      -10.456649988329138
+    ],
+    "mean": -11.45721024324134,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.16267627974351248,
+      -0.1254259290297826
+    ],
+    "mean": -0.14146951536337535,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median DISTS improvement over dncnn": {
+    "ci95": [
+      -0.152259259223938,
+      -0.11346495004991693
+    ],
+    "mean": -0.13084007104237877,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median DISTS improvement over drunet": {
+    "ci95": [
+      -0.19171407220264275,
+      -0.15175883370141185
+    ],
+    "mean": -0.17004482547442118,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.3332773580153783,
+      -0.2557561959822972
+    ],
+    "mean": -0.29218455900748574,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median SSIM improvement over dncnn": {
+    "ci95": [
+      -0.31826432942102345,
+      -0.23456518561889728
+    ],
+    "mean": -0.2740218455592791,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median SSIM improvement over drunet": {
+    "ci95": [
+      -0.3503023173908392,
+      -0.2739657949407896
+    ],
+    "mean": -0.31047521382570265,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median minus cbm3d": {
+    "ci95": [
+      -8.960281168416172,
+      -6.884949217708005
+    ],
+    "mean": -7.850657494425951,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median minus dncnn": {
+    "ci95": [
+      -7.812187232787433,
+      -5.893379313946917
+    ],
+    "mean": -6.816277083431432,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "median minus drunet": {
+    "ci95": [
+      -10.552364011796932,
+      -8.297422487462065
+    ],
+    "mean": -9.353026720210538,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_07 DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.06446642319361368,
+      -0.03611194630463917
+    ],
+    "mean": -0.04949042896429697,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_07 DISTS improvement over dncnn": {
+    "ci95": [
+      -0.05374296640356382,
+      -0.02523649695018927
+    ],
+    "mean": -0.03886098464330038,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "nlm_07 DISTS improvement over drunet": {
+    "ci95": [
+      -0.09780799537897109,
+      -0.05843837211529413
+    ],
+    "mean": -0.07806573907534281,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "nlm_07 SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.11414626598358153,
+      -0.06553996024032434
+    ],
+    "mean": -0.08915281693140666,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_07 SSIM improvement over dncnn": {
+    "ci95": [
+      -0.09789324276149271,
+      -0.044450384254256896
+    ],
+    "mean": -0.07099010348320008,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 2
+  },
+  "nlm_07 SSIM improvement over drunet": {
+    "ci95": [
+      -0.13505322645107906,
+      -0.08172646969556811
+    ],
+    "mean": -0.10744347174962363,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_07 minus cbm3d": {
+    "ci95": [
+      -3.3051499830132482,
+      -2.75894128061529
+    ],
+    "mean": -3.038381096717908,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_07 minus dncnn": {
+    "ci95": [
+      -2.6037834950819305,
+      -1.3102200089146727
+    ],
+    "mean": -2.0040006857233865,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 2
+  },
+  "nlm_07 minus drunet": {
+    "ci95": [
+      -4.951079413249983,
+      -4.175658298169889
+    ],
+    "mean": -4.540750322502494,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_09 DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.09068966997166474,
+      -0.061382237002253544
+    ],
+    "mean": -0.07527827620506287,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_09 DISTS improvement over dncnn": {
+    "ci95": [
+      -0.08053308275838694,
+      -0.04995161488652229
+    ],
+    "mean": -0.06464883188406627,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_09 DISTS improvement over drunet": {
+    "ci95": [
+      -0.12469883970916272,
+      -0.08245071671903136
+    ],
+    "mean": -0.1038535863161087,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_09 SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.1620187855263551,
+      -0.09388315123816332
+    ],
+    "mean": -0.1276486317316691,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_09 SSIM improvement over dncnn": {
+    "ci95": [
+      -0.14586309912304085,
+      -0.07324594713747504
+    ],
+    "mean": -0.10948591828346252,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "nlm_09 SSIM improvement over drunet": {
+    "ci95": [
+      -0.1824606411655744,
+      -0.11025727391242984
+    ],
+    "mean": -0.14593928654988608,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_09 minus cbm3d": {
+    "ci95": [
+      -4.303957533287155,
+      -3.601633009741157
+    ],
+    "mean": -3.952498010798167,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_09 minus dncnn": {
+    "ci95": [
+      -3.6140489545499483,
+      -2.1452539348581543
+    ],
+    "mean": -2.918117599803645,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 2
+  },
+  "nlm_09 minus drunet": {
+    "ci95": [
+      -5.956689982817347,
+      -5.023091520644975
+    ],
+    "mean": -5.454867236582752,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_11 DISTS improvement over cbm3d": {
+    "ci95": [
+      -0.11349493923286597,
+      -0.08305943732460341
+    ],
+    "mean": -0.09791118999322256,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_11 DISTS improvement over dncnn": {
+    "ci95": [
+      -0.10399780934055647,
+      -0.07102381584544976
+    ],
+    "mean": -0.08728174567222595,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_11 DISTS improvement over drunet": {
+    "ci95": [
+      -0.1484926658123732,
+      -0.10336886723836262
+    ],
+    "mean": -0.12648650010426837,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_11 SSIM improvement over cbm3d": {
+    "ci95": [
+      -0.20985750511288648,
+      -0.12628973918656508
+    ],
+    "mean": -0.1679523726304372,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_11 SSIM improvement over dncnn": {
+    "ci95": [
+      -0.194078397427996,
+      -0.10542672445376715
+    ],
+    "mean": -0.1497896591822306,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "nlm_11 SSIM improvement over drunet": {
+    "ci95": [
+      -0.22996747903525827,
+      -0.14246039549509687
+    ],
+    "mean": -0.18624302744865417,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_11 minus cbm3d": {
+    "ci95": [
+      -5.463838289189637,
+      -4.686246257879155
+    ],
+    "mean": -5.081648075899233,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "nlm_11 minus dncnn": {
+    "ci95": [
+      -4.7548511915045735,
+      -3.2743727832725056
+    ],
+    "mean": -4.0472676649047115,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "nlm_11 minus drunet": {
+    "ci95": [
+      -7.142781604994635,
+      -6.085117751581932
+    ],
+    "mean": -6.5840173016838195,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  },
+  "v4_lambda_0p01 DISTS improvement over cbm3d": {
+    "ci95": [
+      5.785795549551449e-05,
+      0.00014150033394495437
+    ],
+    "mean": 9.892781575520995e-05,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 17
+  },
+  "v4_lambda_0p01 DISTS improvement over dncnn": {
+    "ci95": [
+      0.004022155329585079,
+      0.01710153197248776
+    ],
+    "mean": 0.010728372136751811,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 15
+  },
+  "v4_lambda_0p01 DISTS improvement over drunet": {
+    "ci95": [
+      -0.04143464408814907,
+      -0.01572826810181141
+    ],
+    "mean": -0.028476382295290627,
+    "metric": "dists",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 2
+  },
+  "v4_lambda_0p01 SSIM improvement over cbm3d": {
+    "ci95": [
+      -8.090771734714481e-05,
+      -2.085159222284805e-05
+    ],
+    "mean": -4.8294663429265804e-05,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 4
+  },
+  "v4_lambda_0p01 SSIM improvement over dncnn": {
+    "ci95": [
+      0.007779279847939787,
+      0.03004350791374841
+    ],
+    "mean": 0.01811441878477731,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 16
+  },
+  "v4_lambda_0p01 SSIM improvement over drunet": {
+    "ci95": [
+      -0.024038114597400042,
+      -0.011879987244804718
+    ],
+    "mean": -0.018338949481646244,
+    "metric": "ssim",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 1
+  },
+  "v4_lambda_0p01 minus cbm3d": {
+    "ci95": [
+      0.0017801129043425368,
+      0.004143632056385722
+    ],
+    "mean": 0.0029297608698749754,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 18
+  },
+  "v4_lambda_0p01 minus dncnn": {
+    "ci95": [
+      0.5599575464925037,
+      1.5507507746254314
+    ],
+    "mean": 1.0373101718643967,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 16
+  },
+  "v4_lambda_0p01 minus drunet": {
+    "ci95": [
+      -1.8639492082017608,
+      -1.167147628819319
+    ],
+    "mean": -1.4994394649147103,
+    "metric": "psnr",
+    "positive_means_candidate_better": true,
+    "unit": "source image averaged over three paired noise draws",
+    "wins": 0
+  }
+}

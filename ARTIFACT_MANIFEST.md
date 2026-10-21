@@ -1,0 +1,61 @@
+# Final artifact manifest
+
+This manifest identifies the small, force-tracked outputs that make the bounded study
+auditable without committing multi-megabyte data arrays or large pretrained weights.
+SHA-256 is shown before each repository-relative path.
+
+## Selected model and lock
+
+```text
+1c494d1718961f7148caf19cff8651d0d6b03097d68733581755cd9d4b04020f  outputs/research_v3/config.json
+b803e8d640b817e445426f4617a9c1587ccebfc29ffaa1f7c95e12c564f8d972  outputs/research_v3/locked_model.json
+294e8a826b4b924a9996cdb86259e6664e013e928d3a6b7b12534001a4cde8c0  outputs/research_v3/runs/v4_lambda_0p01/model.json
+ecd158364a8041f78c8b482b58f9ed9177be7308a1bf3e28a9a64bc0f6626e0d  outputs/research_v3/runs/v4_lambda_0p01/deploy.pt
+```
+
+## Metrics, manifests, and safety evidence
+
+```text
+bf675596794963f7995928523a2f3d87e3cdabe8904f387bc4b1d49a717df8d1  outputs/research_v3/benchmark_summary.json
+c5b2b30394821e3dab538c6cb2a21089e659a50858a9331a0715a749e833f1e2  outputs/research_v3/benchmark_paired_deltas.json
+53477f7c376243f721d74e0b32e1c9aea52bda7b25eabcfeb29857d2c00f4624  outputs/research_v3/benchmark_results.csv
+9bc8d6596553cfe4835930bf811a0be7aede34e293d5b4a2ff893ecba68ecfe1  outputs/research_v3/holdout_summary.json
+31574021addbf01ecf4205d36c79c9de4f05839b4999c697079b1ee03767b65e  outputs/research_v3/holdout_paired_deltas.json
+0178caa10c5a52e2b7500a1626e9ca1a5374e1e9926728249507e047107b87c7  outputs/research_v3/holdout_results.csv
+64f196e3f4d9a4f19d2af6ce955e76c04feaba8db637b1ae7b09dc1960bcac05  outputs/research_v3/holdout_manifest.json
+4740a1d9862b68bb7eb7a9b952db2a84d3be15dfda311d18b667303bdf909ebe  outputs/research_v3/holdout_complete.json
+d7c0cb01575748cff4047eac9b33f27db56c98bd57cb68d40fae40dec5a05f63  outputs/research_v3/oracle_v4.json
+811088846bfaaf9357930395be2dc7715f78fc033c6799d07cecbb85452ceb8d  outputs/research_v3/sure_solution_v4.json
+2442d871e6ff6945377602c456a35d1f6d7f64110e3fa89987b47b88808bbfe3  outputs/research_v3/safety_verification.json
+```
+
+## Pinned comparator code and provenance
+
+```text
+20a2e1639105c4602da24ffb5b2d2c41077cb7d643500c87e30aa50e663ebfa6  outputs/research_v3/vendor/provenance.json
+448e69b705d64f21bf8cb86562301e0edd99ac79026064ddd75af8242b067be5  outputs/research_v3/vendor/LICENSE
+48406db8867394ac5ae233ebeec7711ac10acfc3a6bbf0072c33aa77d659b6fd  outputs/research_v3/vendor/models/basicblock.py
+8cee9e14df16da67f922ba96b9156b5bc5bcfc8c1cc2628906c871287d4b7c40  outputs/research_v3/vendor/models/network_dncnn.py
+8043b6350f1589d5f08892e3be0b4d12c5a502058014285107b7360696d12bf5  outputs/research_v3/vendor/models/network_unet.py
+```
+
+## Inspected comparison sheets
+
+```text
+50327fb815c56a7d930c0e3fbd4612a84df37db4a1705ba505bfb9761574c523  outputs/research_v3/views/benchmark/v4_lambda_0p01/page_1.png
+7a420e9f1235186d2fa867c29d959abbb48ce656e91976115eb86925f9ac1a34  outputs/research_v3/views/benchmark/v4_lambda_0p01/page_2.png
+75bcd71c53684c3737caaf701dc6ed33512fc8325cd4450c40ad7a7285b2cdfe  outputs/research_v3/views/benchmark/v4_lambda_0p01/page_3.png
+3fcc7e7a5a80f107573926c1be142e5c91a03dcb62cc96f835c7ead136d1262e  outputs/research_v3/views/benchmark/v4_lambda_0p01/page_4.png
+4c2b8f5f4e3daf074e1ec8c59a5aa0cbd296b035210cdcd5df8bfabcdfe0c6e4  outputs/research_v3/views/benchmark/v4_lambda_0p01/worst_04.png
+8e82f25127397e4284d3be10155b26412200df4c200c467f6c2769f7fa633759  outputs/research_v3/views/holdout/v4_lambda_0p01/page_1.png
+d7f6a4261e59ec96282599c059024a7571b52959efa909cc75ef9c869d99752d  outputs/research_v3/views/holdout/v4_lambda_0p01/page_2.png
+bb1455587103fe0d66302a80969ed66da96aff7c84b330fad3b100cdf487da24  outputs/research_v3/views/holdout/v4_lambda_0p01/page_3.png
+d47328d1559a66cac2ba3e835f2a0282dfa53b6483ad31f6f5ebe7b7798bed87  outputs/research_v3/views/holdout/v4_lambda_0p01/page_4.png
+e9725f05248a8fbbefdc209c78c762460188f9e2b752f41e1ccf13cbd7723b38  outputs/research_v3/views/holdout/v4_lambda_0p01/worst_06.png
+605205658f607bbd33bd085c4214754d88d17a76ab518c8f81f5b60d49e89fb2  outputs/research_v3/views/holdout/dncnn/worst_08.png
+d441a32a1052aa51ae261889581a55245431d4cf2f9902787a844cba1cc2e31e  outputs/research_v3/views/holdout/equal_fusion_v4/worst_12.png
+```
+
+Large frozen inputs and checkpoints are recoverable from recorded URLs and hashes.
+The lock binds MUSIQ `e95806...18aa`, DISTS `f5e65c...218`, VGG16
+`397923...5bf0`, the selected model, script, config, benchmark, and KAIR provenance.

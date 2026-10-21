@@ -1,0 +1,207 @@
+{
+  "data_sha256": "43497959639de5effb840d80a15c231716a09fefd51ae66a7cd413c33b8e56f5",
+  "lock_sha256": "b803e8d640b817e445426f4617a9c1587ccebfc29ffaa1f7c95e12c564f8d972",
+  "noise_seed_offset": 1000000,
+  "samples": [
+    {
+      "crop_sha256": "96c479d94d2b22a9d6315f9c2b40e5c1caa9864634459fe121a1f0997487d008",
+      "id": "Urban100_081",
+      "left": 192,
+      "min_dhash_distance": 26,
+      "raw_sha256": "0c6367851ea442576b04fc92b8c4ef434089e60f06c1e27cba97125ab3ba24cb",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img081.png",
+      "top": 192
+    },
+    {
+      "crop_sha256": "1364511449247d215e5f9c835ad710f59c5382e94ddb8c36e2df505abab3d445",
+      "id": "Urban100_082",
+      "left": 192,
+      "min_dhash_distance": 15,
+      "raw_sha256": "4468db77a1962f539f5b549f0cd5f9daf9e04cc5cef0df96685c90ac4e68a5eb",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img082.png",
+      "top": 192
+    },
+    {
+      "crop_sha256": "c2ffba9a29ec925a56c80b68a66e543c6c489fc62044d8deb86c2cd9007c56f0",
+      "id": "Urban100_083",
+      "left": 187,
+      "min_dhash_distance": 21,
+      "raw_sha256": "7a502eaced1f01aa93b70622d523cda425d8d3544a681154bfbd6cdb0963d9e8",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img083.png",
+      "top": 192
+    },
+    {
+      "crop_sha256": "a0bcb6870857e5d48e0c82f658d47ecfaf61bff995b1b89845394c09659f3a9b",
+      "id": "Urban100_084",
+      "left": 192,
+      "min_dhash_distance": 24,
+      "raw_sha256": "48af5b48b4b9e57938a7afcbf75c86531d9b3c3e468e2e8e0b45d2d833df14b8",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img084.png",
+      "top": 192
+    },
+    {
+      "crop_sha256": "fc0f2f70c38bbe40001875cf0465dd272f09c565a9a34c866e81347b927576e6",
+      "id": "Urban100_085",
+      "left": 192,
+      "min_dhash_distance": 19,
+      "raw_sha256": "898a26bfc692082c56088497c010868f4e672045471403ec0827c45a1549bb9d",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img085.png",
+      "top": 105
+    },
+    {
+      "crop_sha256": "543f9047e690f1dfda4757502f653bbe04de07b617af4da33b6fcdf6b972ef37",
+      "id": "Urban100_086",
+      "left": 192,
+      "min_dhash_distance": 22,
+      "raw_sha256": "b662de32c2f037afdb39b223d5e0eae669d5fd632cf4061075b3e8f27e6b6710",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img086.png",
+      "top": 128
+    },
+    {
+      "crop_sha256": "dc3ecac8f4bec9508d8b43233ae11917017daee7b8762dd37c5ca5b5117ac83c",
+      "id": "Urban100_087",
+      "left": 192,
+      "min_dhash_distance": 21,
+      "raw_sha256": "252d63b43b3785f2595c5ec3e43164397134dc671fef6c9819aa69f3e0fe4bf1",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img087.png",
+      "top": 192
+    },
+    {
+      "crop_sha256": "2fd808927d83a6e3a2bf6849cf9c913b3b4cb7b04265e099d237f9036e207ecb",
+      "id": "Urban100_088",
+      "left": 192,
+      "min_dhash_distance": 21,
+      "raw_sha256": "387db78bb58b99961ab0872b7e1819a7b4fee8edc29785bc60d4faf4d14aaaac",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img088.png",
+      "top": 104
+    },
+    {
+      "crop_sha256": "05faddbb89d30b6d01fb4b6dc4da6420f0b602968827f43a3e890b782f9dec5e",
+      "id": "Urban100_089",
+      "left": 128,
+      "min_dhash_distance": 20,
+      "raw_sha256": "3d8446abf4226b23295385784aa6c9566a94b38c40fedebceb1e44c285cd045f",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img089.png",
+      "top": 192
+    },
+    {
+      "crop_sha256": "3762da62198e97ff82393d66dcfb4c4d0e49c5a52acb1bd5348c4e046f7a5051",
+      "id": "Urban100_090",
+      "left": 192,
+      "min_dhash_distance": 23,
+      "raw_sha256": "f8c635a974fece6cb0d4c1c85cb713fe1b8512c6686d50a31714553d06084968",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img090.png",
+      "top": 106
+    },
+    {
+      "crop_sha256": "dc240c4cbf720fcc557e9d5090fac555aa162dbef9f9743b46f0c26fcc0c6b5e",
+      "id": "Urban100_091",
+      "left": 192,
+      "min_dhash_distance": 24,
+      "raw_sha256": "f727a9b6849446cb54862bd87c4b5e1c920148f91ba4acb82321190cb9e667c4",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img091.png",
+      "top": 106
+    },
+    {
+      "crop_sha256": "e54a62cf44c6a1505f4e37e997557ce40c63eda09c013f21848efca3bc7247e9",
+      "id": "Urban100_092",
+      "left": 192,
+      "min_dhash_distance": 22,
+      "raw_sha256": "139af08759c2bd7140925df1d0d9adbbe4d2d1095461e5e9c7a59e800fb840ca",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img092.png",
+      "top": 109
+    },
+    {
+      "crop_sha256": "f4eb71bdb5ed1c60abd48a7230b91e77f9aab3a7f5b238e72f11d6aa8e849fa4",
+      "id": "Urban100_093",
+      "left": 192,
+      "min_dhash_distance": 26,
+      "raw_sha256": "c24ebe8af6bb2ea1f84b67b1fb1edd071e75d648b272d022d57d6fa1caeefd67",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img093.png",
+      "top": 128
+    },
+    {
+      "crop_sha256": "f376b6d547d3e87c83f75986baf5c446945623d85264d2c0b0162164923bde02",
+      "id": "Urban100_094",
+      "left": 192,
+      "min_dhash_distance": 23,
+      "raw_sha256": "a2b7d279793724f9f6d1e9324188829e3f635cce2f0d1344133ab6185abc2117",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img094.png",
+      "top": 128
+    },
+    {
+      "crop_sha256": "b0f20431a9fdea64cd622c9e44c30daa701931b961ea359c9be077211717c7c1",
+      "id": "Urban100_095",
+      "left": 192,
+      "min_dhash_distance": 23,
+      "raw_sha256": "206886f0208d6bace4cff2ef9ed7e9a8629f5563ef4047c5e9bc1782c409f27c",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img095.png",
+      "top": 128
+    },
+    {
+      "crop_sha256": "d991370261c0540de6aa784226b15181cb750fc2ffccf0e0f7236d2c2df4d384",
+      "id": "Urban100_096",
+      "left": 192,
+      "min_dhash_distance": 19,
+      "raw_sha256": "8c95463789f64da3a3a9f0c1095af6a14c6ec02fc2adf346de8706555a98a11d",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img096.png",
+      "top": 128
+    },
+    {
+      "crop_sha256": "cf6c4649c6020c01c0d1b0c114a736086a111d2e468ac2ce6b42be1c4e2a9be7",
+      "id": "Urban100_097",
+      "left": 192,
+      "min_dhash_distance": 23,
+      "raw_sha256": "0a6bdfd4b724890d56ac0922cf4dc21ea29dd5d2b7aceb3fb4ba2c2fa3209289",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img097.png",
+      "top": 106
+    },
+    {
+      "crop_sha256": "25eb6e9727c297497a2f8c103227385da4320b600bf3017f6b515ddf88ba17fc",
+      "id": "Urban100_098",
+      "left": 192,
+      "min_dhash_distance": 23,
+      "raw_sha256": "4643e5f915bbbda102b014b967c9921354d698502da8577b7eb84826275f4679",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img098.png",
+      "top": 106
+    },
+    {
+      "crop_sha256": "cff492382e8a4d3836bff372a79f739f9b491b6681e7e4518c7fee1347b04968",
+      "id": "Urban100_099",
+      "left": 192,
+      "min_dhash_distance": 19,
+      "raw_sha256": "307997691bc8d3c7b31e2a337d146eb64e270c994e9ec5ad9493574d94bc7628",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img099.png",
+      "top": 137
+    },
+    {
+      "crop_sha256": "408303a150727eeabe88f6d96de634b4ca1704a07c528ed87c2956b0f1eb1ba9",
+      "id": "Urban100_100",
+      "left": 192,
+      "min_dhash_distance": 22,
+      "raw_sha256": "267ed429a565d89a1b884ef261258638e1e2748c4bcd6d290fb7d3522ea3dcac",
+      "size": 128,
+      "source_url": "https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img100.png",
+      "top": 192
+    }
+  ]
+}

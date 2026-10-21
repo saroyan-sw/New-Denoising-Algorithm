@@ -1,59 +1,49 @@
 # Exact session handoff
 
-Last durable update: 2026-10-22 Asia/Yerevan. Development is complete through the
-eighth and final substantial training run. The final holdout remains sealed until the
-model lock is written.
+Last durable update: 2026-10-22 Asia/Yerevan. The bounded research session and sealed
+holdout are complete. No training or model-selection work remains.
 
-## Completed and verified
+## Final state
 
-- Fixed, source-disjoint 20-image development benchmark, 16 training sources, and
-  three deterministic unclipped AWGN draws at sigma 25/255.
-- Battery watchdog, cumulative four-hour budget, atomic optimizer/RNG recovery,
-  transient Windows-file recovery, and 25 passing tests.
-- Nine classical operators; official pinned KAIR DnCNN and DRUNet; frozen DISTS;
-  source-cluster paired intervals; runtime and peak-process-memory accounting.
-- Frozen pretrained MUSIQ/KonIQ transformer with verified checkpoint, isolated
-  nonzero logit gradient, standardized IQA term, and MC-SURE fidelity objective.
-- Two documented ineligible pilots, three v3 runs, and the evidence-based v4 NLM-0.7
-  triplet. All meaningful candidate pages (20 images each) and worst panels were
-  personally opened; see `visual_audit.json` and `experiments.csv`.
-- Independent literature research and independent protocol/code review incorporated.
+- Selected run: `v4_lambda_0p01`.
+- Architecture: global convex fusion of identity, bilateral, NLM-0.7, and CBM3D.
+- Weights: `[0.0000550514, 0.0019913730, 0.0035475527, 0.9944059849]`.
+- Training count: 8/10 substantial runs; no capacity-expansion gate opened.
+- Holdout: Urban100 081-100 center 128 crops, three fixed noise draws, completed once
+  after a SHA-256-bound lock. `holdout_complete.json` binds the lock and frozen data.
+- Safety: physical watchdog and exact checkpoint recovery verified; last expensive
+  stage completed above the 15% threshold.
+- Tests: 25 passed before lock; run them again after checkout.
+- Visual audit: every meaningful development candidate, final selected output, DnCNN,
+  and equal control were opened on all 20 relevant images plus worst panels.
 
-Run count is 8/10: two preliminary pilots, three v3 runs, and three v4 runs. No more
-training is justified or allowed in this bounded session. Spatial, multiscale, and
-sequential gates are closed by oracle evidence.
+The final claim is negative. Holdout fusion-versus-CBM3D is +0.00293 dB PSNR with
+positive paired interval and +0.000099 DISTS improvement, but SSIM regresses by
+0.0000483 with a wholly negative interval. DRUNet is 1.499 dB better. See
+`FINAL_REPORT.md` for all metrics, limitations, and literature.
 
-## Locked selection decision to execute
-
-Select `v4_lambda_0p01`, the highest-development-PSNR positive-lambda candidate.
-Development: PSNR 31.54778 dB (+0.00239 vs CBM3D, paired 95% CI +0.00148 to
-+0.00317), DISTS improves by 0.000196, and SSIM regresses by 0.0000455 (CI
--0.0000719 to -0.0000232). It remains 0.41 dB behind DnCNN and 1.03 dB behind
-DRUNet. Therefore it does not yet support a full improvement claim.
-
-The SURE-only v4 control reaches 31.55998 dB but also has a larger consistent SSIM
-regression. The final v4 lambda 0.03 run reaches 31.54686 dB and is rejected by the
-registered selection rule.
-
-## Exact resume sequence
-
-From the repository root, inspect `outputs/research_v3/watchdog.json`,
-`session_budget.json`, and `run_budget.json`; stop if battery is 15% or lower. Then:
+## Fresh-checkout reproduction
 
 ```powershell
+py -3.12 -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements-research-lock.txt
 .venv\Scripts\python.exe -m unittest discover -s tests -v
-.venv\Scripts\python.exe scripts\research_session_v3.py lock
-.venv\Scripts\python.exe scripts\research_session_v3.py holdout
+.venv\Scripts\python.exe scripts\apply_locked_fusion.py input.png output.png
 ```
 
-The `holdout` command is one-shot and resumable. Never modify code/config/model after
-`lock`, never tune from holdout, and never rerun `prepare` or reset the cumulative
-budget. After holdout, open all four selected pages and its worst panel, plus DnCNN
-pages if generated; record observations without changing selection. Then update the
-final report and package the selected deploy/model/lock, summaries, manifests,
-provenance, environment record, small pinned vendor sources, and representative view
-images into Git. Do not commit large pretrained checkpoints or data arrays.
+The selected model JSON and `deploy.pt`, lock, summaries, paired deltas, per-image
+results, final views, and pinned small KAIR sources are force-tracked under their
+original `outputs/research_v3/` paths. Large data arrays, source images, and pretrained
+checkpoints remain intentionally untracked; their URLs and SHA-256 hashes are recorded
+in `MODEL_AND_METRIC_PROVENANCE.md` and the lock. Consequently, a fresh clone can audit
+the tracked result rows and deploy the selected model, but it cannot recompute the
+completed holdout until those inputs are reacquired. The tracked completion marker is
+deliberately rejected when its bound `holdout_data.npz` is absent.
 
-Generated arrays/checkpoints are ignored under `outputs/research_v3/` but are bound by
-SHA-256 manifests. The tracked protocol, architecture registry, audit, experiment log,
-and this file are the durable recovery map.
+To audit rather than rerun, start with `FINAL_REPORT.md`, `visual_audit.json`,
+`experiments.csv`, `architecture_registry.md`, and `ARTIFACT_MANIFEST.md`. Never use
+the completed holdout to choose a new architecture while presenting it as untouched.
+
+If extending this research in a new session, create a new protocol version and a new
+unseen holdout. The strongest evidence-based next idea is not additional gating
+capacity over the same bank; it is a genuinely more complementary operator bank.

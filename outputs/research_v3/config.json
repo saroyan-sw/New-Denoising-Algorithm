@@ -1,0 +1,36 @@
+{
+  "bank": [
+    "identity",
+    "bilateral",
+    "nlm_07",
+    "cbm3d"
+  ],
+  "benchmark_sources": 20,
+  "boundary": "operator-specific native; same noisy array",
+  "budget_start": 1792610865.57409,
+  "carried_active_seconds": 2208.6060474,
+  "lambdas": [
+    0.0,
+    0.01,
+    0.03
+  ],
+  "lr": 0.08,
+  "max_hours": 4,
+  "max_runs": 10,
+  "mc_epsilon": 0.001,
+  "mc_probes": 2,
+  "no_input_clip": true,
+  "objective": "MC-SURE / sigma^2 - lambda * (MUSIQ - train_mean)/train_std",
+  "original_budget_start": 1791923291.0,
+  "output_clip": true,
+  "resumed_at": 1792613074.1801372,
+  "seeds": [
+    20261014,
+    20261015,
+    20261016
+  ],
+  "sigma": 0.09803921568627451,
+  "steps": 40,
+  "training_sources": 16,
+  "version": 4
+}

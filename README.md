@@ -1,5 +1,11 @@
 # Audited Image Denoising Baselines
 
+The completed bounded frozen-IQA fusion study is documented in
+[FINAL_REPORT.md](FINAL_REPORT.md). The selected reproducible model, its exact
+limitations, the sealed holdout, and a one-image deployment command are provided
+there. The result is a carefully measured negative result: it does not establish a
+meaningful improvement over CBM3D or competitiveness with DRUNet.
+
 Current experiment status and decisions: [docs/experiment_state_2026-10-02.md](docs/experiment_state_2026-10-02.md).
 
 This repository reconstructs the useful parts of the earlier Self-FuseNet-inspired denoising project without carrying forward duplicated scripts, hard-coded paths, hidden package installation, or scientifically invalid comparisons.

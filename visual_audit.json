@@ -4,12 +4,12 @@
   "protocol": "Every meaningful development candidate was opened across all 20 fixed images in four five-image comparison pages, followed by its automatically selected worst panel. DRUNet and CBM3D appear in every candidate page under the same noise draw.",
   "development_methods": {
     "preliminary_lambda_0p000": {
-      "pages": "outputs/transformer_fusion_session/visual_review/lambda_0p000",
+      "pages": "outputs/research_v3/views/benchmark/ineligible_pilot_lambda_0p000/page_1.png ... page_4.png",
       "worst": 14,
       "finding": "Visibly noisy near-identity output with strong chroma speckle; ineligible because fitting sources overlapped development."
     },
     "preliminary_normsure_v2_lambda_0p000": {
-      "pages": "outputs/transformer_fusion_session/visual_review/normsure_v2_lambda_0p000",
+      "pages": "outputs/research_v3/views/benchmark/ineligible_pilot_normsure_v2_lambda_0p000/page_1.png ... page_4.png",
       "worst": 5,
       "finding": "Noise reduction accompanied by severe smoothing and mottled residuals; ineligible because three fitting sources overlapped development."
     },
@@ -29,8 +29,8 @@
       "finding": "No visible difference from CBM3D or lambda 0.01."
     },
     "equal_fusion_v3": {
-      "pages": "outputs/research_v3/views/benchmark/equal_fusion_v3/page_1.png ... page_4.png",
-      "worst": "outputs/research_v3/views/benchmark/equal_fusion_v3/worst_05.png",
+      "pages": "outputs/research_v3/views/benchmark/equal_fusion/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/equal_fusion/worst_05.png",
       "finding": "Visible residual noise and mottling; uniform operator fusion is not viable."
     },
     "dncnn": {
@@ -54,6 +54,24 @@
       "finding": "Again indistinguishable from CBM3D; DRUNet remains visibly crisper on eye, fence, and building detail."
     }
   },
+  "final_holdout": {
+    "selection_was_locked_first": true,
+    "selected_model": {
+      "pages": "outputs/research_v3/views/holdout/v4_lambda_0p01/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/holdout/v4_lambda_0p01/worst_06.png",
+      "finding": "All 20 plus worst were opened. Output is visually indistinguishable from CBM3D, with no added ringing or color shift and no perceptible recovery; DRUNet is generally cleaner on repeated facades and thin lines."
+    },
+    "dncnn": {
+      "pages": "outputs/research_v3/views/holdout/dncnn/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/holdout/dncnn/worst_08.png",
+      "finding": "All 20 plus worst were opened. Blind DnCNN visibly softens or distorts repeated architectural patterns and fine lines on several crops, consistent with its weaker holdout metrics."
+    },
+    "equal_fusion_v4": {
+      "pages": "outputs/research_v3/views/holdout/equal_fusion_v4/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/holdout/equal_fusion_v4/worst_12.png",
+      "finding": "All 20 plus worst were opened. Colored residual noise remains throughout, especially on flat and repeated regions."
+    }
+  },
   "architecture_gate_conclusion": "The reference-only oracle headroom is too small and too sparse to justify spatial, multiscale, or sequential expansion. A2-A4 remain closed.",
-  "selection_conclusion": "Among the required positive-lambda models, v4_lambda_0p01 has the highest fixed-development PSNR. Its tiny PSNR and DISTS gains over CBM3D accompany a statistically consistent SSIM regression, so development evidence does not support a full classical-improvement claim."
+  "selection_conclusion": "Among the required positive-lambda models, v4_lambda_0p01 has the highest fixed-development PSNR. On both development and sealed holdout, its tiny PSNR and DISTS gains over CBM3D accompany a statistically consistent SSIM regression. The full classical-improvement claim fails, and DRUNet remains decisively stronger."
 }
