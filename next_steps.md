@@ -12,8 +12,9 @@ All scheduled and gated architectures are frozen in `architecture_registry.md`.
 
 The initial 20-crop protocol incorrectly included fitting images and has been superseded
 by benchmark20.json with 16 separate training sources. Preserve the old artifacts.
-Protocol v3 uses three benchmark noise draws, a global convex bank, frozen MUSIQ,
-MC-SURE fidelity, independent DISTS, CBM3D/NLM and DnCNN/DRUNet.
+Protocol v4 uses three benchmark noise draws, the development-selected NLM-0.7 compact
+global convex bank, frozen MUSIQ, MC-SURE fidelity, independent DISTS, CBM3D/NLM and
+DnCNN/DRUNet. The v3 NLM-0.9 triplet remains as controlled predecessor evidence.
 
 Commands (run from repository root; do not recreate the frozen benchmark):
 

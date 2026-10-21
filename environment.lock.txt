@@ -1,0 +1,13 @@
+platform=Windows-11-10.0.26100-SP0
+python=3.12.14
+torch=2.14.1+cpu
+torchvision=0.29.1+cpu
+pyiqa=0.1.16
+numpy=2.5.2
+scipy=1.18.1
+scikit-image=0.26.0
+bm3d=4.0.3
+Pillow=12.3.0
+psutil=7.2.2
+cuda_available=false
+compute=CPU

@@ -68,6 +68,13 @@ with the representation ceiling.
 H3: increase spatial/multiscale/sequence capacity only after a validated oracle and
 visible failure support it. Maximum initial sequence depth two; no unrestricted generator.
 
+Observed controlled revision before model lock: the fixed NLM sweep selected
+`h=0.7*sigma` (29.0572 dB) over the original `0.9*sigma` (28.3590 dB). Replacing only
+that operator raised the global reference-oracle gain over CBM3D from 0.0068 to
+0.0140 dB, while per-image-over-global headroom remained 0.0289 dB. Repeat A1's three
+lambdas as protocol v4. This is a bank correction, not a spatial-capacity expansion;
+A2-A4 remain closed by their registered gates.
+
 ## Safety and records
 
 Host watchdog polls Windows GetSystemPowerStatus every 30 seconds, independently of

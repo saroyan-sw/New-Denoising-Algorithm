@@ -30,9 +30,10 @@ SIGMA = 25 / 255
 # leaving 12,191.394 seconds rather than resetting the four-hour allowance.
 START = 1792610865.57409
 SEEDS = [20261014, 20261015, 20261016]
+VERSION = 4
 BASE = ['identity', 'gaussian_07', 'gaussian_11', 'bilateral', 'median', 'nlm_07', 'nlm_09', 'nlm_11', 'cbm3d']
-BANK = ['identity', 'bilateral', 'nlm_09', 'cbm3d']
-CONFIG = dict(version=3, sigma=SIGMA, seeds=SEEDS, bank=BANK, lambdas=[0., .01, .03],
+BANK = ['identity', 'bilateral', 'nlm_07', 'cbm3d']
+CONFIG = dict(version=VERSION, sigma=SIGMA, seeds=SEEDS, bank=BANK, lambdas=[0., .01, .03],
               steps=40, lr=.08, training_sources=16, benchmark_sources=20,
               objective='MC-SURE / sigma^2 - lambda * (MUSIQ - train_mean)/train_std',
               mc_probes=2, mc_epsilon=.001, boundary='operator-specific native; same noisy array',
@@ -52,6 +53,21 @@ def sha(path):
         for b in iter(lambda: f.read(1048576), b''):
             h.update(b)
     return h.hexdigest()
+
+def validate_hash_manifest(record, paths):
+    """Validate an exact key-to-file hash manifest; also used by gate tests."""
+    for key,path in paths.items():
+        path=Path(path)
+        if key not in record or not path.exists() or record[key]!=sha(path):
+            raise RuntimeError('Lock hash mismatch: '+key)
+
+def validate_holdout_binding(manifest, lock_sha, data_path, complete=None):
+    data_sha=sha(data_path)
+    if manifest.get('lock_sha256')!=lock_sha or manifest.get('data_sha256')!=data_sha:
+        raise RuntimeError('Holdout data is stale or not bound to the selected lock')
+    if complete is not None and (complete.get('lock_sha256')!=lock_sha or complete.get('data_sha256')!=data_sha):
+        raise RuntimeError('Stale holdout completion marker')
+    return data_sha
 
 def rgb(path):
     with Image.open(path) as im:
@@ -268,15 +284,30 @@ def classical(split, wd):
         save_np(path,values=values,times=times)
         print(split,name,'seconds',round(times.sum(),2),flush=True)
 
-def acquire(wd):
-    no_lock()
-    files={
+def vendor_files():
+    commit='fc1732f4a4514e42ce15e5b3a1e18c828af47a1e'
+    return {
       'dncnn_color_blind.pth':'https://github.com/cszn/KAIR/releases/download/v1.0/dncnn_color_blind.pth',
       'drunet_color.pth':'https://github.com/cszn/KAIR/releases/download/v1.0/drunet_color.pth',
-      'models/basicblock.py':'https://raw.githubusercontent.com/cszn/KAIR/master/models/basicblock.py',
-      'models/network_unet.py':'https://raw.githubusercontent.com/cszn/KAIR/master/models/network_unet.py',
-      'models/network_dncnn.py':'https://raw.githubusercontent.com/cszn/KAIR/master/models/network_dncnn.py',
-      'LICENSE':'https://raw.githubusercontent.com/cszn/KAIR/master/LICENSE'}
+      'models/basicblock.py':f'https://raw.githubusercontent.com/cszn/KAIR/{commit}/models/basicblock.py',
+      'models/network_unet.py':f'https://raw.githubusercontent.com/cszn/KAIR/{commit}/models/network_unet.py',
+      'models/network_dncnn.py':f'https://raw.githubusercontent.com/cszn/KAIR/{commit}/models/network_dncnn.py',
+      'LICENSE':f'https://raw.githubusercontent.com/cszn/KAIR/{commit}/LICENSE'}
+
+def verify_vendor():
+    provenance_path=OUT/'vendor/provenance.json'
+    if not provenance_path.exists(): raise RuntimeError('Missing vendor provenance; run acquire')
+    provenance=read(provenance_path); expected=vendor_files()
+    if set(provenance)!=set(expected): raise RuntimeError('Vendor provenance file set mismatch')
+    for name,url in expected.items():
+        path=OUT/'vendor'/name; record=provenance[name]
+        if not path.exists() or record.get('url')!=url or record.get('sha256')!=sha(path) or record.get('bytes')!=path.stat().st_size:
+            raise RuntimeError('Vendor provenance mismatch: '+name)
+    return sha(provenance_path)
+
+def acquire(wd):
+    no_lock()
+    files=vendor_files()
     provenance={}
     for name,url in files.items():
         wd.boundary('download_'+name)
@@ -286,6 +317,7 @@ def acquire(wd):
             download(url,temp,wd); os.replace(temp,path)
         provenance[name]=dict(url=url,sha256=sha(path),bytes=path.stat().st_size)
     write(OUT/'vendor/provenance.json',provenance)
+    verify_vendor()
 
 def download(url, path, wd):
     """Bounded network reads with progress, retries, and watchdog boundaries."""
@@ -313,6 +345,7 @@ def download(url, path, wd):
             print('Download retry',attempt+1,repr(error),flush=True)
 
 def network(name):
+    verify_vendor()
     torch=setup_torch()
     sys.path.insert(0,str(OUT/'vendor'))
     if name=='dncnn':
@@ -368,11 +401,11 @@ def optimize_quadratic(gram,linear):
 
 def sure_terms(wd):
     no_lock()
-    path=OUT/'sure_terms.npz'
+    path=OUT/f'sure_terms_v{VERSION}.npz'
     if path.exists(): return
     y=np.load(OUT/'training_data.npz')['noisy'][0]; z=stack('training')[0]
     div=np.zeros((len(y),len(BANK)),dtype='float64')
-    partial=OUT/'sure_partial.npz'; done=0
+    partial=OUT/f'sure_partial_v{VERSION}.npz'; done=0
     if partial.exists():
         with np.load(partial) as p:
             div=p['div'].copy();done=int(p['done'])
@@ -389,7 +422,7 @@ def sure_terms(wd):
     linear=2*SIGMA**2*div.mean(0)
     w=optimize_quadratic(gram,linear)
     save_np(path,gram=gram,linear=linear,weights=w,div=div)
-    write(OUT/'sure_solution.json',dict(weights=w.tolist(),bank=BANK,risk=float(w@gram@w+linear@w-SIGMA**2)))
+    write(OUT/f'sure_solution_v{VERSION}.json',dict(weights=w.tolist(),bank=BANK,risk=float(w@gram@w+linear@w-SIGMA**2)))
 
 def oracle(wd):
     no_lock()
@@ -411,17 +444,17 @@ def oracle(wd):
     for i in range(len(x)):
         wd.boundary('oracle_'+str(i));ww,mm=fit(z[i:i+1],x[i:i+1]);image_weights.append(ww.tolist());image_mse.append(mm)
     errors=(np.clip(z,0,1)-x[:,None]).transpose(1,0,2,3,4).reshape(len(BANK),-1)
-    write(OUT/'oracle.json',dict(constraints='global/per-image simplex, clipped-output MSE, seed0 development only',
+    write(OUT/f'oracle_v{VERSION}.json',dict(constraints='global/per-image simplex, clipped-output MSE, seed0 development only',
         global_weights=w.tolist(),global_mse=mse,per_image_weights=image_weights,per_image_mse=image_mse,
         error_correlations=np.corrcoef(errors).tolist(),bank=BANK))
-    save_np(OUT/'cache/benchmark/oracle_global.npz',values=np.einsum('sikhwc,k->sihwc',stack('benchmark'),w),times=np.zeros((3,20)))
+    save_np(OUT/f'cache/benchmark/oracle_global_v{VERSION}.npz',values=np.einsum('sikhwc,k->sihwc',stack('benchmark'),w),times=np.zeros((3,20)))
 
 def model_metric(name):
     setup_torch()
     import pyiqa
     return pyiqa.create_metric(name,device='cpu',as_loss=True).eval().requires_grad_(False)
 
-def run_id(lam): return ('v3_lambda_'+str(lam)).replace('.','p')
+def run_id(lam): return (f'v{VERSION}_lambda_'+str(lam)).replace('.','p')
 
 def optimization_step(logits, optimizer, gram, linear, z, scorer, cal, lam, step):
     import torch
@@ -445,13 +478,13 @@ def train(lam,wd):
         if ledger['preliminary_runs']+len(ledger['started'])>=10: raise RuntimeError('Ten-run limit')
         ledger['started'].append(rid);write(ledgerpath,ledger)
     wd.boundary('training_load')
-    terms=np.load(OUT/'sure_terms.npz');w0=terms['weights']
+    terms=np.load(OUT/f'sure_terms_v{VERSION}.npz');w0=terms['weights']
     logits=torch.tensor(np.log(np.maximum(w0,.001)),dtype=torch.float32,requires_grad=True)
     optimizer=torch.optim.Adam([logits],lr=CONFIG['lr'])
     gram=torch.tensor(terms['gram'],dtype=torch.float32);linear=torch.tensor(terms['linear'],dtype=torch.float32)
     z=torch.from_numpy(stack('training')[0]).permute(0,1,4,2,3)
     scorer=model_metric('musiq')
-    quality_cal=OUT/'quality_calibration.json'
+    quality_cal=OUT/f'quality_calibration_v{VERSION}.json'
     if quality_cal.exists(): cal=read(quality_cal)
     else:
         scores=[]
@@ -459,10 +492,18 @@ def train(lam,wd):
             for k in range(len(BANK)):
                 wd.boundary('iqa_calibration');scores.extend(scorer(z[:4,k].clamp(0,1)).flatten().tolist())
         cal=dict(mean=float(np.mean(scores)),std=max(float(np.std(scores)),1));write(quality_cal,cal)
+    audit_weights=torch.softmax(logits,0)
+    audit_pred=(z[:4]*audit_weights[None,:,None,None,None]).sum(1).clamp(0,1)
+    audit_quality=scorer(audit_pred).mean()
+    musiq_logit_gradient_norm=float(torch.autograd.grad(audit_quality,logits)[0].norm())
     checkpoint=directory/'checkpoint.pt';history=[];start=0
     if checkpoint.exists():
         saved=torch.load(checkpoint,weights_only=False);logits.data.copy_(saved['logits']);optimizer.load_state_dict(saved['optimizer']);history=saved['history'];start=saved['next_step']
+        if saved.get('config')!=CONFIG or not 0<=start<=CONFIG['steps'] or len(history)!=start:
+            raise RuntimeError('Incompatible or corrupt training checkpoint')
         torch.set_rng_state(saved['torch_rng']);random.setstate(saved['python_rng']);np.random.set_state(saved['numpy_rng'])
+        prior_training_seconds=float(saved.get('elapsed_training_seconds',0.))
+    else: prior_training_seconds=0.
     start_time=time.perf_counter();gradient_norm=0.
     if lam==0:
         weights=w0
@@ -473,14 +514,22 @@ def train(lam,wd):
             gradient_norm=max(gradient_norm,gn);history.append(entry)
             atomic_torch(checkpoint,dict(logits=logits.detach(),optimizer=optimizer.state_dict(),scheduler=None,scaler=None,
                  torch_rng=torch.get_rng_state(),python_rng=random.getstate(),numpy_rng=np.random.get_state(),config=CONFIG,
-                 next_step=step+1,history=history,stop_requested=wd.stop.is_set()))
+                 next_step=step+1,history=history,stop_requested=wd.stop.is_set(),
+                 elapsed_training_seconds=prior_training_seconds+time.perf_counter()-start_time))
             if step%10==0: print(rid,'step',step,'loss',round(entry['loss'],5),flush=True)
             wd.boundary('train_after_'+str(step))
         weights=torch.softmax(logits.detach(),0).numpy()
     model=dict(run_id=rid,weights=list(map(float,weights)),bank=BANK,lambda_iqa=lam,config=CONFIG,
         musiq_frozen=all(not p.requires_grad for p in scorer.parameters()),input_gradient_norm=gradient_norm,
-        musiq_preprocess=scorer.net.data_preprocess_opts,training_seconds=time.perf_counter()-start_time,
+        musiq_logit_gradient_norm=musiq_logit_gradient_norm,
+        musiq_preprocess=scorer.net.data_preprocess_opts,
+        training_seconds=prior_training_seconds+time.perf_counter()-start_time,
+        training_seconds_note='Aggregate active optimizer time across checkpoint resumes; excludes scoring and output inference',
+        checkpoint_sha256=sha(checkpoint) if checkpoint.exists() else None,
         training_manifest_sha256=sha(ROOT/'benchmark20.json'),history=history,
+        pyiqa_version=importlib.metadata.version('pyiqa'),musiq_score_direction='higher_is_better',
+        musiq_input='Fusion output clipped to RGB [0,1]; PyIQA eval normalization and multiscale preprocessing',
+        musiq_checkpoint_url='https://huggingface.co/chaofengc/IQA-PyTorch-Weights/resolve/main/musiq_koniq_ckpt-e95806b9.pth',
         musiq_checkpoint_sha256=sha(OLD/'model_cache/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth'))
     write(directory/'model.json',model)
     atomic_torch(directory/'deploy.pt',dict(weights=torch.tensor(weights),bank=BANK,config=CONFIG))
@@ -494,7 +543,7 @@ def predict_model(model,split,wd):
 
 def equal(split):
     z=stack(split);times=sum(np.load(OUT/'cache'/split/f'{name}.npz')['times'] for name in BANK)
-    save_np(OUT/'cache'/split/'equal_fusion.npz',values=z.mean(2),times=times)
+    save_np(OUT/f'cache/{split}/equal_fusion_v{VERSION}.npz',values=z.mean(2),times=times)
 
 def retrospective_pilots():
     """Apply historical pilot weights to benchmark20; mark overlap/ineligibility."""
@@ -544,18 +593,30 @@ def summarize(split):
     for m in methods:
         rr=[r for r in rows if r['method']==m]
         summary[m]={k:float(np.mean([r[k] for r in rr])) for k in ['psnr','ssim','dists','runtime_s']}
-        summary[m]['seed_mean_psnr']={str(s):float(np.mean([r['psnr'] for r in rr if r['seed']==s])) for s in SEEDS}
+        ids=sorted(set(r['id'] for r in rr))
+        for metric in ['psnr','ssim','dists']:
+            summary[m]['seed_mean_'+metric]={str(s):float(np.mean([r[metric] for r in rr if r['seed']==s])) for s in SEEDS}
+            summary[m]['sample_sd_'+metric]=float(np.std([r[metric] for r in rr],ddof=1))
+            source_means=[np.mean([r[metric] for r in rr if r['id']==ident]) for ident in ids]
+            summary[m]['source_mean_sd_'+metric]=float(np.std(source_means,ddof=1))
         summary[m]['max_process_peak_rss_bytes']=max(r['process_peak_rss_bytes'] for r in rr)
     write(OUT/f'{split}_summary.json',summary)
     delta={}
     for m in methods:
         for baseline in ['cbm3d','dncnn','drunet']:
             if baseline not in methods: continue
-            ids=sorted(set(r['id'] for r in rows));d=[]
-            for ident in ids:
-                a=np.mean([r['psnr'] for r in rows if r['id']==ident and r['method']==m]);b=np.mean([r['psnr'] for r in rows if r['id']==ident and r['method']==baseline]);d.append(a-b)
-            rng=np.random.default_rng(20261014);means=np.asarray(d)[rng.integers(0,len(d),(10000,len(d)))].mean(1)
-            delta[m+' minus '+baseline]=dict(mean=float(np.mean(d)),ci95=np.quantile(means,[.025,.975]).tolist(),wins=int(np.sum(np.array(d)>0)),unit='source image averaged over three paired noise draws')
+            ids=sorted(set(r['id'] for r in rows))
+            for metric in ['psnr','ssim','dists']:
+                d=[]
+                for ident in ids:
+                    a=np.mean([r[metric] for r in rows if r['id']==ident and r['method']==m])
+                    b=np.mean([r[metric] for r in rows if r['id']==ident and r['method']==baseline])
+                    d.append((b-a) if metric=='dists' else (a-b))
+                rng=np.random.default_rng(20261014);means=np.asarray(d)[rng.integers(0,len(d),(10000,len(d)))].mean(1)
+                key=m+' minus '+baseline if metric=='psnr' else m+' '+metric.upper()+' improvement over '+baseline
+                delta[key]=dict(metric=metric,positive_means_candidate_better=True,mean=float(np.mean(d)),
+                    ci95=np.quantile(means,[.025,.975]).tolist(),wins=int(np.sum(np.array(d)>0)),
+                    unit='source image averaged over three paired noise draws')
     write(OUT/f'{split}_paired_deltas.json',delta)
 
 def views(method,split='benchmark'):
@@ -574,24 +635,47 @@ def views(method,split='benchmark'):
     grid(imgs,names+['absolute error x5'],dest/f'worst_{worst+1:02}.png',6)
 
 def lock(wd):
-    no_lock(); summary=read(OUT/'benchmark_summary.json')
+    no_lock(); summary=read(OUT/'benchmark_summary.json');vendor_sha=verify_vendor()
     runs=[read(p) for p in (OUT/'runs').glob('*/model.json')]
+    current=[m for m in runs if m['config']['version']==VERSION]
+    if {m['lambda_iqa'] for m in current}!={0.,.01,.03}:raise RuntimeError('Current protocol ablations incomplete')
     positive=[m for m in runs if m['lambda_iqa']>0]
     if len(positive)<2:raise RuntimeError('Predeclared positive IQA ablations incomplete')
-    if any(name not in summary for name in BASE+['dncnn','drunet','equal_fusion']+[r['run_id'] for r in runs]):raise RuntimeError('Comparisons incomplete')
+    if any(name not in summary for name in BASE+['dncnn','drunet',f'equal_fusion_v{VERSION}']+[r['run_id'] for r in runs]):raise RuntimeError('Comparisons incomplete')
     chosen=max(positive,key=lambda m:summary[m['run_id']]['psnr'])
     best_overall=max(runs,key=lambda m:summary[m['run_id']]['psnr'])
+    chosen_dir=OUT/'runs'/chosen['run_id']
     write(OUT/'locked_model.json',dict(model=chosen,best_overall_fusion=best_overall['run_id'],selection='Highest development PSNR among IQA-trained positive-lambda candidates; SURE-only control reported separately',
-        config_sha256=sha(OUT/'config.json'),benchmark_sha256=sha(ROOT/'benchmark20.json'),script_sha256=sha(Path(__file__)),time=time.time()))
+        config_sha256=sha(OUT/'config.json'),benchmark_sha256=sha(ROOT/'benchmark20.json'),script_sha256=sha(Path(__file__)),
+        vendor_provenance_sha256=vendor_sha,model_json_sha256=sha(chosen_dir/'model.json'),deploy_sha256=sha(chosen_dir/'deploy.pt'),
+        musiq_checkpoint_sha256=sha(OLD/'model_cache/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth'),
+        dists_checkpoint_sha256=sha(OLD/'model_cache/hub/pyiqa/DISTS_weights-f5e65c96.pth'),
+        vgg_checkpoint_sha256=sha(OLD/'model_cache/hub/checkpoints/vgg16-397923af.pth'),
+        pyiqa_version=importlib.metadata.version('pyiqa'),time=time.time()))
     wd.boundary('model_locked')
 
 def holdout(wd):
     lockfile=OUT/'locked_model.json'
     if not lockfile.exists(): raise RuntimeError('Holdout gate closed')
     selected=read(lockfile)
-    if selected['config_sha256']!=sha(OUT/'config.json') or selected['benchmark_sha256']!=sha(ROOT/'benchmark20.json'):raise RuntimeError('Lock hash mismatch')
-    if (OUT/'holdout_complete.json').exists():return
-    if not (OUT/'holdout_data.npz').exists():
+    chosen_dir=OUT/'runs'/selected['model']['run_id']
+    verify_vendor()
+    validate_hash_manifest(selected,{
+        'config_sha256':OUT/'config.json','benchmark_sha256':ROOT/'benchmark20.json','script_sha256':Path(__file__),
+        'vendor_provenance_sha256':OUT/'vendor/provenance.json','model_json_sha256':chosen_dir/'model.json',
+        'deploy_sha256':chosen_dir/'deploy.pt','musiq_checkpoint_sha256':OLD/'model_cache/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth',
+        'dists_checkpoint_sha256':OLD/'model_cache/hub/pyiqa/DISTS_weights-f5e65c96.pth',
+        'vgg_checkpoint_sha256':OLD/'model_cache/hub/checkpoints/vgg16-397923af.pth'})
+    if selected.get('pyiqa_version')!=importlib.metadata.version('pyiqa'):raise RuntimeError('PyIQA version differs from lock')
+    lock_sha=sha(lockfile)
+    complete_path=OUT/'holdout_complete.json';data_path=OUT/'holdout_data.npz';manifest_path=OUT/'holdout_manifest.json'
+    if complete_path.exists() and (not data_path.exists() or not manifest_path.exists()):
+        raise RuntimeError('Holdout completion marker lacks bound data')
+    if data_path.exists():
+        if not manifest_path.exists():raise RuntimeError('Holdout data lacks manifest')
+        validate_holdout_binding(read(manifest_path),lock_sha,data_path,read(complete_path) if complete_path.exists() else None)
+        if complete_path.exists():return
+    if not data_path.exists():
         samples=[];images=[];dev=read(ROOT/'benchmark20.json');known=dev['training']+dev['benchmark']
         for index in range(81,101):
             wd.boundary('holdout_download_'+str(index));url=f'https://raw.githubusercontent.com/wuzhongwulidong/URBAN100/master/img{index:03}.png'
@@ -604,11 +688,13 @@ def holdout(wd):
             if distance<=6 or sha(crop_path) in {p['sha256'] for p in known}:raise RuntimeError('Possible holdout near-duplicate needs audit')
             samples.append(dict(id=f'Urban100_{index:03}',source_url=url,raw_sha256=sha(path),crop_sha256=sha(crop_path),top=top,left=left,size=128,min_dhash_distance=distance))
         clean=np.stack(images);noisy=np.stack([np.stack([x+np.random.default_rng(seed+1000000+i*1009).normal(0,SIGMA,x.shape).astype('float32') for i,x in enumerate(clean)]) for seed in SEEDS])
-        write(OUT/'holdout_manifest.json',dict(samples=samples,lock_sha256=sha(lockfile),noise_seed_offset=1000000))
-        save_np(OUT/'holdout_data.npz',clean=clean,noisy=noisy)
+        save_np(data_path,clean=clean,noisy=noisy)
+        write(manifest_path,dict(samples=samples,lock_sha256=lock_sha,
+              data_sha256=sha(data_path),noise_seed_offset=1000000))
+    validate_holdout_binding(read(manifest_path),lock_sha,data_path)
     classical('holdout',wd);neural('holdout',wd);equal('holdout');predict_model(selected['model'],'holdout',wd)
     evaluate('holdout',wd);views(selected['model']['run_id'],'holdout')
-    write(OUT/'holdout_complete.json',dict(time=time.time(),lock_sha256=sha(lockfile)))
+    write(complete_path,dict(time=time.time(),lock_sha256=lock_sha,data_sha256=sha(data_path)))
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('command',choices=['prepare','acquire','classical','neural','sure','oracle','train','evaluate','views','lock','holdout','pilot-review']);parser.add_argument('--split',default='benchmark');parser.add_argument('--lambda-iqa',type=float);parser.add_argument('--method');args=parser.parse_args()

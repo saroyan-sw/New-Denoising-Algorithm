@@ -9,8 +9,9 @@ holdout must never be used to choose among these architectures.
 
 - Input: one RGB float32 noisy image `y` in `[approximately -0.4, 1.4]`. The input is
   not clipped before denoising. The known AWGN standard deviation is `25/255`.
-- Compact bank, in this fixed order: identity, bilateral, non-local means with
-  `h = 0.9 * sigma`, and color BM3D at the exact sigma.
+- Initial compact bank: identity, bilateral, NLM with `h = 0.9 * sigma`, and color
+  BM3D. The controlled A1r revision changes only NLM to the development-selected
+  `h = 0.7 * sigma`; all later deployed candidates use that revised fixed order.
 - Every fusion architecture combines fixed operator outputs `o_k(y)`. It does not
   update an operator or use a clean training target.
 - The fused result is clipped to `[0,1]` only for metrics and saved images.
@@ -52,9 +53,9 @@ Scheduled variants:
 
 | ID | lambda | purpose |
 |---|---:|---|
-| `v3_lambda_0p000` | 0.00 | fidelity-only control; exact convex SURE weights |
-| `v3_lambda_0p010` | 0.01 | weak frozen-MUSIQ regularization |
-| `v3_lambda_0p030` | 0.03 | stronger frozen-MUSIQ regularization |
+| `v3_lambda_0p0` | 0.00 | fidelity-only control; exact convex SURE weights |
+| `v3_lambda_0p01` | 0.01 | weak frozen-MUSIQ regularization |
+| `v3_lambda_0p03` | 0.03 | stronger frozen-MUSIQ regularization |
 
 For positive lambda: Adam, learning rate 0.08, 40 updates, deterministic image
 cycling, actual optimizer/RNG checkpoint recovery, no scheduler, no mixed precision.
@@ -74,12 +75,23 @@ The reference-assisted convex oracle is a diagnostic ceiling only. It is fitted 
 reported on the development benchmark and can never be deployed or evaluated on the
 final holdout.
 
+## A1r — NLM-selected compact fusion (scheduled evidence-based revision)
+
+The predeclared NLM sweep found `h=0.7*sigma` at 29.0572 dB versus 28.3590 dB for
+the original `h=0.9*sigma`. A validation-only oracle with the one-operator substitution
+increased global headroom over CBM3D from 0.0068 to 0.0140 dB while per-image-over-
+global headroom stayed only 0.0289 dB (one of 20 images at least 0.1 dB). Therefore,
+repeat the same three A1 lambdas as `v4_lambda_0p0`, `v4_lambda_0p01`, and
+`v4_lambda_0p03`, changing no other model or optimizer setting. These bring the total
+run count to 8/10 including the two ineligible pilots. A2-A4 remain closed.
+
 ## A2 — feature-conditioned spatial convex fusion (gated, not scheduled yet)
 
 Test only if A1's development oracle has useful per-image/pixel headroom and visual
 inspection shows different operators winning in different spatial regions. Fixed
-features are computed from the noisy image: RGB, luminance, local 3x3 mean, local
-3x3 standard deviation, and Sobel gradient magnitude (7 channels total). A small
+features are computed from the noisy image: RGB (3 channels), luminance, luminance
+local 3x3 mean, luminance local 3x3 standard deviation, and luminance Sobel gradient
+magnitude (7 channels total). A small
 gating network predicts four per-pixel logits:
 
 ```text
@@ -89,7 +101,7 @@ Conv(16, 4, 1) -> softmax over operators
 x_hat[p] = sum_k w[p,k] * o_k(y)[p]
 ```
 
-Parameter count: 3,348 including biases. Add total variation on the weight maps with
+Parameter count: 3,412 including biases. Add total variation on the weight maps with
 coefficient `1e-3`; otherwise use the same MC-SURE/MUSIQ objective and data. Initialize
 the last-layer biases from the selected A1 logits and all other weights with Kaiming
 uniform initialization. Maximum one fidelity-only control and one positive-lambda run.

@@ -15,6 +15,8 @@ Read these files in order:
 3. `benchmark20.json` — immutable 20-image development set and disjoint training set.
 4. `experiments.csv` — chronological run/failure/inspection ledger.
 5. `next_steps.md` — current cache-aware resume sequence.
+6. `MODEL_AND_METRIC_PROVENANCE.md` — exact MUSIQ, DISTS, neural-baseline, and
+   environment provenance, including preprocessing and domain-shift cautions.
 
 The archived 128x128 CBSD/Kodak crops are development data, not a fresh test set.
 The final Urban100 081-100 holdout must remain absent until `locked_model.json` exists.
@@ -55,7 +57,7 @@ outputs/research_v3/
   benchmark_summary.json   mean PSNR, SSIM, DISTS, runtime, peak process memory
   benchmark_results.csv    every individual metric observation
   benchmark_paired_deltas.json  paired source-cluster bootstrap intervals
-  oracle.json              development-only diagnostic; never a deployable result
+  oracle_v4.json           development-only diagnostic; never a deployable result
   locked_model.json        immutable model selection and hashes, when selection ends
   holdout_*                must appear only after the lock
 ```
@@ -119,10 +121,11 @@ For each folder in `outputs/research_v3/runs/`, inspect:
   history, and explicit `scheduler=None`, `scaler=None`.
 - `quality_calibration.json`: training-only MUSIQ mean and standard deviation.
 
-The run IDs are `v3_lambda_0p000`, `v3_lambda_0p010`, and `v3_lambda_0p030`.
+The current run IDs are `v4_lambda_0p0`, `v4_lambda_0p01`, and `v4_lambda_0p03`.
 The first is an exact MC-SURE control. The other two are the only predeclared learned
-MUSIQ ablations. Two older runs under `outputs/transformer_fusion_session/training/`
-are ineligible and still count as runs 1 and 2.
+MUSIQ ablations for the NLM-selected bank. The completed v3 triplet is preserved as
+the controlled predecessor. Two still older pilot runs are ineligible. Together the
+two pilots + v3 triplet + v4 triplet consume 8 of 10 allowed runs.
 
 ## 7. Cache-aware resume sequence
 

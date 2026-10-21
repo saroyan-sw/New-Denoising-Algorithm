@@ -1,6 +1,8 @@
 # Dataset layout
 
-Images are intentionally not committed. The first four dataset folders are populated; the others are reserved for later experiments:
+Images are intentionally not committed. Checkout audit on 2026-10-14 found that this
+local clone contains this README but none of the dataset folders below. The layout is
+the intended full-data layout, not a statement that the folders are currently present:
 
 ```text
 data/
@@ -14,7 +16,13 @@ data/
   CBSD68-dataset-master/  # preserved third-party package; do not use as clean input
 ```
 
-The canonical folders `DIV2K_valid`, `DIV2K_train`, `CBSD68`, and `Kodak24` are populated. `CBSD68` is a copy of the 68 lossless `original_png` files from the preserved `CBSD68-dataset-master` package. That package also has original JPEGs and pre-generated noisy PNGs at several noise levels. The current protocol **does not use** those pre-generated noisy files: it generates seeded AWGN from the clean PNGs so the degradation is controlled and comparable across datasets. `Kodak24` contains `kodim01.png` through `kodim24.png`, previously under `images/train` despite being used here only for testing.
+For the bounded fusion session, no claim is made on full DIV2K, CBSD68, Kodak24, or
+Urban100. Development uses 74 unique source IDs recovered from existing 128x128
+archived CBSD/Kodak experiment crops; `benchmark20.json` freezes 20 and separates 16
+training sources. Those sources were historically exposed and are development-only.
+After immutable model selection, the final evaluation uses only center 128 crops of
+Urban100 081–100 and reports that exact subset. Install the full datasets separately
+before attempting any standard full-image benchmark claim.
 
 To install the official high-resolution DIV2K validation and training archives in
 the folders above, run from the project root:
