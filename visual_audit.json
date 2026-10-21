@@ -1,0 +1,59 @@
+{
+  "complete_through_model_selection": true,
+  "inspector": "primary research agent",
+  "protocol": "Every meaningful development candidate was opened across all 20 fixed images in four five-image comparison pages, followed by its automatically selected worst panel. DRUNet and CBM3D appear in every candidate page under the same noise draw.",
+  "development_methods": {
+    "preliminary_lambda_0p000": {
+      "pages": "outputs/transformer_fusion_session/visual_review/lambda_0p000",
+      "worst": 14,
+      "finding": "Visibly noisy near-identity output with strong chroma speckle; ineligible because fitting sources overlapped development."
+    },
+    "preliminary_normsure_v2_lambda_0p000": {
+      "pages": "outputs/transformer_fusion_session/visual_review/normsure_v2_lambda_0p000",
+      "worst": 5,
+      "finding": "Noise reduction accompanied by severe smoothing and mottled residuals; ineligible because three fitting sources overlapped development."
+    },
+    "v3_lambda_0p0": {
+      "pages": "outputs/research_v3/views/benchmark/v3_lambda_0p0/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/v3_lambda_0p0/worst_04.png",
+      "finding": "Visually indistinguishable from CBM3D, including the same fine-detail smoothing."
+    },
+    "v3_lambda_0p01": {
+      "pages": "outputs/research_v3/views/benchmark/v3_lambda_0p01/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/v3_lambda_0p01/worst_04.png",
+      "finding": "No visible MUSIQ artifact or texture recovery; effectively CBM3D."
+    },
+    "v3_lambda_0p03": {
+      "pages": "outputs/research_v3/views/benchmark/v3_lambda_0p03/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/v3_lambda_0p03/worst_04.png",
+      "finding": "No visible difference from CBM3D or lambda 0.01."
+    },
+    "equal_fusion_v3": {
+      "pages": "outputs/research_v3/views/benchmark/equal_fusion_v3/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/equal_fusion_v3/worst_05.png",
+      "finding": "Visible residual noise and mottling; uniform operator fusion is not viable."
+    },
+    "dncnn": {
+      "pages": "outputs/research_v3/views/benchmark/dncnn/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/dncnn/worst_05.png",
+      "finding": "Cleaner and often preserves fence, masonry, and fur detail better than the classical fusion; no obvious halo or color shift."
+    },
+    "v4_lambda_0p0": {
+      "pages": "outputs/research_v3/views/benchmark/v4_lambda_0p0/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/v4_lambda_0p0/worst_12.png",
+      "finding": "Near-CBM3D output with a slight NLM texture/noise blend in grass, water, and fur; no ringing or color shift."
+    },
+    "v4_lambda_0p01": {
+      "pages": "outputs/research_v3/views/benchmark/v4_lambda_0p01/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/v4_lambda_0p01/worst_04.png",
+      "finding": "Visually indistinguishable from CBM3D; no artifact and no visible texture recovery."
+    },
+    "v4_lambda_0p03": {
+      "pages": "outputs/research_v3/views/benchmark/v4_lambda_0p03/page_1.png ... page_4.png",
+      "worst": "outputs/research_v3/views/benchmark/v4_lambda_0p03/worst_04.png",
+      "finding": "Again indistinguishable from CBM3D; DRUNet remains visibly crisper on eye, fence, and building detail."
+    }
+  },
+  "architecture_gate_conclusion": "The reference-only oracle headroom is too small and too sparse to justify spatial, multiscale, or sequential expansion. A2-A4 remain closed.",
+  "selection_conclusion": "Among the required positive-lambda models, v4_lambda_0p01 has the highest fixed-development PSNR. Its tiny PSNR and DISTS gains over CBM3D accompany a statistically consistent SSIM regression, so development evidence does not support a full classical-improvement claim."
+}
