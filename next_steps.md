@@ -1,7 +1,15 @@
 # Resume — session in progress
 
 For a complete inspection map and failure-safe operating procedure, read
-`EXPERIMENT_REVIEW_GUIDE.md` first.
+`SESSION_HANDOFF.md` and `EXPERIMENT_REVIEW_GUIDE.md` first.
+
+Current checkpoint: v4 lambda 0 and 0.01 are complete/evaluated/all-20 inspected;
+v4 lambda 0.03 has not started. Run count is 7/10. Model lock is absent and final
+holdout is unopened. The next allowed training command is exactly:
+
+```powershell
+.venv\Scripts\python.exe scripts\research_session_v3.py train --lambda-iqa 0.03
+```
 
 Working directory: this repository. Python: `.venv/Scripts/python.exe`.
 The budget remains 10 substantial runs or four cumulative active hours. The original
