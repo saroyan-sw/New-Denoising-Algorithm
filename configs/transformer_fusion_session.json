@@ -1,0 +1,49 @@
+{
+  "protocol_version": 1,
+  "session_date": "2026-10-14",
+  "task": "color_awgn_nonblind",
+  "noise_sigma_255": 25.0,
+  "clip_noisy_input": false,
+  "development": {
+    "images": 20,
+    "fit_images": 12,
+    "validation_images": 8,
+    "historical_exposure": "The source crops were used by earlier project experiments and are development-only; they are never described as a fresh holdout.",
+    "manifest": "outputs/transformer_fusion_session/dev_manifest.json"
+  },
+  "holdout": {
+    "images": 20,
+    "source": "Urban100 images 081-100 from the recorded public mirror",
+    "gating": "Download and evaluation are forbidden until locked_model.json exists.",
+    "manifest": "outputs/transformer_fusion_session/holdout_manifest.json"
+  },
+  "operator_bank": [
+    "identity",
+    "gaussian_sigma_0.7",
+    "gaussian_sigma_1.1",
+    "bilateral_r3_s2.0_r0.12",
+    "median_3x3"
+  ],
+  "fusion": {
+    "architecture": "global nonnegative simplex weights over parallel full-image operators",
+    "identity_preserving": true,
+    "iqa_model": "musiq",
+    "iqa_library": "pyiqa",
+    "fidelity": "Monte-Carlo SURE for known AWGN; one fixed Rademacher probe per image",
+    "lambda_candidates": [0.0, 0.01, 0.03],
+    "steps": 20,
+    "learning_rate": 0.5,
+    "objective_scaling": "SURE divided by sigma^2 so fidelity and standardized IQA terms have auditable dimensionless scales"
+  },
+  "budget": {
+    "maximum_substantial_runs": 10,
+    "maximum_hours": 4,
+    "battery_stop_percent": 15
+  },
+  "evaluation": {
+    "selection_metric": "validation mean PSNR; SSIM and MUSIQ are secondary",
+    "metrics": ["PSNR_RGB", "SSIM_RGB", "MSE_RGB"],
+    "saved_outputs": true,
+    "holdout_once": true
+  }
+}

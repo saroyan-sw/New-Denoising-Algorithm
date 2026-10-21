@@ -1,0 +1,406 @@
+{
+  "benchmark": [
+    {
+      "category": "smooth",
+      "challenge": 0.19030310213565826,
+      "dhash": "1100011010110111000110010001000100011001010111101001111001101011",
+      "edge": 0.022177593782544136,
+      "fine": 0.020082851871848106,
+      "id": "CBSD68_0013",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/014_CBSD68_0013_r0_clean.png",
+      "repeat": 0.9873444510935704,
+      "sha256": "0ad20148ae33dcc24198a05fdbfb4af9cb71097e1175d15e647f5221975a8b5b"
+    },
+    {
+      "category": "smooth",
+      "challenge": 0.4212084114551544,
+      "dhash": "1001100000011001001100011011001000010011000000000000000010100100",
+      "edge": 0.022806823253631592,
+      "fine": 0.029827818274497986,
+      "id": "CBSD68_0032",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/033_CBSD68_0032_r0_clean.png",
+      "repeat": 0.9928377245722935,
+      "sha256": "1a475fff46f46a0e65b1d885f42808d37b8502c61039e46be45067a89836f7e6"
+    },
+    {
+      "category": "smooth",
+      "challenge": 0.09842199832201004,
+      "dhash": "1111111011100110111000111110000011100000111100011111100010111100",
+      "edge": 0.0269094817340374,
+      "fine": 0.03629649430513382,
+      "id": "Kodak24_kodim04",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/054_Kodak24_kodim04_r0_clean.png",
+      "repeat": 0.8586710149747883,
+      "sha256": "8bb8bc9b6977c8099b3d6bde04861d6beaebcf46ae4ae00484addb2efb0310e9"
+    },
+    {
+      "category": "smooth",
+      "challenge": 0.1615218073129654,
+      "dhash": "0100100100110001000111000000011100000001000100101001011100000110",
+      "edge": 0.03506188839673996,
+      "fine": 0.04774833098053932,
+      "id": "Kodak24_kodim03",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/053_Kodak24_kodim03_r0_clean.png",
+      "repeat": 0.8344553084428323,
+      "sha256": "5a1a11f1636ebbd9b319b6e4212272c8d6c0ef93020931eed5d861975169e67e"
+    },
+    {
+      "category": "edges",
+      "challenge": 0.2431464046239853,
+      "dhash": "1010101010100000000011000111010100111000011000011001100111000000",
+      "edge": 0.16621588170528412,
+      "fine": 0.21327337622642517,
+      "id": "Kodak24_kodim19",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/069_Kodak24_kodim19_r0_clean.png",
+      "repeat": 0.6221790390724459,
+      "sha256": "b26baac422da588b0444979b018a8ea2d5dc206fe174772e3ffac5f9ab830856"
+    },
+    {
+      "category": "edges",
+      "challenge": 0.25045162439346313,
+      "dhash": "1100000110101000000000100001101001001100010101001001010011110100",
+      "edge": 0.15456470847129822,
+      "fine": 0.21140430867671967,
+      "id": "CBSD68_0010",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/011_CBSD68_0010_r0_clean.png",
+      "repeat": 0.5278418781513389,
+      "sha256": "7733fbf90d2cd9b1b68a599b19bd43136aadce58a9cd098531cd0eb55ccac12d"
+    },
+    {
+      "category": "edges",
+      "challenge": 0.16204099357128143,
+      "dhash": "1100011100001110111100101111010001101011011000011000001101000010",
+      "edge": 0.14807114005088806,
+      "fine": 0.1810007095336914,
+      "id": "Kodak24_kodim06",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/056_Kodak24_kodim06_r0_clean.png",
+      "repeat": 0.5063805383203727,
+      "sha256": "37f0688abb5ecd00503a640fc8b9429330143945b5c08c61b2d0289063dfd528"
+    },
+    {
+      "category": "edges",
+      "challenge": 0.16641396284103394,
+      "dhash": "0111100001111100111000110111001001111000010101101100011001001100",
+      "edge": 0.14161495864391327,
+      "fine": 0.18238356709480286,
+      "id": "Kodak24_kodim13",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/063_Kodak24_kodim13_r0_clean.png",
+      "repeat": 0.5602758764800783,
+      "sha256": "cc02f8b0df2ece5fdb3d2eb2335ec28583f98426887399211497ba615c846cf0"
+    },
+    {
+      "category": "fine_texture",
+      "challenge": 0.2591695785522461,
+      "dhash": "0011111010011100101110000011010011000001100111001101100101100100",
+      "edge": 0.21794331073760986,
+      "fine": 0.27501463890075684,
+      "id": "CBSD68_0026",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/027_CBSD68_0026_r0_clean.png",
+      "repeat": 0.5570415601534892,
+      "sha256": "8ed12703d52171adaede137aed184db713a06ea55cd1377f0e699f212508eb85"
+    },
+    {
+      "category": "fine_texture",
+      "challenge": 0.19311212003231049,
+      "dhash": "1011000010000011001001100111110110011111011111101001100110100100",
+      "edge": 0.12682151794433594,
+      "fine": 0.17338821291923523,
+      "id": "CBSD68_0046",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/047_CBSD68_0046_r0_clean.png",
+      "repeat": 0.677365215659845,
+      "sha256": "2f098de02f38425d43e084cae551c116087604fac9513eff4ae5eb99b88b49ea"
+    },
+    {
+      "category": "fine_texture",
+      "challenge": 0.2548920810222626,
+      "dhash": "1000110010000000000001000100101101101011000110111101111001101010",
+      "edge": 0.13768205046653748,
+      "fine": 0.17019210755825043,
+      "id": "CBSD68_0007",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/008_CBSD68_0007_r0_clean.png",
+      "repeat": 0.7905432187744663,
+      "sha256": "bbed4be2e3c3bde0619af5a3f2d1924b1d82e231ffe5dca20b0fd193549b702b"
+    },
+    {
+      "category": "fine_texture",
+      "challenge": 0.1750267744064331,
+      "dhash": "0111001001110000001100001011000001110010011101110101000111001000",
+      "edge": 0.11638490855693817,
+      "fine": 0.16020844876766205,
+      "id": "CBSD68_0043",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/044_CBSD68_0043_r0_clean.png",
+      "repeat": 0.45881467990078667,
+      "sha256": "cf25630e19e267bd95369d97f85bc03dcdef909cd1d478da90ac598ee6c43547"
+    },
+    {
+      "category": "repeated_structure",
+      "challenge": 0.2727097272872925,
+      "dhash": "0100101100101100001111000111110110111100100011001100110110001110",
+      "edge": 0.038964077830314636,
+      "fine": 0.04297291859984398,
+      "id": "CBSD68_0038",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/039_CBSD68_0038_r0_clean.png",
+      "repeat": 0.9024987443660576,
+      "sha256": "74fa8b6ee597f1d9fd3e6ff3a987978e61e5509a59d91b6fa5bb8f74be2119ac"
+    },
+    {
+      "category": "repeated_structure",
+      "challenge": 0.15821348130702972,
+      "dhash": "1000000000000001000000000000000001000001010000000000001010010010",
+      "edge": 0.019739961251616478,
+      "fine": 0.021165508776903152,
+      "id": "CBSD68_0023",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/024_CBSD68_0023_r0_clean.png",
+      "repeat": 0.8981901781667911,
+      "sha256": "d2596a9ef607665ee4b6784426df88f868d7c455f76d2b9c937e763fc9abeb1e"
+    },
+    {
+      "category": "repeated_structure",
+      "challenge": 0.23948344588279724,
+      "dhash": "1001011000100110000010000001110010010000100100010001100010010110",
+      "edge": 0.04264006391167641,
+      "fine": 0.05074894800782204,
+      "id": "CBSD68_0024",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/025_CBSD68_0024_r0_clean.png",
+      "repeat": 0.8723440369469467,
+      "sha256": "a1c576d6dba48fa7d1248618c11af399ae62b7dc58c789e7e20431466e3aee84"
+    },
+    {
+      "category": "repeated_structure",
+      "challenge": 0.014436161145567894,
+      "dhash": "0000000000000000000000000000000000000000000000000000000001010000",
+      "edge": 0.003808347973972559,
+      "fine": 0.005866630934178829,
+      "id": "Kodak24_kodim20",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/070_Kodak24_kodim20_r0_clean.png",
+      "repeat": 0.855806674589277,
+      "sha256": "596d755e157a3ed9e35ebf5cb7eee03f966f045f4e95a0cd08db1e50ac7af742"
+    },
+    {
+      "category": "challenging",
+      "challenge": 0.29624325037002563,
+      "dhash": "0000001100000101000100100000000011100110111101110100101111011000",
+      "edge": 0.06753553450107574,
+      "fine": 0.09226103127002716,
+      "id": "CBSD68_0025",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/026_CBSD68_0025_r0_clean.png",
+      "repeat": 0.9067067862105694,
+      "sha256": "0808b8e6595113a4b39ddd7f38d0f698ad9b06810ada5180189acd13b0d38f3a"
+    },
+    {
+      "category": "challenging",
+      "challenge": 0.27620729804039,
+      "dhash": "1011011001110010011000110110110000110100001111100000001100010011",
+      "edge": 0.07003113627433777,
+      "fine": 0.06697024405002594,
+      "id": "CBSD68_0029",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/030_CBSD68_0029_r0_clean.png",
+      "repeat": 0.8558546033181487,
+      "sha256": "ecf0f2bcf78eec7bd0a521cfcde9a7c241c8a5110902816c91d355433c0a09ab"
+    },
+    {
+      "category": "challenging",
+      "challenge": 0.2663012742996216,
+      "dhash": "0111000111100000100000100101110011110010001110100001110000011100",
+      "edge": 0.08406589180231094,
+      "fine": 0.09178733825683594,
+      "id": "Kodak24_kodim23",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/073_Kodak24_kodim23_r0_clean.png",
+      "repeat": 0.7410799372052059,
+      "sha256": "051f6db39456dea08b298561636c44eab135ab29ec9ffb3190447ac63e953514"
+    },
+    {
+      "category": "challenging",
+      "challenge": 0.25650545954704285,
+      "dhash": "1100001111000111110001111100011111000111110011111100111111001111",
+      "edge": 0.1252480000257492,
+      "fine": 0.16696079075336456,
+      "id": "CBSD68_0008",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/009_CBSD68_0008_r0_clean.png",
+      "repeat": 0.7582057026595374,
+      "sha256": "8ad461f061cc8c135bb8d8e7666d2b839b281c7c01690a7b75877f6e2ab9b073"
+    }
+  ],
+  "categories": "Statistical content proxies, verified by clean grid; category membership is not semantic ground truth",
+  "corruption": {
+    "clip_input": false,
+    "seeds": [
+      20261014,
+      20261015,
+      20261016
+    ],
+    "sigma": 0.09803921568627451
+  },
+  "crop": "Existing native 128x128 archive crop, no resize; original crop metadata in archived metrics.csv",
+  "prior_exposure": "All archived sources historically exposed. Preliminary v1/v2 excluded from valid selection. Final holdout is separate Urban100.",
+  "selection": "Four seeded choices from each sequential top-10 content-proxy stratum; no denoising scores used",
+  "selection_seed": 20261014,
+  "split_audit": {
+    "minimum_train_benchmark_dhash_distance": 18,
+    "sha256_overlap": 0,
+    "source_overlap": 0
+  },
+  "training": [
+    {
+      "challenge": 0.21850374341011047,
+      "dhash": "0111101011110110110011111011111101110111010011110110011000100001",
+      "edge": 0.07823123037815094,
+      "fine": 0.09920495003461838,
+      "id": "CBSD68_0009",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/010_CBSD68_0009_r0_clean.png",
+      "repeat": 0.7807956658025301,
+      "sha256": "0ab4d50b38f3f54507e0bc5578218dd22900977a5b7cbd71b4a0b30601fb8393"
+    },
+    {
+      "challenge": 0.1700725257396698,
+      "dhash": "1000011000011000101100011000100001110000100010001101001111010011",
+      "edge": 0.08205927908420563,
+      "fine": 0.07813519984483719,
+      "id": "CBSD68_0014",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/015_CBSD68_0014_r0_clean.png",
+      "repeat": 0.40507810993847104,
+      "sha256": "4b6ae29e8606d07886a923723f18508256bd27b6cfd2715c52464bcce55c264b"
+    },
+    {
+      "challenge": 0.11453787982463837,
+      "dhash": "0110110001110100001101010011000100011001000110010001100100010001",
+      "edge": 0.07741551101207733,
+      "fine": 0.10025417059659958,
+      "id": "CBSD68_0017",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/018_CBSD68_0017_r0_clean.png",
+      "repeat": 0.5095547553769547,
+      "sha256": "e972b616840ca370eb8dd95d692a0aa7d0f0c379af18e52425e345c11dd453b2"
+    },
+    {
+      "challenge": 0.18714609742164612,
+      "dhash": "1000000111000001101101101010111000001111000011110010011110010011",
+      "edge": 0.11463568359613419,
+      "fine": 0.14604046940803528,
+      "id": "CBSD68_0021",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/022_CBSD68_0021_r0_clean.png",
+      "repeat": 0.7400235671375085,
+      "sha256": "3873407fc49aa682970aec9aa7ac3fd694b4d9c64024f963f9d54ca5f7468fb5"
+    },
+    {
+      "challenge": 0.19083063304424286,
+      "dhash": "0001100000010010100011100100110001011000111100011100001000001100",
+      "edge": 0.07539595663547516,
+      "fine": 0.07219661772251129,
+      "id": "CBSD68_0022",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/023_CBSD68_0022_r0_clean.png",
+      "repeat": 0.7695718810568574,
+      "sha256": "42e97462d1d39211d1105b0452020d74c90117cfe3ff6b2f1689c18fbe3c5bed"
+    },
+    {
+      "challenge": 0.22884322702884674,
+      "dhash": "0111110010111100101101001011100110110001001110001011100100110001",
+      "edge": 0.13145416975021362,
+      "fine": 0.1631944179534912,
+      "id": "CBSD68_0027",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/028_CBSD68_0027_r0_clean.png",
+      "repeat": 0.6763561089657438,
+      "sha256": "1330878ae6b129534aedef3840197da58d2b9c5626e98083464b341d2512428c"
+    },
+    {
+      "challenge": 0.18628698587417603,
+      "dhash": "1001110000111110000011110110011101101110011001110010001110110001",
+      "edge": 0.1272210031747818,
+      "fine": 0.15750686824321747,
+      "id": "CBSD68_0036",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/037_CBSD68_0036_r0_clean.png",
+      "repeat": 0.6036067644648296,
+      "sha256": "a1c125ef2d7d0de5d3bec904592b11a77d2486152cbf9bcf3dbbdada17b07323"
+    },
+    {
+      "challenge": 0.22350281476974487,
+      "dhash": "1100111111001111011011010110000111100001111001111110100111111101",
+      "edge": 0.047111816704273224,
+      "fine": 0.049212031066417694,
+      "id": "CBSD68_0042",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/043_CBSD68_0042_r0_clean.png",
+      "repeat": 0.7620439212097909,
+      "sha256": "c60d9318fdfec12675255fba7e280d4aaa8ce48994e3f8e91e57e0d3c815db37"
+    },
+    {
+      "challenge": 0.1662427932024002,
+      "dhash": "0000101101011001100111001001000000011001100100111000001111010011",
+      "edge": 0.13953839242458344,
+      "fine": 0.17755605280399323,
+      "id": "CBSD68_0049",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/050_CBSD68_0049_r0_clean.png",
+      "repeat": 0.5182200745630937,
+      "sha256": "b08f73335abe249ccc9653115ca2a1eddcc9cd2894aa3e3d98a11eeeb5fe22ee"
+    },
+    {
+      "challenge": 0.15589135885238647,
+      "dhash": "0010100100101001001110010011100100101101101000110100111010001110",
+      "edge": 0.09106646478176117,
+      "fine": 0.11426225304603577,
+      "id": "Kodak24_kodim01",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/051_Kodak24_kodim01_r0_clean.png",
+      "repeat": 0.5279657913932344,
+      "sha256": "891b9e6cbc6f32a460ae55f16ca05643211c17b6349c717c86c87f5c10bd8767"
+    },
+    {
+      "challenge": 0.2204776406288147,
+      "dhash": "1111000101110111001110011001000110011001000110010000110000011100",
+      "edge": 0.10671639442443848,
+      "fine": 0.12443067878484726,
+      "id": "Kodak24_kodim05",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/055_Kodak24_kodim05_r0_clean.png",
+      "repeat": 0.640919972559991,
+      "sha256": "ed2cbb962751f0d60f49638951854019af17e8d16fa6cabfa0477a5bbd39c303"
+    },
+    {
+      "challenge": 0.14122425019741058,
+      "dhash": "1100111111001100111100001111000111110001111100010110001111100010",
+      "edge": 0.03206611052155495,
+      "fine": 0.02516101486980915,
+      "id": "Kodak24_kodim07",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/057_Kodak24_kodim07_r0_clean.png",
+      "repeat": 0.9424063252450919,
+      "sha256": "361cb2e34550b2bb6c8e63714b7c40115ba25b85e94dea833119701fb1d89982"
+    },
+    {
+      "challenge": 0.22398898005485535,
+      "dhash": "0000111000001110000011101100011011110000110001111110010111100000",
+      "edge": 0.047227367758750916,
+      "fine": 0.06027908995747566,
+      "id": "Kodak24_kodim09",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/059_Kodak24_kodim09_r0_clean.png",
+      "repeat": 0.7587670659479889,
+      "sha256": "9a72a14bc9df8c4b772853ceeb0267ab9c648a2015bcea398a6b188be95f220d"
+    },
+    {
+      "challenge": 0.06325846910476685,
+      "dhash": "1100110011100011001000010010001100110010100100110010010100100100",
+      "edge": 0.04650775343179703,
+      "fine": 0.061057429760694504,
+      "id": "Kodak24_kodim11",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/061_Kodak24_kodim11_r0_clean.png",
+      "repeat": 0.3612808823993122,
+      "sha256": "3dd16584278422df0349dedc68d95a6b32eae87938dea021e32411030cc620b7"
+    },
+    {
+      "challenge": 0.18742671608924866,
+      "dhash": "0111101101111001101110011011001001111000011111000111100001110000",
+      "edge": 0.04892118275165558,
+      "fine": 0.06050008907914162,
+      "id": "Kodak24_kodim15",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/065_Kodak24_kodim15_r0_clean.png",
+      "repeat": 0.8273201098577913,
+      "sha256": "2659a54d7613d4690b8ee1fff8d96d50c2429e6d15f8d3a74a4d19a460c2fa21"
+    },
+    {
+      "challenge": 0.1521456390619278,
+      "dhash": "0101101100110011011000011100110001001100011001000111001001110100",
+      "edge": 0.07015489041805267,
+      "fine": 0.09068072587251663,
+      "id": "Kodak24_kodim16",
+      "path": "experiments/coefficient_fitting/results/nima_technical_100/images/066_Kodak24_kodim16_r0_clean.png",
+      "repeat": 0.774790008858727,
+      "sha256": "47fe773cab70e4d75936c73e4cf1799056c638697245e337131005ec1c8228ca"
+    }
+  ],
+  "version": 3
+}
