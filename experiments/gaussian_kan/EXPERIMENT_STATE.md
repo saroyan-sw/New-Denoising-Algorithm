@@ -5,7 +5,7 @@
 - Milestones 0–2 are complete. Milestone 3, baseline comparisons, is next.
 - Active experiment: none. Completed: primary KAN seed 1729. Pending: matched MLP, affine model, Gaussian parameter estimate.
 - Latest checkpoint: `checkpoints/latest.pt`, step 1,000. Best: `checkpoints/best_step_000400.pt`. Preserved pilot: `checkpoints/pilot_step_000031.pt`. Checkpoints are ignored by Git and must remain accessible locally.
-- Latest committed milestone: Milestone 1 at `c1da9bd`, receipt `85ef1f2`, both pushed to `origin/main`. Milestone 2 commit and push are pending as this entry is written.
+- Latest committed milestone: Milestone 2 at `a9b59f6`, pushed to `origin/main` (`85ef1f2..a9b59f6`). Milestone 1 at `c1da9bd` and receipt `85ef1f2` were also pushed.
 
 ## Attempted and completed
 

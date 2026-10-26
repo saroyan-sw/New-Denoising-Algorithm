@@ -4,9 +4,9 @@
     "kan_primary_seed_1729"
   ],
   "completed_milestones": [0, 1, 2],
-  "last_commit": "c1da9bd",
+  "last_commit": "a9b59f6",
   "last_completed_step": 1000,
-  "last_push_status": "pushed to origin/main through c1da9bd",
+  "last_push_status": "pushed to origin/main through a9b59f6",
   "latest_checkpoint": "checkpoints\\latest.pt",
   "milestone": 3,
   "next_action": "Implement matched MLP, affine, and Gaussian parameter-estimation baselines",
