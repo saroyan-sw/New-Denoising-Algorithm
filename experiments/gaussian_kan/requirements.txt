@@ -1,0 +1,6 @@
+torch==2.14.1
+numpy>=2.5,<3
+scipy>=1.18,<2
+matplotlib>=3.11,<4
+PyYAML>=6,<7
+efficient-kan @ git+https://github.com/shawcharles/efficient-kan.git@0240ea138fe257d800c9bfa561025e1c44aedc71

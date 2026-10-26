@@ -1,0 +1,12 @@
+{
+  "milestone": 0,
+  "status": "completed",
+  "active_experiment": null,
+  "last_completed_step": 0,
+  "latest_checkpoint": null,
+  "completed_experiments": [],
+  "pending_experiments": ["kan_primary_seed_1729", "mlp_matched_seed_1729", "affine_seed_1729", "gaussian_parameter_estimate"],
+  "last_commit": null,
+  "last_push_status": "not_attempted",
+  "next_action": "Implement and validate the Milestone 1 KAN pilot, then run 30 steps"
+}

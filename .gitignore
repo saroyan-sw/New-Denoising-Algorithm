@@ -10,3 +10,8 @@ outputs/
 artifacts/
 data/*
 !data/README.md
+experiments/gaussian_kan/checkpoints/*
+!experiments/gaussian_kan/checkpoints/.gitkeep
+experiments/gaussian_kan/results/logs/*
+!experiments/gaussian_kan/results/logs/.gitkeep
+experiments/gaussian_kan/.deps/

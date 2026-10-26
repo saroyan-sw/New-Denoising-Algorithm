@@ -1,0 +1,14 @@
+experiment_id: kan_primary_seed_1729
+model: kan
+widths: [1, 8, 8, 1]
+grid_intervals: 32
+spline_order: 3
+seed: 1729
+batch_size: 2048
+steps: 1000
+learning_rate: 0.001
+validation_size: 8192
+checkpoint_every: 100
+validate_every: 25
+target_std: 0.2
+device: auto
