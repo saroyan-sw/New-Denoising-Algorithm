@@ -8,7 +8,7 @@
 - Repository: clean `main` at `ea1cf5b` when this study began; configured remote `https://github.com/saroyan-sw/New-Denoising-Algorithm.git`. Work is in an isolated clone of that active checkout to preserve existing denoising results.
 - Errors: the older checkout under `C:\Users\saroy\Codes\New-Denoising-Algorithm` had no `.venv` and is behind the active project. An initial dependency attempt in the generated workspace was stopped after the user identified the active project. No experiment results came from that attempt.
 - Validation: `train.py --status` reported the saved state; configuration parsed with expected widths; atomic PyTorch checkpoint save/load round-trip passed; `git diff --check` passed. An initial Windows fsync-on-read-only-handle error was corrected and the round-trip passed. The test checkpoint was removed.
-- Git commit: pending. Push: not attempted.
+- Git milestone commit: `b7eb1c1` (`milestone-0: initialize experiment infrastructure`). Push: succeeded to `origin/main` after a one-command safe-directory setting; remote reported `ea1cf5b..b7eb1c1`.
 - Files created: `config/experiment.yaml`, `requirements.txt`, state and plan files, `state.py`, `checkpoint.py`, and `train.py`. Checkpoints: none retained.
-- What remains: commit and push Milestone 0; implement and run the Milestone 1 KAN pilot.
+- What remains: implement and run the Milestone 1 KAN pilot.
 - Exact next command from this directory: `python train.py --status` (using an environment with requirements installed); then implement the pilot training command.
