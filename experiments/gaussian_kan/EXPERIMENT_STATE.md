@@ -5,7 +5,7 @@
 - Milestones 0–3 are complete. Milestone 4, independent scientific evaluation, is next.
 - Active experiment: none. Completed: KAN, parameter-matched MLP, affine Adam, and Gaussian parameter-estimation baseline. Pending experiments: none from the initial baseline set; independent evaluation and capacity/seed work remain.
 - KAN final checkpoint: `checkpoints/latest.pt`, best: `checkpoints/best_step_000400.pt`. MLP and affine have `checkpoints/{mlp,affine}/latest.pt` and best checkpoint references inside. All checkpoints are local and ignored by Git.
-- Latest committed milestone: Milestone 2 at `a9b59f6`, receipt `361061c`, both pushed to `origin/main`. Milestone 3 commit and push are pending as this entry is written.
+- Latest committed milestone: Milestone 3 at `b02c6f3`, pushed to `origin/main` (`361061c..b02c6f3`). Milestone 2 at `a9b59f6` and receipt `361061c` were also pushed.
 
 ## Attempted and completed
 
