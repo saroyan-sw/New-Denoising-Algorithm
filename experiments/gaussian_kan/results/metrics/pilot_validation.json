@@ -1,0 +1,20 @@
+{
+  "experiment_id": "kan_primary_seed_1729",
+  "pilot_steps": 31,
+  "parameter_count": 2960,
+  "initial_validation_w2_squared": 0.035744719207286835,
+  "step_20_validation_w2_squared": 0.020002422854304314,
+  "step_30_validation_w2_squared": 0.012773619033396244,
+  "step_31_validation_w2_squared": 0.012183339335024357,
+  "step_31_output_mean": -0.019545789808034897,
+  "step_31_output_std": 0.1079169511795044,
+  "target_std": 0.2,
+  "initial_to_step20_max_parameter_change": 0.021149607375264168,
+  "step20_to_step30_max_parameter_change": 0.012330660596489906,
+  "optimizer_state_entries_at_step30": 9,
+  "exact_step20_to_step30_replay": "passed: model tensors and PyTorch RNG state identical",
+  "pilot_checkpoint": "checkpoints/pilot_step_000031.pt",
+  "pilot_checkpoint_sha256": "8547302FFEC2B24F6634B6241A23FFD6F4B9A21E1A31282A970E1558AD9939A9",
+  "plot": "results/figures/pilot_initial_and_step30.png",
+  "interpretation": "Pilot optimization is working, but the output standard deviation is below the target and the learned map is not yet an inverse-CDF approximation. Continue training before drawing scientific conclusions."
+}

@@ -32,4 +32,4 @@ Primary: efficient-kan pure-PyTorch B-spline edges, widths `[1,8,8,1]`, 32 grid 
 
 ## Next action
 
-Finish Milestone 0 validation, then implement the KAN pilot and resume test.
+Milestones 0 and 1 passed. Resume the primary KAN from step 31 and complete its 1,000-step run in bounded sessions, then verify all Milestone 2 outputs.

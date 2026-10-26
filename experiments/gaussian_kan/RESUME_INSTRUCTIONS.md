@@ -7,4 +7,12 @@
 5. Continue the first unfinished milestone. To resume training, use `python train.py --resume latest --max-runtime-seconds 600` or `python train.py --resume latest --max-steps-per-session 200`. Never start an interrupted run from step 0 without an explicit deliberate reset.
 6. Update both state files after verified work. Commit and push each validated milestone. Record push failures honestly.
 
+For the current Windows checkout, the exact next command from this directory is:
+
+```powershell
+& 'C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv\Scripts\python.exe' train.py --resume latest --max-runtime-seconds 600
+```
+
+The step-31 checkpoint is local and ignored by Git. Preserve or copy `checkpoints/latest.pt` and the other checkpoint files when moving the study; a fresh remote checkout alone cannot resume the interrupted optimizer trajectory.
+
 The existing project virtual environment used in earlier sessions is `C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv`. Its path is machine-specific and is not required by the project code.

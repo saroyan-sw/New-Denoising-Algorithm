@@ -1,12 +1,18 @@
 {
-  "milestone": 0,
-  "status": "completed",
-  "active_experiment": null,
-  "last_completed_step": 0,
-  "latest_checkpoint": null,
+  "active_experiment": "kan_primary_seed_1729",
+  "completed_milestones": [0, 1],
   "completed_experiments": [],
-  "pending_experiments": ["kan_primary_seed_1729", "mlp_matched_seed_1729", "affine_seed_1729", "gaussian_parameter_estimate"],
-  "last_commit": "b7eb1c1",
-  "last_push_status": "pushed to origin/main",
-  "next_action": "Implement and validate the Milestone 1 KAN pilot, then run 30 steps"
+  "last_commit": "1d78a9a",
+  "last_completed_step": 31,
+  "last_push_status": "pushed to origin/main through 1d78a9a",
+  "latest_checkpoint": "checkpoints\\latest.pt",
+  "milestone": 2,
+  "next_action": "python train.py --resume latest --max-runtime-seconds 600",
+  "pending_experiments": [
+    "kan_primary_seed_1729",
+    "mlp_matched_seed_1729",
+    "affine_seed_1729",
+    "gaussian_parameter_estimate"
+  ],
+  "status": "interrupted"
 }
