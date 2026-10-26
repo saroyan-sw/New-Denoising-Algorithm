@@ -1,18 +1,19 @@
 {
-  "active_experiment": "kan_primary_seed_1729",
-  "completed_milestones": [0, 1],
-  "completed_experiments": [],
+  "active_experiment": null,
+  "completed_experiments": [
+    "kan_primary_seed_1729"
+  ],
+  "completed_milestones": [0, 1, 2],
   "last_commit": "c1da9bd",
-  "last_completed_step": 31,
+  "last_completed_step": 1000,
   "last_push_status": "pushed to origin/main through c1da9bd",
   "latest_checkpoint": "checkpoints\\latest.pt",
-  "milestone": 2,
-  "next_action": "python train.py --resume latest --max-runtime-seconds 600",
+  "milestone": 3,
+  "next_action": "Implement matched MLP, affine, and Gaussian parameter-estimation baselines",
   "pending_experiments": [
-    "kan_primary_seed_1729",
     "mlp_matched_seed_1729",
     "affine_seed_1729",
     "gaussian_parameter_estimate"
   ],
-  "status": "interrupted"
+  "status": "planned"
 }

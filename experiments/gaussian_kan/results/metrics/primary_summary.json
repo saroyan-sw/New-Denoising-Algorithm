@@ -1,0 +1,33 @@
+{
+  "experiment_id": "kan_primary_seed_1729",
+  "status": "completed_and_checkpoint_verified",
+  "architecture": "cubic B-spline KAN [1,8,8,1], 32 grid intervals",
+  "parameter_count": 2960,
+  "optimizer_steps": 1000,
+  "batch_size": 2048,
+  "validation_size": 8192,
+  "checkpoint_interval_steps": 100,
+  "periodic_checkpoints_verified": 10,
+  "best_step": 400,
+  "best_validation_w2_squared": 0.00003655956970760599,
+  "best_validation_w2": 0.006046451001009269,
+  "best_output_mean": 0.004155409522354603,
+  "best_output_std": 0.19816401600837708,
+  "final_step": 1000,
+  "final_validation_w2_squared": 0.00014622329035773873,
+  "final_validation_w2": 0.012092282264226996,
+  "final_output_mean": -0.006476021837443113,
+  "final_output_std": 0.19730637967586517,
+  "cumulative_training_loop_seconds": 108.89759960002266,
+  "best_checkpoint": "checkpoints/best_step_000400.pt",
+  "best_checkpoint_sha256": "F622052F9F32E76798B10CD18957B119C0FCDFF6AC68D34FE20C98A5FEC9B6EF",
+  "final_checkpoint": "checkpoints/latest.pt",
+  "final_checkpoint_sha256": "A9289676C6029368542567EF6D9DA7BDCE9C38B9EF03C96A59771E404DADC689",
+  "plot": "results/figures/primary_best_step400.png",
+  "observations": [
+    "Recomputed fixed validation metrics from both checkpoints match saved values.",
+    "Best and final validation values differ; use the best checkpoint for comparisons and report both.",
+    "The visually inspected best map is decreasing and resembles the decreasing Gaussian quantile map; distribution matching did not select the increasing inverse CDF.",
+    "Finite-sample reference error and independent test metrics remain to be measured in Milestone 4."
+  ]
+}

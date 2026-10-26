@@ -32,4 +32,4 @@ Primary: efficient-kan pure-PyTorch B-spline edges, widths `[1,8,8,1]`, 32 grid 
 
 ## Next action
 
-Milestones 0 and 1 passed. Resume the primary KAN from step 31 and complete its 1,000-step run in bounded sessions, then verify all Milestone 2 outputs.
+Milestones 0–2 passed. Implement and evaluate matched MLP, affine, Gaussian parameter-estimation, and oracle baselines. Use the best KAN checkpoint at step 400 for the primary comparison and retain the final-step result separately.

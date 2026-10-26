@@ -2,10 +2,10 @@
 
 ## Current position
 
-- Milestones 0 and 1 are complete. Milestone 2, the 1,000-step primary KAN run, is active and intentionally interrupted at step 31 after a bounded pilot.
-- Active experiment: `kan_primary_seed_1729`. Completed experiments: none. Pending: primary KAN, matched MLP, affine model, Gaussian parameter estimate.
-- Latest resumable checkpoint: `checkpoints/latest.pt`, step 31. Preserved pilot snapshot: `checkpoints/pilot_step_000031.pt`, SHA-256 `8547302FFEC2B24F6634B6241A23FFD6F4B9A21E1A31282A970E1558AD9939A9`. Checkpoints are ignored by Git and must remain accessible locally.
-- Latest committed milestone: Milestone 1 at `c1da9bd`, pushed to `origin/main` (`1d78a9a..c1da9bd`). Milestone 0 commit `b7eb1c1` and receipt `1d78a9a` were also pushed.
+- Milestones 0–2 are complete. Milestone 3, baseline comparisons, is next.
+- Active experiment: none. Completed: primary KAN seed 1729. Pending: matched MLP, affine model, Gaussian parameter estimate.
+- Latest checkpoint: `checkpoints/latest.pt`, step 1,000. Best: `checkpoints/best_step_000400.pt`. Preserved pilot: `checkpoints/pilot_step_000031.pt`. Checkpoints are ignored by Git and must remain accessible locally.
+- Latest committed milestone: Milestone 1 at `c1da9bd`, receipt `85ef1f2`, both pushed to `origin/main`. Milestone 2 commit and push are pending as this entry is written.
 
 ## Attempted and completed
 
@@ -20,15 +20,17 @@
 
 - Initial Windows checkpoint fsync used a read-only handle and failed; corrected to a writable handle and round-trip validation passed.
 - The first pilot logger wrote duplicate rows when the bounded session ended exactly at a validation step. The condition was corrected; existing duplicates were removed; a step-31 resume confirmed unique metric steps `[0,20,25,30,31]`.
-- The primary result, baseline comparisons, finite-sample reference, full function and tail evaluation, additional seeds, and capacity tests remain undone. No final scientific claim has been made.
+- Baselines, finite-sample reference, independent evaluation, additional seeds, and capacity tests remain undone. No final scientific claim has been made.
 - The older checkout at `C:\Users\saroy\Codes\New-Denoising-Algorithm` is behind the active project checkout. The active project environment is `C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv` (Python 3.12.14, PyTorch 2.14.1+cpu, CUDA unavailable).
 
 ## Next concrete action
 
-From this directory in PowerShell, continue the same run in bounded sessions:
+Milestone 2 resumed the same optimizer and random states from step 31 and reached step 1,000 without non-finite losses or gradients. Ten periodic 100-step checkpoints, a best checkpoint at step 400, and the final checkpoint were verified. Recomputing fixed validation metrics from both checkpoints reproduced the saved metrics. Best validation squared W2 was `0.00003656` (W2 `0.00605`), mean `0.00416`, and standard deviation `0.19816`; final-step squared W2 was `0.00014622` (W2 `0.01209`). Cumulative training-loop time was `108.90 s` on CPU, excluding process startup and plotting. The best checkpoint plot was inspected: its mapping is decreasing, resembling the decreasing Gaussian quantile map. This is compatible with distribution matching and does not identify an original noise mechanism. See `results/metrics/primary_summary.json` and `results/figures/primary_best_step400.png`.
+
+From this directory in PowerShell, verify the finished run before implementing baselines:
 
 ```powershell
-& 'C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv\Scripts\python.exe' train.py --resume latest --max-runtime-seconds 600
+& 'C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv\Scripts\python.exe' train.py --status
 ```
 
-Inspect `train.py --status`, the metric CSV, and the latest checkpoint after each session. Do not start without `--resume` while this run is interrupted. After step 1,000, verify final and best checkpoints and commit the Milestone 2 evidence.
+Next implement the parameter-matched MLP, affine generator, and Gaussian parameter-estimation baseline, then evaluate them on the same independent draws as the saved best KAN. Do not retrain the completed KAN without a documented reason.

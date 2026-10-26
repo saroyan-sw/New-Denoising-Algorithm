@@ -4,7 +4,9 @@ This independent experiment tests whether a cubic B-spline KAN can map uniform l
 
 See `EXPERIMENT_PLAN.md` and `EXPERIMENT_STATE.md` for the protocol and current evidence. `RESUME_INSTRUCTIONS.md` is the recovery entry point.
 
-The 31-step pilot passed an exact checkpoint replay test and produced an [initial versus step-30 plot](results/figures/pilot_initial_and_step30.png). Its output is still narrower than the target; the primary run remains in progress. The [pilot metric record](results/metrics/pilot_validation.json) separates measured values from conclusions.
+The 31-step pilot passed an exact checkpoint replay test and produced an [initial versus step-30 plot](results/figures/pilot_initial_and_step30.png). At that stage its output was narrower than the target. The [pilot metric record](results/metrics/pilot_validation.json) separates measured values from conclusions.
+
+The 1,000-step primary run is now complete. Its [best-checkpoint plot](results/figures/primary_best_step400.png) shows a decreasing quantile-like map; [verified checkpoint metrics](results/metrics/primary_summary.json) record both best and final validation results. Baseline comparisons and independent scientific evaluation are next.
 
 Install `requirements.txt` in a compatible Python environment. The pinned KAN library is [shawcharles/efficient-kan](https://github.com/shawcharles/efficient-kan) at commit `0240ea138fe257d800c9bfa561025e1c44aedc71`, a pure-PyTorch implementation with trainable B-spline edge functions.
 
