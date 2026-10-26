@@ -5,7 +5,7 @@
 - Milestones 0 and 1 are complete. Milestone 2, the 1,000-step primary KAN run, is active and intentionally interrupted at step 31 after a bounded pilot.
 - Active experiment: `kan_primary_seed_1729`. Completed experiments: none. Pending: primary KAN, matched MLP, affine model, Gaussian parameter estimate.
 - Latest resumable checkpoint: `checkpoints/latest.pt`, step 31. Preserved pilot snapshot: `checkpoints/pilot_step_000031.pt`, SHA-256 `8547302FFEC2B24F6634B6241A23FFD6F4B9A21E1A31282A970E1558AD9939A9`. Checkpoints are ignored by Git and must remain accessible locally.
-- Latest committed milestone: Milestone 0 at `b7eb1c1`; receipt commit `1d78a9a`. Both pushed to `origin/main`. Milestone 1 commit and push are pending as this entry is written.
+- Latest committed milestone: Milestone 1 at `c1da9bd`, pushed to `origin/main` (`1d78a9a..c1da9bd`). Milestone 0 commit `b7eb1c1` and receipt `1d78a9a` were also pushed.
 
 ## Attempted and completed
 
