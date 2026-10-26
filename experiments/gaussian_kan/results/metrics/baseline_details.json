@@ -1,0 +1,12 @@
+{
+  "validation_size": 8192,
+  "latent_seed": 917271,
+  "target_seed": 638219,
+  "fit_latent_seed": 33991,
+  "fit_target_seed": 44117,
+  "fitted_affine_scale": 0.677446092380597,
+  "fitted_affine_shift": -0.33893000988097277,
+  "estimated_gaussian_mean": -0.00011700517367462397,
+  "estimated_gaussian_std": 0.2000236922356509,
+  "comparison_limit": "Best neural checkpoints were selected on this fixed validation set; independent held-out evaluation follows in Milestone 4."
+}

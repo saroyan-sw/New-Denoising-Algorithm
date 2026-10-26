@@ -1,6 +1,8 @@
 """Distribution-free trainable generators. The target law is not used here."""
 
 from efficient_kan import KAN
+import torch
+from torch import nn
 
 
 def make_kan(widths: list[int], grid_intervals: int, spline_order: int) -> KAN:
@@ -11,3 +13,18 @@ def make_kan(widths: list[int], grid_intervals: int, spline_order: int) -> KAN:
 
 def parameter_count(model) -> int:
     return sum(parameter.numel() for parameter in model.parameters() if parameter.requires_grad)
+
+
+def make_mlp() -> nn.Module:
+    """2,913 parameters, within 1.6% of the 2,960-parameter KAN."""
+    return nn.Sequential(nn.Linear(1, 52), nn.SiLU(), nn.Linear(52, 52), nn.SiLU(), nn.Linear(52, 1))
+
+
+class AffineGenerator(nn.Module):
+    def __init__(self) -> None:
+        super().__init__()
+        self.scale = nn.Parameter(torch.tensor(0.0))
+        self.shift = nn.Parameter(torch.tensor(0.0))
+
+    def forward(self, z):
+        return self.scale * z + self.shift

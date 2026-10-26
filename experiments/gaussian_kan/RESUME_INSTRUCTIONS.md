@@ -4,7 +4,7 @@
 2. Inspect `git status --short --branch`, `git log -5 --oneline`, and `git remote -v` from the repository root.
 3. Install `requirements.txt` in a Python environment with compatible PyTorch. On the current Windows machine, the existing research `.venv` has PyTorch and scientific packages. Install the pinned `efficient-kan` dependency there or into an isolated local package directory and set `PYTHONPATH` accordingly.
 4. Run `python train.py --status` in this directory. Check that `latest_checkpoint` exists and is loadable before resuming. Ignored checkpoints need separate local preservation.
-5. Continue the first unfinished milestone. The primary KAN is complete at step 1,000; Milestone 3 baseline work is next. For any future interrupted training run, use `python train.py --resume latest --max-runtime-seconds 600` or `python train.py --resume latest --max-steps-per-session 200`. Never start an interrupted run from step 0 without an explicit deliberate reset.
+5. Continue the first unfinished milestone. The primary KAN and initial baselines are complete; Milestone 4 independent evaluation is next. For any future interrupted training run, use `python train.py --resume latest --max-runtime-seconds 600` or `python train.py --resume latest --max-steps-per-session 200`. Never start an interrupted run from step 0 without an explicit deliberate reset.
 6. Update both state files after verified work. Commit and push each validated milestone. Record push failures honestly.
 
 For the current Windows checkout, the exact next command from this directory is:
@@ -13,6 +13,6 @@ For the current Windows checkout, the exact next command from this directory is:
 & 'C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv\Scripts\python.exe' train.py --status
 ```
 
-The completed-run checkpoints are local and ignored by Git. Preserve or copy `checkpoints/latest.pt`, `checkpoints/best_step_000400.pt`, and other checkpoint files when moving the study; a fresh remote checkout alone cannot inspect the trained weights.
+The completed-run checkpoints are local and ignored by Git. Preserve or copy the KAN, MLP, and affine checkpoint directories when moving the study; a fresh remote checkout alone cannot inspect the trained weights.
 
 The existing project virtual environment used in earlier sessions is `C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv`. Its path is machine-specific and is not required by the project code.

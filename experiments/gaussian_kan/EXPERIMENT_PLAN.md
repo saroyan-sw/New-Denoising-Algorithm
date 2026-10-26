@@ -32,4 +32,4 @@ Primary: efficient-kan pure-PyTorch B-spline edges, widths `[1,8,8,1]`, 32 grid 
 
 ## Next action
 
-Milestones 0–2 passed. Implement and evaluate matched MLP, affine, Gaussian parameter-estimation, and oracle baselines. Use the best KAN checkpoint at step 400 for the primary comparison and retain the final-step result separately.
+Milestones 0–3 passed. Evaluate all saved generators on fresh independent latent and target draws, estimate the Gaussian-versus-Gaussian sampling floor, and inspect quantiles, monotonicity, interior function error, and tails. Keep validation-based checkpoint selection separate from test evaluation.

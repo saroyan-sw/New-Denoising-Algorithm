@@ -1,19 +1,18 @@
 {
   "active_experiment": null,
   "completed_experiments": [
-    "kan_primary_seed_1729"
-  ],
-  "completed_milestones": [0, 1, 2],
-  "last_commit": "a9b59f6",
-  "last_completed_step": 1000,
-  "last_push_status": "pushed to origin/main through a9b59f6",
-  "latest_checkpoint": "checkpoints\\latest.pt",
-  "milestone": 3,
-  "next_action": "Implement matched MLP, affine, and Gaussian parameter-estimation baselines",
-  "pending_experiments": [
+    "kan_primary_seed_1729",
     "mlp_matched_seed_1729",
     "affine_seed_1729",
     "gaussian_parameter_estimate"
   ],
+  "completed_milestones": [0, 1, 2, 3],
+  "last_commit": "361061c",
+  "last_completed_step": 1000,
+  "last_push_status": "pushed to origin/main through 361061c",
+  "latest_checkpoint": "checkpoints\\affine\\latest.pt",
+  "milestone": 4,
+  "next_action": "Implement independent scientific evaluation, sampling floor, quantile and tail diagnostics",
+  "pending_experiments": [],
   "status": "planned"
 }
