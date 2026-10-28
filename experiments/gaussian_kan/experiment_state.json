@@ -1,5 +1,7 @@
 {
   "active_experiment": null,
+  "artifact_bundle": "outputs/Gaussian_KAN_Study_Bundle.zip",
+  "checkpoint_manifest": "CHECKPOINT_MANIFEST.json",
   "completed_experiments": [
     "kan_primary_seed_1729",
     "mlp_matched_seed_1729",
@@ -16,15 +18,18 @@
     2,
     3,
     4,
-    5
+    5,
+    6
   ],
-  "last_commit": "e540bda",
+  "last_commit": "3c1a50d",
   "last_completed_step": 1000,
-  "last_push_status": "pushed to origin/main through e540bda",
+  "last_push_status": "pushed to origin/main through 3c1a50d",
   "latest_checkpoint": "runs/kan_primary64_seed_1729/checkpoints/latest.pt",
   "milestone": 6,
-  "next_action": "Create final report and executed Jupyter notebook with isolated experiment controls",
-  "notebook_status": "planned",
+  "next_action": "Open Gaussian_KAN_Lab.ipynb; all planned research is complete; optional new runs belong in explorations/",
+  "notebook": "Gaussian_KAN_Lab.ipynb",
+  "notebook_status": "executed_passed",
   "pending_experiments": [],
-  "status": "planned"
+  "report": "FINAL_RESEARCH_REPORT.md",
+  "status": "completed"
 }

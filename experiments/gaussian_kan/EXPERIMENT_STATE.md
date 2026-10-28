@@ -2,46 +2,48 @@
 
 ## Current position
 
-- Milestones 0–5 are complete. Milestone 6 is active: final report, checkpoint/artifact manifest, portable bundle, and the requested executed step-by-step Jupyter notebook.
-- Active experiment: none. All eight planned training/fitting experiments are complete. No unfinished training run remains. The report and notebook are pending.
-- KAN final checkpoint: `checkpoints/latest.pt`, best: `checkpoints/best_step_000400.pt`. MLP and affine have `checkpoints/{mlp,affine}/latest.pt` and best checkpoint references inside. All checkpoints are local and ignored by Git.
-- Latest committed milestone: Milestone 5 at `e540bda`, pushed to `origin/main` (`da0ac02..e540bda`). Earlier result milestones and their receipts were pushed.
+- Milestones 0–6 are complete. All eight planned experiment IDs are completed; no training run is active, failed, or interrupted.
+- The final report, executed notebook, checkpoint manifest, and portable bundle are verified.
+- Latest pushed result milestone: Milestone 5 at e540bda, receipt 3c1a50d. Milestone 6 is verified and awaits its final commit/push receipt.
+- Primary final: checkpoints/latest.pt, step 1,000; validation-selected primary: checkpoints/best_step_000400.pt.
+- Other weights: checkpoints/mlp/, checkpoints/affine/, and runs/<run_id>/checkpoints/.
+- The 215 checkpoint hashes are recorded in CHECKPOINT_MANIFEST.json. Model binaries are ignored by Git and included in outputs/Gaussian_KAN_Study_Bundle.zip.
 
-## Attempted and completed
+## What was completed and actually worked
 
-- Milestone 0 established the isolated study, configuration, atomic JSON state, atomic PyTorch checkpoint IO, status command, ignore rules, and resume instructions. Config and checkpoint round-trip validation passed.
-- Milestone 1 used the genuine pure-PyTorch B-spline KAN from `shawcharles/efficient-kan` commit `0240ea1`, widths `[1,8,8,1]`, 32 intervals, order 3, 2,960 trainable parameters, CPU. The pinned package was added to the existing research `.venv` after locating it in the earlier project chat.
-- Ran 20 steps with independent batches of 2,048 uniform and Gaussian samples, then restored the saved model, optimizer, and RNG states and ran steps 21–30. A one-step additional resume reached step 31.
-- Exact replay of steps 21–30 from the step-20 checkpoint reproduced every saved model tensor and PyTorch RNG state at step 30. Initial-to-step-20 and step-20-to-step-30 parameters both changed. Optimizer state contains nine parameter entries.
-- Fixed validation squared W2 fell from `0.0357447` initially to `0.0200024` at step 20, `0.0127736` at step 30, and `0.0121833` at step 31. At step 31 output mean was `-0.01955` and output standard deviation `0.10792` versus target `0.2`. This is a functioning pilot, not a learned Gaussian distribution yet.
-- Files created: `models.py`, resumable `train.py`, `visualize.py`, `tests/test_resume.py`, metric CSV, pilot validation JSON, and `results/figures/pilot_initial_and_step30.png`. Visual inspection shows the distribution broadening, but the pilot map is still nonmonotone and far from the increasing inverse CDF.
+0. Located the existing project environment via the earlier project chat: Python 3.12.14, PyTorch 2.14.1+cpu, CUDA unavailable. Established state/configuration/ignore rules, atomic checkpoint IO, and Git milestones.
+1. Verified genuine cubic spline KAN forward propagation, finite gradients, parameter updates, a 31-step pilot, and exact step-20-to-step-30 replay of weights and PyTorch RNG state.
+2. Continued that same trajectory to 1,000 steps. Verified ten periodic checkpoints plus best and final validation measurements. Best step: 400.
+3. Completed the parameter-matched MLP and affine Adam baselines, empirical sorted-quantile affine fit, Gaussian parameter fit, and inverse-CDF oracle comparison.
+4. Evaluated fresh 100,000-sample output laws, ten Gaussian sampling-reference pairs, moments, quantiles, monotonicity, interior function error, and tails. Six scientific figures were inspected.
+5. Completed two more primary seeds, smaller32, and primary64 under the fixed queue. Verified 40 new periodic checkpoints and selected-checkpoint metrics. Evaluated a fresh confirmation pair and inspected both capacity figures.
+6. Created FINAL_RESEARCH_REPORT.md, NOTEBOOK_GUIDE.md, ARTIFACTS.md, environment/requirements records, lab comparison helpers, and Gaussian_KAN_Lab.ipynb. Its 32 cells include 16 executed code cells, ten embedded figures, and zero errors. Default execution ran exact recovery, gradients, live comparison, and artifact checks. Separate integration checks validated MLP/tanh and KAN/W1 optional experiments, explicit resume, and rejection of mismatched target comparisons. The portable ZIP passed CRC, all checkpoint hashes, and exact notebook-byte verification.
 
-## Errors and limits
+## Measured findings
 
-- Initial Windows checkpoint fsync used a read-only handle and failed; corrected to a writable handle and round-trip validation passed.
-- The first pilot logger wrote duplicate rows when the bounded session ended exactly at a validation step. The condition was corrected; existing duplicates were removed; a step-31 resume confirmed unique metric steps `[0,20,25,30,31]`.
-- The resumed evaluation check exposed float32 subtraction rounding in the empirical affine standard-deviation error. Evaluation now casts all generated arrays to float64; the same frozen test samples were re-evaluated and all metric consistency checks passed.
-- Final synthesis and the user-requested Jupyter notebook remain to be completed.
-- The older checkout at `C:\Users\saroy\Codes\New-Denoising-Algorithm` is behind the active project checkout. The active project environment is `C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv` (Python 3.12.14, PyTorch 2.14.1+cpu, CUDA unavailable).
+First independent-test W2: KAN selected 0.007763; KAN final 0.007481; MLP 0.042940; Gaussian parameter fit 0.001646; oracle 0.001658. Gaussian sampling-reference mean 0.001555, SD 0.000336.
 
-## Next concrete action
+The selected KAN was strictly decreasing over the measured interior grid, with RMSE 0.006421 against the decreasing quantile reference. Extreme tails remained clipped. The first-test final/best ranking flipped on the later confirmation pair; both are reported without test-based reselection.
 
-Milestone 2 resumed the same optimizer and random states from step 31 and reached step 1,000 without non-finite losses or gradients. Ten periodic 100-step checkpoints, a best checkpoint at step 400, and the final checkpoint were verified. Recomputing fixed validation metrics from both checkpoints reproduced the saved metrics. Best validation squared W2 was `0.00003656` (W2 `0.00605`), mean `0.00416`, and standard deviation `0.19816`; final-step squared W2 was `0.00014622` (W2 `0.01209`). Cumulative training-loop time was `108.90 s` on CPU, excluding process startup and plotting. The best checkpoint plot was inspected: its mapping is decreasing, resembling the decreasing Gaussian quantile map. This is compatible with distribution matching and does not identify an original noise mechanism. See `results/metrics/primary_summary.json` and `results/figures/primary_best_step400.png`.
+Confirmation W2 for primary seeds 1729/1730/1731: 0.006242/0.006020/0.005266 (mean 0.005843, SD 0.000512). The 592-parameter smaller KAN reached 0.006627; grid64 with 5,520 parameters reached 0.005765. Finer resolution helped some tail errors. Minimum necessary capacity remains unknown.
 
-Milestone 3 trained a 2,913-parameter `1→52→52→1` SiLU MLP and a two-parameter affine generator for 1,000 Adam steps under the same batch size, learning rate, random seed, sorted-sample loss, and validation draws as the KAN. Ten periodic checkpoints and best/final checkpoint metrics were verified for each. Independent 2,048,000-draw fitting also produced an empirical quantile-optimal affine map and a Gaussian mean/std fit; the true inverse-CDF oracle was evaluated without fitting. Fixed-validation W2: KAN `0.00605`, MLP `0.04008`, affine Adam `0.04501`, affine empirical `0.04065`, Gaussian fit `0.00545`, oracle `0.00536`. Measured training-loop times: KAN `108.90 s`, MLP `3.36 s`, affine Adam `2.90 s`; empirical affine fitting `0.15 s`, Gaussian parameter fitting `0.045 s`. Both baseline figures were visually inspected. The MLP's map was nearly linear, while the KAN followed the decreasing quantile map. See `BASELINE_COMPARISON.md`, `results/metrics/baseline_comparison.csv`, and the two baseline figures. These are validation-selection results, not independent test results.
+## Encountered errors and corrections
 
-Milestone 4 evaluated saved models on 100,000 fresh independent latent/target draws and estimated the sampling reference using ten independent Gaussian pairs. Test W2: preselected KAN best `0.007763`, KAN final `0.007481`, MLP `0.042940`, Gaussian parameter fit `0.001646`, oracle `0.001658`; reference mean `0.001555`, SD `0.000336`. The KAN map was strictly decreasing on 10,000 interior grid points. Its RMSE versus the decreasing quantile map was `0.006421`; extreme tails remained clipped. Six scientific figures and numerical tables were produced and inspected. See `SCIENTIFIC_EVALUATION.md` for the full interpretation. The final KAN happened to test slightly better than the validation-selected checkpoint; both are reported without test-based reselection.
+- Initial inspection looked at the generated workspace and an older repository checkout. The active .venv was found in the prior project chat and reused.
+- Windows fsync failed on a read-only checkpoint handle; changed to a writable handle and verified round-trip IO.
+- Pilot metrics duplicated session-end validation rows; corrected the condition and verified unique steps.
+- Evaluation consistency exposed float32 subtraction rounding in affine std error; arrays now use float64 for evaluation and the same frozen samples were rechecked.
+- Initial notebook execution tried a read-only default IPython history directory; the harness now uses project-local caches.
+- Git pushes from the older isolated clone needed a one-command safe-directory setting. All milestone pushes succeeded; no force-push was used.
 
-On 2026-10-29, the study was copied from the earlier output checkout into this active project checkout after fast-forwarding its Git history through `b454644`. All 106 copied checkpoint hashes matched. No file under `sources/` was modified.
+## Artifact location and continuation
 
-From this directory in PowerShell, verify the evaluation evidence:
+The authoritative study is now in the active project checkout under New-Denoising-Algorithm/experiments/gaussian_kan. It was copied from the earlier output checkout on 2026-10-29 after a Git fast-forward; all 106 then-existing checkpoint hashes matched. No synced file under sources/ was changed.
 
-```powershell
-& '..\..\.venv\Scripts\python.exe' tests\test_evaluation_artifacts.py
-```
+Exact next command from this directory:
 
-The configurable runner passed full-versus-resumed KAN equality for model weights, Adam state, and PyTorch random state. It also verified loss permutation invariance, prevention of accidental overwrite, and rejection of changed resume configurations. The four-run queue is fixed in `config/robustness.json` before execution. Each run writes independent state, metrics, immutable config, best weights, and atomic recovery checkpoints under `runs/<run_id>/`.
+~~~powershell
+& '..\..\.venv\Scripts\python.exe' -m jupyterlab Gaussian_KAN_Lab.ipynb
+~~~
 
-Milestone 5 completed all four queued runs, then verified 40 periodic checkpoints and recomputed best validation metrics. On the fresh confirmation pair, primary seeds 1729/1730/1731 achieved W2 `0.006242/0.006020/0.005266` (mean `0.005843`, SD `0.000512`). The 592-parameter smaller KAN achieved `0.006627`; the 5,520-parameter 64-grid KAN achieved `0.005765`. All five selected maps were strictly decreasing on the interior grid. Finer resolution improved seed-1729 tail quantiles but did not eliminate their error. The smallest tested model retained similar central accuracy. See `ROBUSTNESS_AND_CAPACITY.md` and the two inspected figures. No larger/deeper search was justified.
-
-Exact next command from this directory: `& '..\..\.venv\Scripts\python.exe' tests\test_robustness_artifacts.py`. Then finish the report and executed notebook. Its optional experiments must use independent named directories under `explorations/`, with explicit resume and no overwrite of completed study runs.
+No required scientific work remains. Optional experiments use independent named directories under explorations/, with explicit resume. Do not repeat completed research runs without documenting a deliberate rerun. Read the final report for limitations and the recommended next experiment.

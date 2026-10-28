@@ -32,6 +32,6 @@ Primary: efficient-kan pure-PyTorch B-spline edges, widths `[1,8,8,1]`, 32 grid 
 
 ## Next action
 
-Milestones 0–5 passed. The bounded four-run robustness/capacity queue is complete and independently verified. See `ROBUSTNESS_AND_CAPACITY.md`. Finish the final research report, artifact manifest, and executed Jupyter notebook. The notebook should allow new named experiments and explicit continuation without modifying completed study outputs.
+Milestones 0–6 passed. The final report, executed notebook, checkpoint manifest, and verified portable bundle are complete. No planned run remains unfinished. Open Gaussian_KAN_Lab.ipynb and read FINAL_RESEARCH_REPORT.md. Follow-up experiments need new named configurations, explicit resume, and independent evaluation.
 
-The user additionally requested a Jupyter notebook on 2026-10-29. It must explain the setup, check loss and gradients, inspect recovery, load measured results and figures, compare models, and allow isolated configurable experiments without overwriting completed runs. Execute and verify the notebook before delivery.
+The user-requested notebook explains the setup, checks samples/loss/gradients, demonstrates exact recovery, loads measured results, compares models, and supports isolated configurable experiments. All 16 code cells executed without error, with ten embedded figures and artifact verification.

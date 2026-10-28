@@ -1,0 +1,15 @@
+{
+  "notebook": "Gaussian_KAN_Lab.ipynb",
+  "status": "passed",
+  "total_cells": 32,
+  "executed_code_cells": 16,
+  "error_outputs": 0,
+  "execution_seconds": 26.64437420014292,
+  "notebook_sha256": "55ad908dbc3497f3111e7121b7002770b2a212110a4115a19d2eeb45127faed4",
+  "python": "3.12.14",
+  "kernel_interpreter": "C:\\Users\\saroy\\.codex\\.chatgpt-projects\\g-p-6aaad21c30088191ba52fa7797bbe604\\New-Denoising-Algorithm\\.venv\\Scripts\\python.exe",
+  "full_study_retrained": false,
+  "optional_new_experiments_enabled": false,
+  "recovery_demonstration_executed": true,
+  "artifact_checks_executed": true
+}

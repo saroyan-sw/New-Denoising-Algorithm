@@ -1,0 +1,18 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "packages": {
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "pandas": "3.0.6",
+    "PyYAML": "6.0.3",
+    "efficient-kan": "0.2.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "jupyterlab": "4.6.4"
+  },
+  "kan_source": "https://github.com/shawcharles/efficient-kan/tree/0240ea138fe257d800c9bfa561025e1c44aedc71"
+}

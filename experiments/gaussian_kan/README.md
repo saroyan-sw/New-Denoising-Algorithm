@@ -1,23 +1,31 @@
-# Gaussian noise generator prerequisite
+# Gaussian generator with a spline KAN
 
-This independent experiment tests whether a cubic B-spline KAN can map uniform latent samples to a Gaussian output law using only unpaired samples and sorted-sample Wasserstein loss. It does not use the Gaussian inverse CDF in training. The repository's denoising experiments are unchanged.
+**Completed research — 29 October 2026.**
 
-See `EXPERIMENT_PLAN.md` and `EXPERIMENT_STATE.md` for the protocol and current evidence. `RESUME_INSTRUCTIONS.md` is the recovery entry point.
+Open [Gaussian_KAN_Lab.ipynb](Gaussian_KAN_Lab.ipynb) for the executed step-by-step notebook, [NOTEBOOK_GUIDE.md](NOTEBOOK_GUIDE.md) for its experiment controls, or [FINAL_RESEARCH_REPORT.md](FINAL_RESEARCH_REPORT.md) for conclusions. [ARTIFACTS.md](ARTIFACTS.md) describes the portable bundle.
 
-The 31-step pilot passed an exact checkpoint replay test and produced an [initial versus step-30 plot](results/figures/pilot_initial_and_step30.png). At that stage its output was narrower than the target. The [pilot metric record](results/metrics/pilot_validation.json) separates measured values from conclusions.
+The KAN learned an approximately Gaussian law from unpaired uniform/target samples, with a decreasing quantile-like map. It beat the tested parameter-matched MLP but retained extreme-tail error. A 592-parameter KAN had similar central accuracy; Gaussian parameter estimation was cheaper and more accurate when its family assumption was available.
 
-The 1,000-step primary run is now complete. Its [best-checkpoint plot](results/figures/primary_best_step400.png) shows a decreasing quantile-like map; [verified checkpoint metrics](results/metrics/primary_summary.json) record both best and final validation results.
+## Open the notebook
 
-The [baseline table and interpretation](BASELINE_COMPARISON.md) compare a parameter-matched MLP, trained and empirically fitted affine maps, Gaussian parameter fit, and oracle. [Independent scientific evaluation](SCIENTIFIC_EVALUATION.md) measures the remaining error and tail limitations. [Robustness and capacity results](ROBUSTNESS_AND_CAPACITY.md) cover three primary seeds, a smaller KAN, and finer spline resolution. The final report and step-by-step Jupyter notebook are next.
+From this study directory in the current project:
 
-Install `requirements.txt` in a compatible Python environment. The pinned KAN library is [shawcharles/efficient-kan](https://github.com/shawcharles/efficient-kan) at commit `0240ea138fe257d800c9bfa561025e1c44aedc71`, a pure-PyTorch implementation with trainable B-spline edge functions.
+~~~powershell
+& '..\..\.venv\Scripts\python.exe' -m jupyterlab Gaussian_KAN_Lab.ipynb
+~~~
 
-From this directory:
+The default notebook reads saved results, checks loss/gradients/checkpoints, demonstrates exact recovery, and compares saved generators. Its 16 code cells executed without error. New training is disabled until you enable the experiment switch. Edit recipes for KAN widths/grids, MLP activations, affine generators, optimizer/loss, batch size, learning rate, and seed. New runs use separate names under explorations/ and explicit resume.
 
-```text
-python train.py --status
-python train.py --max-steps-per-session 200
-python train.py --resume latest --max-runtime-seconds 600
-```
+For a standalone copy, install requirements-notebook.txt and keep the notebook beside the code/results. The portable ZIP includes all 215 checkpoint files. A Git-only checkout retains saved notebook outputs and measurements; inspecting trained weights needs the bundle.
 
-Python executable and package installation may vary by machine. Checkpoints are local and ignored by Git; lightweight metrics, figures, configuration, and study documentation are version controlled.
+## Evidence and recovery
+
+- [Baseline comparison](BASELINE_COMPARISON.md)
+- [Independent scientific evaluation](SCIENTIFIC_EVALUATION.md)
+- [Seed and capacity study](ROBUSTNESS_AND_CAPACITY.md)
+- [Experiment plan](EXPERIMENT_PLAN.md), [current state](EXPERIMENT_STATE.md), and [resume instructions](RESUME_INSTRUCTIONS.md)
+- CHECKPOINT_MANIFEST.json and environment_study.json record artifact hashes and the tested environment.
+
+The primary KAN used the pure-PyTorch [efficient-kan dependency](https://github.com/shawcharles/efficient-kan/tree/0240ea138fe257d800c9bfa561025e1c44aedc71), widths [1,8,8,1], 32 intervals, and cubic B-splines. The Gaussian inverse CDF was evaluation only. Distribution matching does not identify an original stochastic mechanism.
+
+Primary status: python train.py --status. A completed primary resume is a no-op. Future configurable runs use experiment_runner.py with a saved configuration, explicit --resume latest, and a session budget. Checkpoints and portable archives stay local; lightweight manifests, configuration, metrics, figures, and the executed notebook are version controlled.

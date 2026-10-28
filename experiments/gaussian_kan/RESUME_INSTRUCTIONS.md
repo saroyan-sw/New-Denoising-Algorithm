@@ -1,18 +1,20 @@
 # Resume instructions
 
-1. Read `EXPERIMENT_PLAN.md`, `EXPERIMENT_STATE.md`, and `experiment_state.json`.
-2. Inspect `git status --short --branch`, `git log -5 --oneline`, and `git remote -v` from the repository root.
-3. Install `requirements.txt` in a Python environment with compatible PyTorch. On the current Windows machine, the existing research `.venv` has PyTorch and scientific packages. Install the pinned `efficient-kan` dependency there or into an isolated local package directory and set `PYTHONPATH` accordingly.
-4. Run `python train.py --status` in this directory. Check that `latest_checkpoint` exists and is loadable before resuming. Ignored checkpoints need separate local preservation.
-5. Continue the first unfinished milestone. Milestones 0–5 are complete; the final report and requested notebook are next. For a future configurable run, use `experiment_runner.py --config <stored config.json> --resume latest` with the original runs root. For an interrupted primary run, use `python train.py --resume latest --max-runtime-seconds 600`. Never restart an interrupted run from step 0 without a deliberate reset.
-6. Update both state files after verified work. Commit and push each validated milestone. Record push failures honestly.
+1. Read EXPERIMENT_PLAN.md, EXPERIMENT_STATE.md, and experiment_state.json.
+2. Inspect git status --short --branch, git log -5 --oneline, and git remote -v from the repository root.
+3. Milestones 0–6 are complete. No experiment needs resuming. Open Gaussian_KAN_Lab.ipynb to inspect the saved results and start optional new approaches.
+4. Verify the local artifacts with python scripts/build_checkpoint_manifest.py --verify and the notebook with python tests/test_notebook_artifact.py.
+5. For a future interrupted configurable run, use the stored config and original runs root with experiment_runner.py --resume latest. Do not silently restart it or change its configuration.
+6. Preserve model binaries separately from Git. New scientific milestones require documentation, verification, commit, and push.
 
-For the current Windows checkout, the exact next command from this directory is:
+Exact next command from this directory on the current machine:
 
-```powershell
-& 'C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv\Scripts\python.exe' train.py --status
-```
+~~~powershell
+& '..\..\.venv\Scripts\python.exe' -m jupyterlab Gaussian_KAN_Lab.ipynb
+~~~
 
-The completed-run checkpoints are local and ignored by Git. Preserve or copy the KAN, MLP, and affine checkpoint directories when moving the study; a fresh remote checkout alone cannot inspect the trained weights.
+For a portable copy, extract outputs/Gaussian_KAN_Study_Bundle.zip. Its top-level gaussian_kan/ folder contains all code, results, notebook, report, and 215 checkpoint files. Install requirements-notebook.txt in a compatible environment and select that interpreter. The HTML export is available under outputs/ for reading without Python.
 
-The existing project virtual environment used in earlier sessions is `C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv`. Its path is machine-specific and is not required by the project code.
+The local original environment is C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv. That path is not hard-coded in the notebook or model code.
+
+The notebook's default execution reads results and runs small checks. Optional new training is disabled until its switch is enabled; it uses separate explorations/ directories, unique run names, explicit resume, and bounded sessions. The completed primary runner refuses to alter a finished checkpoint.

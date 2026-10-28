@@ -173,6 +173,9 @@ def train(args) -> None:
         payload = load_checkpoint(latest, map_location=device)
         if payload["config"] != config:
             raise ValueError("configuration differs from recovery checkpoint")
+        if payload["step"] >= config["steps"]:
+            print(f"{config['experiment_id']} is already complete at step {payload['step']}; no checkpoint was changed")
+            return
         model = make_kan(config["widths"], config["grid_intervals"], config["spline_order"]).to(device)
         optimizer = torch.optim.Adam(model.parameters(), lr=config["learning_rate"])
         model.load_state_dict(payload["model_state"])

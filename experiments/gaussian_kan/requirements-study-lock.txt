@@ -1,0 +1,8 @@
+# Direct scientific dependencies verified in the completed experiment.
+# Install PyTorch's CPU wheel from its CPU index on CPU-only Windows machines.
+torch==2.14.1
+numpy==2.5.2
+scipy==1.18.1
+matplotlib==3.11.2
+PyYAML==6.0.3
+efficient-kan @ git+https://github.com/shawcharles/efficient-kan.git@0240ea138fe257d800c9bfa561025e1c44aedc71
