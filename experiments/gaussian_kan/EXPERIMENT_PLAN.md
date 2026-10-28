@@ -14,7 +14,7 @@ Fit a deterministic generator to transform independent `Z ~ U(0,1)` samples into
 | 3 | Train parameter-matched MLP and affine model; estimate Gaussian mean/std from target sample; evaluate oracle | Baseline metrics and computational costs saved |
 | 4 | Evaluate moments, W2, quantiles, monotonicity, interior inverse-CDF fit, tails, and reference sample error | Tables and figures documented with limitations |
 | 5 | If justified by evidence and runtime, add two seeds and smaller or finer-grid KAN | Measured stability and capacity/cost tradeoff |
-| 6 | Synthesize verified findings and next experiment | Reproducible report and exact continuation procedure |
+| 6 | Synthesize verified findings and next experiment; create the requested step-by-step Jupyter notebook | Reproducible report, executed notebook with saved results and isolated exploration controls, exact continuation procedure |
 
 Each milestone follows implement, test, run, evaluate, checkpoint, document, commit, push. Stop a run cleanly under its session budget; never mark it complete without verified outputs.
 
@@ -32,4 +32,6 @@ Primary: efficient-kan pure-PyTorch B-spline edges, widths `[1,8,8,1]`, 32 grid 
 
 ## Next action
 
-Milestones 0–3 passed. Evaluate all saved generators on fresh independent latent and target draws, estimate the Gaussian-versus-Gaussian sampling floor, and inspect quantiles, monotonicity, interior function error, and tails. Keep validation-based checkpoint selection separate from test evaluation.
+Milestones 0–4 passed. Run two additional primary seeds (1730, 1731), one smaller `[1,8,1]` 32-grid KAN, and one `[1,8,8,1]` 64-grid KAN. The first three address reproducibility and necessary capacity; the 64-grid run is justified by the measured extreme-tail miss. Keep all other training settings fixed. These are a bounded exploratory capacity study, not a large search. Evaluate with a fresh confirmation sample pair (seeds 20261029 and 20261030), and report every run. Do not select a new best model using those test metrics.
+
+The user additionally requested a Jupyter notebook on 2026-10-29. It must explain the setup, check loss and gradients, inspect recovery, load measured results and figures, compare models, and allow isolated configurable experiments without overwriting completed runs. Execute and verify the notebook before delivery.

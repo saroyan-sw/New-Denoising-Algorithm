@@ -1,0 +1,13 @@
+{
+  "test_size": 100000,
+  "test_latent_seed": 824501,
+  "test_target_seed": 912877,
+  "floor_seed": 725347,
+  "floor_replicates": 10,
+  "interior_z_interval": [
+    0.0001,
+    0.9999
+  ],
+  "checkpoint_selection": "best validation checkpoint, before independent test",
+  "no_test_based_model_selection": true
+}

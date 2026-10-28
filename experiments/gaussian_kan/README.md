@@ -8,7 +8,7 @@ The 31-step pilot passed an exact checkpoint replay test and produced an [initia
 
 The 1,000-step primary run is now complete. Its [best-checkpoint plot](results/figures/primary_best_step400.png) shows a decreasing quantile-like map; [verified checkpoint metrics](results/metrics/primary_summary.json) record both best and final validation results.
 
-The [baseline table and interpretation](BASELINE_COMPARISON.md) compare a parameter-matched MLP, trained and empirically fitted affine maps, Gaussian parameter fit, and oracle. Independent test evaluation is the next milestone.
+The [baseline table and interpretation](BASELINE_COMPARISON.md) compare a parameter-matched MLP, trained and empirically fitted affine maps, Gaussian parameter fit, and oracle. [Independent scientific evaluation](SCIENTIFIC_EVALUATION.md) measures the remaining error and tail limitations. A bounded seed/capacity study and a step-by-step Jupyter notebook are in progress.
 
 Install `requirements.txt` in a compatible Python environment. The pinned KAN library is [shawcharles/efficient-kan](https://github.com/shawcharles/efficient-kan) at commit `0240ea138fe257d800c9bfa561025e1c44aedc71`, a pure-PyTorch implementation with trainable B-spline edge functions.
 

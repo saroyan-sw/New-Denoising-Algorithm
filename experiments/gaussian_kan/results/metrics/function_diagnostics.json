@@ -1,0 +1,50 @@
+{
+  "KAN best": {
+    "orientation": "decreasing",
+    "interior_rmse_increasing": 0.39905341065954564,
+    "interior_rmse_decreasing": 0.006420789815688452,
+    "interior_rmse_chosen": 0.006420789815688452,
+    "interior_max_absolute_error_chosen": 0.17382871673764955,
+    "fraction_increasing_differences": 0.0,
+    "fraction_decreasing_differences": 1.0,
+    "sign_changes_in_differences": 0,
+    "rmse_left_1pct": 0.03287659868961991,
+    "rmse_right_1pct": 0.03644922153520151
+  },
+  "KAN final": {
+    "orientation": "decreasing",
+    "interior_rmse_increasing": 0.3983167845156294,
+    "interior_rmse_decreasing": 0.007855043268809854,
+    "interior_rmse_chosen": 0.007855043268809854,
+    "interior_max_absolute_error_chosen": 0.13585892905138997,
+    "fraction_increasing_differences": 0.0,
+    "fraction_decreasing_differences": 1.0,
+    "sign_changes_in_differences": 0,
+    "rmse_left_1pct": 0.023592625026892366,
+    "rmse_right_1pct": 0.023209986038276273
+  },
+  "MLP best": {
+    "orientation": "increasing",
+    "interior_rmse_increasing": 0.04205014941071573,
+    "interior_rmse_decreasing": 0.3910471803653464,
+    "interior_rmse_chosen": 0.04205014941071573,
+    "interior_max_absolute_error_chosen": 0.4081637917890456,
+    "fraction_increasing_differences": 1.0,
+    "fraction_decreasing_differences": 0.0,
+    "sign_changes_in_differences": 0,
+    "rmse_left_1pct": 0.20700400849519832,
+    "rmse_right_1pct": 0.20628518433427023
+  },
+  "Affine Adam best": {
+    "orientation": "decreasing",
+    "interior_rmse_increasing": 0.37306142706848355,
+    "interior_rmse_decreasing": 0.04668731917445249,
+    "interior_rmse_chosen": 0.04668731917445249,
+    "interior_max_absolute_error_chosen": 0.44114322055720356,
+    "fraction_increasing_differences": 0.0,
+    "fraction_decreasing_differences": 1.0,
+    "sign_changes_in_differences": 0,
+    "rmse_left_1pct": 0.23849327629935535,
+    "rmse_right_1pct": 0.23656243927917917
+  }
+}

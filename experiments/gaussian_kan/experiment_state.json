@@ -6,13 +6,13 @@
     "affine_seed_1729",
     "gaussian_parameter_estimate"
   ],
-  "completed_milestones": [0, 1, 2, 3],
-  "last_commit": "b02c6f3",
+  "completed_milestones": [0, 1, 2, 3, 4],
+  "last_commit": "b454644",
   "last_completed_step": 1000,
-  "last_push_status": "pushed to origin/main through b02c6f3",
+  "last_push_status": "pushed to origin/main through b454644",
   "latest_checkpoint": "checkpoints\\affine\\latest.pt",
-  "milestone": 4,
-  "next_action": "Implement independent scientific evaluation, sampling floor, quantile and tail diagnostics",
-  "pending_experiments": [],
+  "milestone": 5,
+  "next_action": "Validate configurable recovery runner; run primary seeds 1730/1731, smaller32 and primary64; then build executed notebook",
+  "pending_experiments": ["kan_primary_seed_1730", "kan_primary_seed_1731", "kan_small32_seed_1729", "kan_primary64_seed_1729"],
   "status": "planned"
 }
