@@ -4,7 +4,7 @@
 
 - Milestones 0–6 are complete. All eight planned experiment IDs are completed; no training run is active, failed, or interrupted.
 - The final report, executed notebook, checkpoint manifest, and portable bundle are verified.
-- Latest pushed result milestone: Milestone 5 at e540bda, receipt 3c1a50d. Milestone 6 is verified and awaits its final commit/push receipt.
+- Latest completed milestone: Milestone 6 at 2b3e0c3, pushed successfully to origin/main (3c1a50d..2b3e0c3). All seven milestones and their source/evidence records are preserved in Git.
 - Primary final: checkpoints/latest.pt, step 1,000; validation-selected primary: checkpoints/best_step_000400.pt.
 - Other weights: checkpoints/mlp/, checkpoints/affine/, and runs/<run_id>/checkpoints/.
 - The 215 checkpoint hashes are recorded in CHECKPOINT_MANIFEST.json. Model binaries are ignored by Git and included in outputs/Gaussian_KAN_Study_Bundle.zip.

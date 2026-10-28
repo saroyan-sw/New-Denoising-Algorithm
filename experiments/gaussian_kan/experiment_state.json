@@ -21,9 +21,18 @@
     5,
     6
   ],
-  "last_commit": "3c1a50d",
+  "git_milestones": {
+    "0": "b7eb1c1",
+    "1": "c1da9bd",
+    "2": "a9b59f6",
+    "3": "b02c6f3",
+    "4": "4751916",
+    "5": "e540bda",
+    "6": "2b3e0c3"
+  },
+  "last_commit": "2b3e0c3",
   "last_completed_step": 1000,
-  "last_push_status": "pushed to origin/main through 3c1a50d",
+  "last_push_status": "pushed to origin/main through 2b3e0c3",
   "latest_checkpoint": "runs/kan_primary64_seed_1729/checkpoints/latest.pt",
   "milestone": 6,
   "next_action": "Open Gaussian_KAN_Lab.ipynb; all planned research is complete; optional new runs belong in explorations/",
