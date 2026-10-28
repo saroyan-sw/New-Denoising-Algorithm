@@ -2,10 +2,10 @@
 
 ## Current position
 
-- Milestones 0–4 are complete. Milestone 5, the bounded seed/capacity study, is next. The requested step-by-step Jupyter notebook follows in Milestone 6.
-- Active experiment: none. Completed: KAN, parameter-matched MLP, affine Adam, and Gaussian parameter-estimation baseline. Pending experiments: none from the initial baseline set; independent evaluation and capacity/seed work remain.
+- Milestones 0–5 are complete. Milestone 6 is active: final report, checkpoint/artifact manifest, portable bundle, and the requested executed step-by-step Jupyter notebook.
+- Active experiment: none. All eight planned training/fitting experiments are complete. No unfinished training run remains. The report and notebook are pending.
 - KAN final checkpoint: `checkpoints/latest.pt`, best: `checkpoints/best_step_000400.pt`. MLP and affine have `checkpoints/{mlp,affine}/latest.pt` and best checkpoint references inside. All checkpoints are local and ignored by Git.
-- Latest committed milestone: Milestone 4 at `4751916`, pushed to `origin/main` (`b454644..4751916`). Milestone 3 and its receipt were also pushed.
+- Latest committed result milestone: Milestone 4 at `4751916`; its receipt and the tested robustness preparation commit `da0ac02` were pushed. Milestone 5 evidence is verified and awaits commit/push.
 
 ## Attempted and completed
 
@@ -21,7 +21,7 @@
 - Initial Windows checkpoint fsync used a read-only handle and failed; corrected to a writable handle and round-trip validation passed.
 - The first pilot logger wrote duplicate rows when the bounded session ended exactly at a validation step. The condition was corrected; existing duplicates were removed; a step-31 resume confirmed unique metric steps `[0,20,25,30,31]`.
 - The resumed evaluation check exposed float32 subtraction rounding in the empirical affine standard-deviation error. Evaluation now casts all generated arrays to float64; the same frozen test samples were re-evaluated and all metric consistency checks passed.
-- Additional seeds, capacity tests, final synthesis, and the user-requested Jupyter notebook remain to be completed.
+- Final synthesis and the user-requested Jupyter notebook remain to be completed.
 - The older checkout at `C:\Users\saroy\Codes\New-Denoising-Algorithm` is behind the active project checkout. The active project environment is `C:\Users\saroy\.codex\.chatgpt-projects\g-p-6aaad21c30088191ba52fa7797bbe604\New-Denoising-Algorithm\.venv` (Python 3.12.14, PyTorch 2.14.1+cpu, CUDA unavailable).
 
 ## Next concrete action
@@ -42,4 +42,6 @@ From this directory in PowerShell, verify the evaluation evidence:
 
 The configurable runner passed full-versus-resumed KAN equality for model weights, Adam state, and PyTorch random state. It also verified loss permutation invariance, prevention of accidental overwrite, and rejection of changed resume configurations. The four-run queue is fixed in `config/robustness.json` before execution. Each run writes independent state, metrics, immutable config, best weights, and atomic recovery checkpoints under `runs/<run_id>/`.
 
-Exact next command from this directory: `& '..\..\.venv\Scripts\python.exe' scripts\run_robustness.py --max-runs-per-session 1 --max-runtime-seconds 300`. Repeating it continues the first unfinished run and skips completed ones. Use the fresh confirmation pair specified in `EXPERIMENT_PLAN.md`. Finish with a report and executed notebook supporting isolated user experiments.
+Milestone 5 completed all four queued runs, then verified 40 periodic checkpoints and recomputed best validation metrics. On the fresh confirmation pair, primary seeds 1729/1730/1731 achieved W2 `0.006242/0.006020/0.005266` (mean `0.005843`, SD `0.000512`). The 592-parameter smaller KAN achieved `0.006627`; the 5,520-parameter 64-grid KAN achieved `0.005765`. All five selected maps were strictly decreasing on the interior grid. Finer resolution improved seed-1729 tail quantiles but did not eliminate their error. The smallest tested model retained similar central accuracy. See `ROBUSTNESS_AND_CAPACITY.md` and the two inspected figures. No larger/deeper search was justified.
+
+Exact next command from this directory: `& '..\..\.venv\Scripts\python.exe' tests\test_robustness_artifacts.py`. Then finish the report and executed notebook. Its optional experiments must use independent named directories under `explorations/`, with explicit resume and no overwrite of completed study runs.

@@ -1,0 +1,36 @@
+{
+  "protocol": {
+    "size": 100000,
+    "latent_seed": 20261029,
+    "target_seed": 20261030
+  },
+  "sampling_floor_seed": 20261031,
+  "floor_replicates": [
+    0.0017263255805344889,
+    0.0009973953818108764,
+    0.001920422295275703,
+    0.0018482532817218828,
+    0.001857635407732501,
+    0.001014627975787145,
+    0.0015431876036832207,
+    0.0012753600780453878,
+    0.0016857508462765403,
+    0.001540121864417963
+  ],
+  "floor_mean_w2": 0.0015409080315285709,
+  "floor_sd_w2": 0.00033945475006673213,
+  "oracle_confirmation_w2": 0.0020346910920598323,
+  "primary_three_seed_mean_w2": 0.005842506044018809,
+  "primary_three_seed_sd_w2": 0.0005116297915276851,
+  "primary_three_seed_range_w2": [
+    0.005265826609248137,
+    0.006241956812668616
+  ],
+  "primary_orientations": [
+    "decreasing",
+    "decreasing",
+    "decreasing"
+  ],
+  "checkpoint_selection": "best fixed-validation checkpoint for each run; final checkpoints reported separately",
+  "interpretation_limit": "Three primary seeds; capacity alternatives each have one seed. Exploratory after first independent evaluation. No claim of minimal possible capacity or general KAN-versus-MLP superiority."
+}

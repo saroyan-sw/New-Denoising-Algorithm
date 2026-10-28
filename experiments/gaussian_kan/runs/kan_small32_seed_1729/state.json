@@ -1,0 +1,12 @@
+{
+  "best_checkpoint": "best_step_000700.pt",
+  "checkpoint_step": 1000,
+  "elapsed_seconds": 18.56351379980333,
+  "error": null,
+  "last_completed_step": 1000,
+  "latest_checkpoint": "checkpoints/latest.pt",
+  "next_action": "Inspect verified results",
+  "parameter_count": 592,
+  "run_id": "kan_small32_seed_1729",
+  "status": "completed"
+}

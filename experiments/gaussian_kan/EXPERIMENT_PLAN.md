@@ -32,6 +32,6 @@ Primary: efficient-kan pure-PyTorch B-spline edges, widths `[1,8,8,1]`, 32 grid 
 
 ## Next action
 
-Milestones 0–4 passed. Run two additional primary seeds (1730, 1731), one smaller `[1,8,1]` 32-grid KAN, and one `[1,8,8,1]` 64-grid KAN. The first three address reproducibility and necessary capacity; the 64-grid run is justified by the measured extreme-tail miss. Keep all other training settings fixed. These are a bounded exploratory capacity study, not a large search. Evaluate with a fresh confirmation sample pair (seeds 20261029 and 20261030), and report every run. Do not select a new best model using those test metrics.
+Milestones 0–5 passed. The bounded four-run robustness/capacity queue is complete and independently verified. See `ROBUSTNESS_AND_CAPACITY.md`. Finish the final research report, artifact manifest, and executed Jupyter notebook. The notebook should allow new named experiments and explicit continuation without modifying completed study outputs.
 
 The user additionally requested a Jupyter notebook on 2026-10-29. It must explain the setup, check loss and gradients, inspect recovery, load measured results and figures, compare models, and allow isolated configurable experiments without overwriting completed runs. Execute and verify the notebook before delivery.

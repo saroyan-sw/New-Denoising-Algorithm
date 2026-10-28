@@ -4,15 +4,27 @@
     "kan_primary_seed_1729",
     "mlp_matched_seed_1729",
     "affine_seed_1729",
-    "gaussian_parameter_estimate"
+    "gaussian_parameter_estimate",
+    "kan_primary_seed_1730",
+    "kan_primary_seed_1731",
+    "kan_small32_seed_1729",
+    "kan_primary64_seed_1729"
   ],
-  "completed_milestones": [0, 1, 2, 3, 4],
-  "last_commit": "4751916",
+  "completed_milestones": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "last_commit": "da0ac02",
   "last_completed_step": 1000,
-  "last_push_status": "pushed to origin/main through 4751916",
-  "latest_checkpoint": "checkpoints\\affine\\latest.pt",
-  "milestone": 5,
-  "next_action": "Validate configurable recovery runner; run primary seeds 1730/1731, smaller32 and primary64; then build executed notebook",
-  "pending_experiments": ["kan_primary_seed_1730", "kan_primary_seed_1731", "kan_small32_seed_1729", "kan_primary64_seed_1729"],
+  "last_push_status": "pushed to origin/main through da0ac02",
+  "latest_checkpoint": "runs/kan_primary64_seed_1729/checkpoints/latest.pt",
+  "milestone": 6,
+  "next_action": "Create final report and executed Jupyter notebook with isolated experiment controls",
+  "notebook_status": "planned",
+  "pending_experiments": [],
   "status": "planned"
 }

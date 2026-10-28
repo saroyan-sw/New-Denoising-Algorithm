@@ -1,0 +1,36 @@
+{
+  "best_checkpoint": "best_step_000925.pt",
+  "best_validation_w2_squared": 3.822847065748647e-05,
+  "config": {
+    "activation": "silu",
+    "batch_size": 2048,
+    "checkpoint_every": 100,
+    "device": "auto",
+    "grid_intervals": 32,
+    "learning_rate": 0.001,
+    "loss": "w2",
+    "model": "kan",
+    "optimizer": "adam",
+    "run_id": "kan_primary_seed_1731",
+    "seed": 1731,
+    "spline_order": 3,
+    "steps": 1000,
+    "target_std": 0.2,
+    "validate_every": 25,
+    "validation_size": 8192,
+    "widths": [
+      1,
+      8,
+      8,
+      1
+    ]
+  },
+  "final_step": 1000,
+  "final_validation": {
+    "output_mean": -0.0032680006697773933,
+    "output_std": 0.19857841730117798,
+    "val_w2_squared": 8.236389112425968e-05
+  },
+  "parameter_count": 2960,
+  "training_loop_seconds": 31.96813670010306
+}

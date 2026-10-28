@@ -1,0 +1,24 @@
+{
+  "activation": "silu",
+  "batch_size": 2048,
+  "checkpoint_every": 100,
+  "device": "auto",
+  "grid_intervals": 32,
+  "learning_rate": 0.001,
+  "loss": "w2",
+  "model": "kan",
+  "optimizer": "adam",
+  "run_id": "kan_primary_seed_1730",
+  "seed": 1730,
+  "spline_order": 3,
+  "steps": 1000,
+  "target_std": 0.2,
+  "validate_every": 25,
+  "validation_size": 8192,
+  "widths": [
+    1,
+    8,
+    8,
+    1
+  ]
+}
