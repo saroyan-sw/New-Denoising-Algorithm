@@ -5,7 +5,7 @@
 - Milestones 0–4 are complete. Milestone 5, the bounded seed/capacity study, is next. The requested step-by-step Jupyter notebook follows in Milestone 6.
 - Active experiment: none. Completed: KAN, parameter-matched MLP, affine Adam, and Gaussian parameter-estimation baseline. Pending experiments: none from the initial baseline set; independent evaluation and capacity/seed work remain.
 - KAN final checkpoint: `checkpoints/latest.pt`, best: `checkpoints/best_step_000400.pt`. MLP and affine have `checkpoints/{mlp,affine}/latest.pt` and best checkpoint references inside. All checkpoints are local and ignored by Git.
-- Latest committed milestone: Milestone 3 at `b02c6f3`, receipt `b454644`, both pushed. Milestone 4 verification and documentation are now complete; commit/push pending.
+- Latest committed milestone: Milestone 4 at `4751916`, pushed to `origin/main` (`b454644..4751916`). Milestone 3 and its receipt were also pushed.
 
 ## Attempted and completed
 

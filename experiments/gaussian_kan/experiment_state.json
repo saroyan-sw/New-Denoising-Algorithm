@@ -7,9 +7,9 @@
     "gaussian_parameter_estimate"
   ],
   "completed_milestones": [0, 1, 2, 3, 4],
-  "last_commit": "b454644",
+  "last_commit": "4751916",
   "last_completed_step": 1000,
-  "last_push_status": "pushed to origin/main through b454644",
+  "last_push_status": "pushed to origin/main through 4751916",
   "latest_checkpoint": "checkpoints\\affine\\latest.pt",
   "milestone": 5,
   "next_action": "Validate configurable recovery runner; run primary seeds 1730/1731, smaller32 and primary64; then build executed notebook",
