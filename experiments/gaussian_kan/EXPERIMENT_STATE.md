@@ -40,4 +40,6 @@ From this directory in PowerShell, verify the evaluation evidence:
 & '..\..\.venv\Scripts\python.exe' tests\test_evaluation_artifacts.py
 ```
 
-Next validate a configurable recovery runner, then run seeds 1730/1731, smaller32, and primary64 under the fixed protocol. Use the fresh confirmation pair specified in `EXPERIMENT_PLAN.md`. Preserve the completed primary/baseline checkpoints. Finish with a report and executed notebook that supports isolated user experiments.
+The configurable runner passed full-versus-resumed KAN equality for model weights, Adam state, and PyTorch random state. It also verified loss permutation invariance, prevention of accidental overwrite, and rejection of changed resume configurations. The four-run queue is fixed in `config/robustness.json` before execution. Each run writes independent state, metrics, immutable config, best weights, and atomic recovery checkpoints under `runs/<run_id>/`.
+
+Exact next command from this directory: `& '..\..\.venv\Scripts\python.exe' scripts\run_robustness.py --max-runs-per-session 1 --max-runtime-seconds 300`. Repeating it continues the first unfinished run and skips completed ones. Use the fresh confirmation pair specified in `EXPERIMENT_PLAN.md`. Finish with a report and executed notebook supporting isolated user experiments.

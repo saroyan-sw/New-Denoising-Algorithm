@@ -15,3 +15,6 @@ experiments/gaussian_kan/checkpoints/*
 experiments/gaussian_kan/results/logs/*
 !experiments/gaussian_kan/results/logs/.gitkeep
 experiments/gaussian_kan/.deps/
+experiments/gaussian_kan/runs/*/checkpoints/
+experiments/gaussian_kan/explorations/
+.ipynb_checkpoints/

@@ -1,0 +1,26 @@
+{
+  "shared": {
+    "model": "kan",
+    "widths": [1, 8, 8, 1],
+    "grid_intervals": 32,
+    "spline_order": 3,
+    "batch_size": 2048,
+    "steps": 1000,
+    "learning_rate": 0.001,
+    "optimizer": "adam",
+    "loss": "w2",
+    "target_std": 0.2,
+    "validation_size": 8192,
+    "checkpoint_every": 100,
+    "validate_every": 25,
+    "device": "auto"
+  },
+  "runs": [
+    {"run_id": "kan_primary_seed_1730", "seed": 1730},
+    {"run_id": "kan_primary_seed_1731", "seed": 1731},
+    {"run_id": "kan_small32_seed_1729", "seed": 1729, "widths": [1, 8, 1]},
+    {"run_id": "kan_primary64_seed_1729", "seed": 1729, "grid_intervals": 64}
+  ],
+  "confirmation": {"size": 100000, "latent_seed": 20261029, "target_seed": 20261030},
+  "rationale": "Two repeat seeds test stability, a smaller spline KAN tests necessary capacity, and finer resolution tests the observed tail limitation. No test-based checkpoint reselection."
+}
