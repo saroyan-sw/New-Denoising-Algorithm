@@ -5,7 +5,7 @@
 - Milestones 0–5 are complete. Milestone 6 is active: final report, checkpoint/artifact manifest, portable bundle, and the requested executed step-by-step Jupyter notebook.
 - Active experiment: none. All eight planned training/fitting experiments are complete. No unfinished training run remains. The report and notebook are pending.
 - KAN final checkpoint: `checkpoints/latest.pt`, best: `checkpoints/best_step_000400.pt`. MLP and affine have `checkpoints/{mlp,affine}/latest.pt` and best checkpoint references inside. All checkpoints are local and ignored by Git.
-- Latest committed result milestone: Milestone 4 at `4751916`; its receipt and the tested robustness preparation commit `da0ac02` were pushed. Milestone 5 evidence is verified and awaits commit/push.
+- Latest committed milestone: Milestone 5 at `e540bda`, pushed to `origin/main` (`da0ac02..e540bda`). Earlier result milestones and their receipts were pushed.
 
 ## Attempted and completed
 
