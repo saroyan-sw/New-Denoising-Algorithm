@@ -1,0 +1,150 @@
+{
+  "sigma_control": 0.1,
+  "replicates": 128,
+  "rows": [
+    {
+      "pattern": "black",
+      "candidates": 1,
+      "noisy_mse": 0.00996353755668384,
+      "individual_subtraction_mse": 0.019944876291727184,
+      "averaged_subtraction_mse": 0.019944876291727184,
+      "theoretical_average_mse": 0.02
+    },
+    {
+      "pattern": "black",
+      "candidates": 8,
+      "noisy_mse": 0.00996353755668384,
+      "individual_subtraction_mse": 0.019950629389033227,
+      "averaged_subtraction_mse": 0.011209812714704295,
+      "theoretical_average_mse": 0.01125
+    },
+    {
+      "pattern": "black",
+      "candidates": 64,
+      "noisy_mse": 0.00996353755668384,
+      "individual_subtraction_mse": 0.019963425030708682,
+      "averaged_subtraction_mse": 0.010116757526903782,
+      "theoretical_average_mse": 0.01015625
+    },
+    {
+      "pattern": "black",
+      "method": "center-excluding neighbor mean",
+      "self_supervised_risk": 0.012515347329696691,
+      "evaluation_clean_mse": 0.0025660558433163744,
+      "difference_expected_sigma_squared": 0.009949291486380317
+    },
+    {
+      "pattern": "gray",
+      "candidates": 1,
+      "noisy_mse": 0.00999116477943644,
+      "individual_subtraction_mse": 0.020006363694871583,
+      "averaged_subtraction_mse": 0.020006363694871583,
+      "theoretical_average_mse": 0.02
+    },
+    {
+      "pattern": "gray",
+      "candidates": 8,
+      "noisy_mse": 0.00999116477943644,
+      "individual_subtraction_mse": 0.0199836886213536,
+      "averaged_subtraction_mse": 0.011242288144444616,
+      "theoretical_average_mse": 0.01125
+    },
+    {
+      "pattern": "gray",
+      "candidates": 64,
+      "noisy_mse": 0.00999116477943644,
+      "individual_subtraction_mse": 0.019987361704233916,
+      "averaged_subtraction_mse": 0.010144881500808257,
+      "theoretical_average_mse": 0.01015625
+    },
+    {
+      "pattern": "gray",
+      "method": "center-excluding neighbor mean",
+      "self_supervised_risk": 0.012588322268776226,
+      "evaluation_clean_mse": 0.002571023273218249,
+      "difference_expected_sigma_squared": 0.010017298995557977
+    },
+    {
+      "pattern": "step",
+      "candidates": 1,
+      "noisy_mse": 0.010018044097276042,
+      "individual_subtraction_mse": 0.020036086654468724,
+      "averaged_subtraction_mse": 0.020036086654468724,
+      "theoretical_average_mse": 0.02
+    },
+    {
+      "pattern": "step",
+      "candidates": 8,
+      "noisy_mse": 0.010018044097276042,
+      "individual_subtraction_mse": 0.020013624004491692,
+      "averaged_subtraction_mse": 0.011260637557670719,
+      "theoretical_average_mse": 0.01125
+    },
+    {
+      "pattern": "step",
+      "candidates": 64,
+      "noisy_mse": 0.010018044097276042,
+      "individual_subtraction_mse": 0.020014335763864,
+      "averaged_subtraction_mse": 0.01017332280113013,
+      "theoretical_average_mse": 0.01015625
+    },
+    {
+      "pattern": "step",
+      "method": "center-excluding neighbor mean",
+      "self_supervised_risk": 0.012905716539742186,
+      "evaluation_clean_mse": 0.0029015534006302923,
+      "difference_expected_sigma_squared": 0.010004163139111894
+    },
+    {
+      "pattern": "blocks",
+      "candidates": 1,
+      "noisy_mse": 0.009985048637771235,
+      "individual_subtraction_mse": 0.0199196953853716,
+      "averaged_subtraction_mse": 0.0199196953853716,
+      "theoretical_average_mse": 0.02
+    },
+    {
+      "pattern": "blocks",
+      "candidates": 8,
+      "noisy_mse": 0.009985048637771235,
+      "individual_subtraction_mse": 0.01998849400918205,
+      "averaged_subtraction_mse": 0.011238649093817252,
+      "theoretical_average_mse": 0.01125
+    },
+    {
+      "pattern": "blocks",
+      "candidates": 64,
+      "noisy_mse": 0.009985048637771235,
+      "individual_subtraction_mse": 0.019979840810296915,
+      "averaged_subtraction_mse": 0.01013651133960571,
+      "theoretical_average_mse": 0.01015625
+    },
+    {
+      "pattern": "blocks",
+      "method": "center-excluding neighbor mean",
+      "self_supervised_risk": 0.017875116028252494,
+      "evaluation_clean_mse": 0.007912043393271546,
+      "difference_expected_sigma_squared": 0.009963072634980948
+    }
+  ],
+  "amplitude_control": [
+    {
+      "amplitude": 0,
+      "expected_loss_to_noisy_input": 0.0
+    },
+    {
+      "amplitude": 0.25,
+      "expected_loss_to_noisy_input": 0.000625
+    },
+    {
+      "amplitude": 0.5,
+      "expected_loss_to_noisy_input": 0.0025
+    },
+    {
+      "amplitude": 1.0,
+      "expected_loss_to_noisy_input": 0.01
+    }
+  ],
+  "clean_references_used_for_training": false,
+  "interpretation": "Even oracle independent noise samples worsen MSE. Matching the noisy input favors zero subtraction."
+}

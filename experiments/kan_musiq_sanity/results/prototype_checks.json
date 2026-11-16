@@ -1,0 +1,11 @@
+{
+  "status": "prototype_checks_passed_not_trained",
+  "parameters": 9877,
+  "conditional_spline_prior_parameters": 4144,
+  "heldout_target_perturbation_invariance": true,
+  "encoder_decoder_gradient_and_update": true,
+  "conditional_KAN_gradient_and_update": true,
+  "checkpoint_roundtrip": true,
+  "training_clean_reference_access": false,
+  "important_limit": "Residual W2 here is a wiring check. Residuals also contain prediction error; no calibrated noise-learning claim."
+}

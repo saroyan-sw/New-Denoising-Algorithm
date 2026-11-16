@@ -1,0 +1,119 @@
+{
+  "checkpoint_sha256": "e95806b9eae5f3814c410f574ba8e552362bd5bc63d758ed5b97860f5d6185aa",
+  "preprocess": "PyIQA MUSIQ KonIQ; grayscale replicated RGB; IQA copy clipped only",
+  "clean_used_for_training": false,
+  "rows": [
+    {
+      "pattern": "black",
+      "variant": "clean_eval_only",
+      "score_higher_is_better": 19.08419418334961,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.0
+    },
+    {
+      "pattern": "black",
+      "variant": "noise_005",
+      "score_higher_is_better": 20.59241485595703,
+      "iqa_only_clipped_fraction": 0.5107421875,
+      "clean_evaluation_mse_unclipped": 0.002439028176052979
+    },
+    {
+      "pattern": "black",
+      "variant": "noise_010",
+      "score_higher_is_better": 22.001678466796875,
+      "iqa_only_clipped_fraction": 0.5107421875,
+      "clean_evaluation_mse_unclipped": 0.009756112704211915
+    },
+    {
+      "pattern": "black",
+      "variant": "flat_mean",
+      "score_higher_is_better": 19.08419418334961,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.0
+    },
+    {
+      "pattern": "gray",
+      "variant": "clean_eval_only",
+      "score_higher_is_better": 17.65365219116211,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.0
+    },
+    {
+      "pattern": "gray",
+      "variant": "noise_005",
+      "score_higher_is_better": 33.615875244140625,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.002553370717062803
+    },
+    {
+      "pattern": "gray",
+      "variant": "noise_010",
+      "score_higher_is_better": 33.61585998535156,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.01021348286825121
+    },
+    {
+      "pattern": "gray",
+      "variant": "flat_mean",
+      "score_higher_is_better": 17.65365219116211,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.0
+    },
+    {
+      "pattern": "step",
+      "variant": "clean_eval_only",
+      "score_higher_is_better": 24.3121337890625,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.0
+    },
+    {
+      "pattern": "step",
+      "variant": "noise_005",
+      "score_higher_is_better": 26.32132339477539,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.0025779638014561917
+    },
+    {
+      "pattern": "step",
+      "variant": "noise_010",
+      "score_higher_is_better": 24.753814697265625,
+      "iqa_only_clipped_fraction": 0.001953125,
+      "clean_evaluation_mse_unclipped": 0.010311855205824767
+    },
+    {
+      "pattern": "step",
+      "variant": "flat_mean",
+      "score_higher_is_better": 17.65365219116211,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.04000000000000001
+    },
+    {
+      "pattern": "blocks",
+      "variant": "clean_eval_only",
+      "score_higher_is_better": 37.76648712158203,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.0
+    },
+    {
+      "pattern": "blocks",
+      "variant": "noise_005",
+      "score_higher_is_better": 42.597129821777344,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.0024376394225649745
+    },
+    {
+      "pattern": "blocks",
+      "variant": "noise_010",
+      "score_higher_is_better": 42.965728759765625,
+      "iqa_only_clipped_fraction": 0.001220703125,
+      "clean_evaluation_mse_unclipped": 0.009750557690259898
+    },
+    {
+      "pattern": "blocks",
+      "variant": "flat_mean",
+      "score_higher_is_better": 17.65365219116211,
+      "iqa_only_clipped_fraction": 0.0,
+      "clean_evaluation_mse_unclipped": 0.039999999999999994
+    }
+  ]
+}

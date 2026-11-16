@@ -1,0 +1,16 @@
+{
+  "stage": "preflight",
+  "status": "preflight_complete",
+  "full_hybrid_training": "not_started",
+  "constraints": {
+    "clean_training_references": false,
+    "observations_per_scene": 1,
+    "noise": "iid Gaussian",
+    "noise_strength": "one shared unknown level"
+  },
+  "next_action": "Review metric gate and finalize training protocol; full learned hybrid remains untrained",
+  "checkpoint": "checkpoints/prototype_shared.pt",
+  "musiq_controls_complete": true,
+  "musiq_training_loss": "excluded_by_toy_ranking_gate",
+  "next_training_stage": "masked denoiser baseline, without clean targets or MUSIQ loss"
+}

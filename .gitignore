@@ -18,3 +18,4 @@ experiments/gaussian_kan/.deps/
 experiments/gaussian_kan/runs/*/checkpoints/
 experiments/gaussian_kan/explorations/
 .ipynb_checkpoints/
+experiments/kan_musiq_sanity/checkpoints/
