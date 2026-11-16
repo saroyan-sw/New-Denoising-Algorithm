@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "channels": 3,
+  "parameters": 9271,
+  "shared_KAN_parameters": 2960,
+  "target_exclusion": true,
+  "finite_gradients_and_updates": true,
+  "checkpoint_roundtrip": true,
+  "full_training": false
+}

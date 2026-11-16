@@ -1,0 +1,59 @@
+{
+  "images_fixed_before_scoring": [
+    "astronaut",
+    "coffee",
+    "chelsea",
+    "camera"
+  ],
+  "source": "skimage.data 0.26.0",
+  "seeds": [
+    2026111601,
+    2026111602,
+    2026111603
+  ],
+  "noise_levels": [
+    0.025,
+    0.05,
+    0.1
+  ],
+  "raw_arrays_clipped": false,
+  "iqa_copy_clipped": true,
+  "external_resize": false,
+  "reference_use": "evaluation_only",
+  "primary_gate_fixed_before_scoring": "For every photo: mean reference > noise050 > noise100, and reference > flat mean",
+  "role": "metric-development calibration, not unseen model holdout",
+  "inputs": {
+    "astronaut": {
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "sha256_float32": "97c5216381c80dc3439e38440dea2adea4c6264bd065a3e3727c2dd0dd7112d1"
+    },
+    "coffee": {
+      "shape": [
+        400,
+        600,
+        3
+      ],
+      "sha256_float32": "318c0b079a77c93557f9a8238989d63abcbf1f0bbb0597b11585b9b7eabd868e"
+    },
+    "chelsea": {
+      "shape": [
+        300,
+        451,
+        3
+      ],
+      "sha256_float32": "e92a462d715cecb327b6a11c2e837582076539db01bca6b8c3d1d8822c35a2e3"
+    },
+    "camera": {
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "sha256_float32": "17123ef3dff76c4520c1de0acd933cff28ed0ed064a4c3924e2eb3131d095861"
+    }
+  }
+}

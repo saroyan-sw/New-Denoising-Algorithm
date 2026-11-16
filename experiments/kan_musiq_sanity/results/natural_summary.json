@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "scores_mean_over_noise_seeds": {
+    "astronaut": {
+      "reference": 78.4634780883789,
+      "noise_025": 76.98560841878255,
+      "noise_050": 70.46691640218098,
+      "noise_100": 54.17111333211263,
+      "smoothed_noise_050": 56.34529495239258,
+      "independent_subtraction_050": 62.50506718953451,
+      "blurred_reference": 61.466590881347656,
+      "flat_mean": 27.050159454345703
+    },
+    "coffee": {
+      "reference": 75.08866882324219,
+      "noise_025": 70.15496063232422,
+      "noise_050": 60.919795989990234,
+      "noise_100": 52.7773183186849,
+      "smoothed_noise_050": 57.431504567464195,
+      "independent_subtraction_050": 56.371682484944664,
+      "blurred_reference": 62.014381408691406,
+      "flat_mean": 26.091625213623047
+    },
+    "chelsea": {
+      "reference": 72.5019302368164,
+      "noise_025": 70.66024780273438,
+      "noise_050": 66.84513346354167,
+      "noise_100": 59.37707265218099,
+      "smoothed_noise_050": 58.08438364664713,
+      "independent_subtraction_050": 63.943285624186196,
+      "blurred_reference": 59.259239196777344,
+      "flat_mean": 23.100486755371094
+    },
+    "camera": {
+      "reference": 67.07344818115234,
+      "noise_025": 64.41682942708333,
+      "noise_050": 55.55496724446615,
+      "noise_100": 45.49917221069336,
+      "smoothed_noise_050": 47.92735799153646,
+      "independent_subtraction_050": 47.88834889729818,
+      "blurred_reference": 51.985877990722656,
+      "flat_mean": 22.621559143066406
+    }
+  },
+  "primary_auxiliary_loss_gate": true,
+  "strict_monotonicity_all_levels_by_image": {
+    "astronaut": true,
+    "coffee": true,
+    "chelsea": true,
+    "camera": true
+  },
+  "interpretation": "Domain calibration only; not proof of a denoising model or safe standalone metric optimization.",
+  "all_cases_reported": true,
+  "full_hybrid_training": "not_started"
+}

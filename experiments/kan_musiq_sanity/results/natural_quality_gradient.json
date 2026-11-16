@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "metric_frozen": true,
+  "score": 70.34319305419922,
+  "input_gradient_norm": 26.904640197753906,
+  "input_gradient_finite": true,
+  "optimizer_steps": 0,
+  "interpretation": "Differentiability check only; no metric optimization or denoising training."
+}

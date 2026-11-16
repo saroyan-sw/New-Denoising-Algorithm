@@ -2,6 +2,8 @@
 
 Date: 2026-11-16. This is a new protocol; the completed scalar KAN and classical-denoising studies remain unchanged.
 
+Subsequent result: the fixed natural-photo calibration passed the noise-ordering gate. See NATURAL_IMAGES_AND_REVISED_ARCHITECTURE.md. The original toy-domain result below remains valid; the metric is eligible only for a controlled auxiliary-loss test on the calibrated natural-photo domain.
+
 ## Confirmed setting
 
 - Only noisy observations are available to training.

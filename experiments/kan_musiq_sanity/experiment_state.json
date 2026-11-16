@@ -1,6 +1,6 @@
 {
-  "stage": "preflight",
-  "status": "preflight_complete",
+  "stage": "natural_photo_calibration",
+  "status": "calibration_complete",
   "full_hybrid_training": "not_started",
   "constraints": {
     "clean_training_references": false,
@@ -8,11 +8,19 @@
     "noise": "iid Gaussian",
     "noise_strength": "one shared unknown level"
   },
-  "next_action": "Review metric gate and finalize training protocol; full learned hybrid remains untrained",
+  "next_action": "Train masked RGB baseline; identify shared noise prior; implement posterior coupling; ablate small frozen-MUSIQ term",
   "checkpoint": "checkpoints/prototype_shared.pt",
   "musiq_controls_complete": true,
-  "musiq_training_loss": "excluded_by_toy_ranking_gate",
+  "musiq_training_loss": "eligible only for a controlled natural-photo auxiliary ablation; excluded on toy domain",
   "next_training_stage": "masked denoiser baseline, without clean targets or MUSIQ loss",
   "last_commit": "4165522",
-  "last_push_status": "pushed to origin/main through 4165522"
+  "last_push_status": "pushed to origin/main through 4165522",
+  "rgb_checkpoint": "checkpoints/prototype_rgb.pt",
+  "natural_scores": 72,
+  "natural_auxiliary_gate_passed": true,
+  "local_checkpoint_hashes": {
+    "checkpoints\\prototype.pt": "aaa2649a71853149c4b2968cfb0679d2e382bad94529ef8e71716819c1442c5c",
+    "checkpoints\\prototype_rgb.pt": "34a712b1ecf1a620d814ba2a3635d59679d80c15b36a17d0cb5d61ea5421c0a3",
+    "checkpoints\\prototype_shared.pt": "321e6a04951f0ca9f1010343f14b0ea02d253e3a61c6d6c18b13bb572397cc2c"
+  }
 }
