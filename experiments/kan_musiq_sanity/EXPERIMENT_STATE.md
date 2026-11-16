@@ -28,3 +28,5 @@ Git status: preflight commit 4165522 pushed successfully to origin/main (e3e2cdb
 Next action: follow NATURAL_IMAGES_AND_REVISED_ARCHITECTURE.md to build the masked RGB baseline, then identify/anchor the shared noise prior and test a small frozen-MUSIQ auxiliary-loss ablation. The literal noisy-input reconstruction loss remains invalid. Posterior coupling remains proposed and has not been implemented.
 
 Recovery: preflight.py skips completed mathematical/prototype artifacts and resumes MUSIQ scoring from saved rows. It does not automatically run full hybrid training. The cached weight path can be supplied with --musiq-checkpoint; its hash is checked before use.
+
+Natural-image milestone b8c8a88 was pushed to origin/main (6302ae0..b8c8a88). All 72 score rows, RGB masking, frozen quality gradients, and figures were verified. Full learned hybrid training remains not started.
