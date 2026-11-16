@@ -19,7 +19,7 @@ Known limitations: no end-to-end denoising result yet; residuals include reconst
 
 Environment reused from the existing project's .venv: Python 3.12, PyTorch 2.14.1+cpu, PyIQA 0.1.16, efficient-kan 0.2.0 pinned by the completed Gaussian study. MUSIQ weights were reused from the local cache, hash e95806b9eae5f3814c410f574ba8e552362bd5bc63d758ed5b97860f5d6185aa. No dependency download was necessary.
 
-Git status: preflight commit/push pending. The previous completed studies are preserved. This work uses a sparse isolated checkout in the chat's outputs folder.
+Git status: preflight commit 4165522 pushed successfully to origin/main (e3e2cdb..4165522). The previous completed studies are preserved. This work uses a sparse isolated checkout in the chat's outputs folder. Full hybrid training remains not started.
 
 Next action: use ARCHITECTURE.md to build the first masked denoiser baseline under the confirmed constraints. Do not proceed with the literal noisy-input reconstruction loss or assume random prior samples cancel the observed noise. Do not enable MUSIQ training on this toy domain based on its name alone.
 
